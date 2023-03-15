@@ -24,6 +24,7 @@
         "@typescript-eslint/space-before-function-paren": "off",
         "@typescript-eslint/strict-boolean-expressions": "off",
         "@typescript-eslint/no-floating-promises": "warn",
+        "indent": ["error", 2],
         "max-len": ["error", { "code": 80,
             "comments": 80,
             "ignoreTemplateLiterals": true
