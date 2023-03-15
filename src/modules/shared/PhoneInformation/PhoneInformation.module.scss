@@ -1,0 +1,19 @@
+.phoneInformation {
+  display: flex;
+  justify-content: space-between;
+}
+  
+.phoneInformationText {
+  font-weight: 600;
+  font-size: 12px;
+  margin-bottom: 8px;
+  color: #89939a;
+}
+
+.phoneInformationValue {
+  font-weight: 600;
+  font-size: 12px;
+  margin-bottom: 8px;
+  text-align: right;
+  color: #313237;
+}
