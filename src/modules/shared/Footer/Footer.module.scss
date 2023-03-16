@@ -1,0 +1,97 @@
+// @import "../../../styles/mixins";
+
+.footer {
+  background-color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0px 1px 0px #e2e6e9;
+  padding-left: 152px;
+  padding-right: 152px;
+  max-height: 96px;
+}
+
+.logo_icon {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+.nav_list {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  gap: 106px;
+}
+
+.nav_link {
+  display: flex;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 12px;
+  color: #89939a;
+  padding: 42px 0;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+
+  &:hover {
+    color: #313237;
+    
+  }
+}
+
+.scroll {
+  display: flex;
+  align-items: center;
+}
+
+.scroll_text {
+  font-size: 12px;
+  color: #89939a;
+  font-weight: 600;
+}
+
+.scroll_button {
+  width: 32px;
+  height: 32px;
+  justify-content: center;
+  align-items: center;
+  margin-left: 16px;
+  background: #fff;
+  border: 1px solid #b4bdc3;
+
+  :hover {
+    border: 1px solid #313237;
+  }
+}
+
+@media screen and (max-width: 639px) {
+  .footer {
+    display: block;
+    padding-left: 16px;
+    padding-right: 16px;
+    height: 258px;
+  }
+
+  .nav_list {
+    display: block;
+    flex-direction: column;
+    gap: 16px;
+    padding: 0;
+
+  }
+
+  .nav_link {
+    padding: 0; 
+  }
+
+  .scroll {
+    justify-content: center;
+    padding: 32px 16px;
+   
+  }
+}
