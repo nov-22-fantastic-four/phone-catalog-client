@@ -1,6 +1,6 @@
 import React from 'react';
+import { ProductCards } from '../ProductCards';
 import { Container } from '../shared/Container';
-import { ProductCard } from '../shared/ProductCard';
 
 export const PhonesPage: React.FC = () => {
   return (
@@ -9,7 +9,7 @@ export const PhonesPage: React.FC = () => {
         Phones Page
       </h1>
 
-      <ProductCard />
+      <ProductCards />
     </Container>
   );
 };
