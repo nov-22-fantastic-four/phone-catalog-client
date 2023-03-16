@@ -1,11 +1,11 @@
 import React from 'react';
 import { Container } from '../shared/Container';
 
-export const HomePage: React.FC = () => {
+export const NotFoundPage: React.FC = () => {
   return (
     <Container>
       <h1>
-        Home Page
+        404
       </h1>
     </Container>
   );
