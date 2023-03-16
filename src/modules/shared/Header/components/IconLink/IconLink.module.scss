@@ -1,0 +1,58 @@
+.navLink {
+  position: relative;
+  display: flex;
+}
+
+.counter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  border-radius: 50%;
+  width: 14px;
+  height: 14px;
+  border: 1px solid #fff;
+  background-color: #EB5757;
+  font-size: 9px;
+  color: #fff;
+  top: 25%;
+  left: 50%;
+  overflow: hidden;
+}
+
+.isActive {
+  position: relative;
+  color: #313237;
+}
+
+.isActive:after {
+  content: "";
+  position: absolute;
+  height: 4px;
+  width: 100%;
+  left: 0;
+  bottom: 0;
+  background-color: #313237;
+}
+
+.icon {
+  box-shadow: -1px 0px 0px #E2E6E9;
+  padding: 24px;
+}
+
+@media (max-width: 1200px) {
+  .icon {
+    padding: 16px;
+  }
+
+  .counter {
+    top: 20%;
+  }
+}
+
+@media (max-width: 640px) {
+  .icon {
+    padding: 16px 25vw;
+    box-shadow: -1px 0px 0px #E2E6E9;
+  }
+ }
