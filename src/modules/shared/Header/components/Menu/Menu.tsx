@@ -24,37 +24,37 @@ export const Menu: React.FC = () => (
       </a>
     </div>
     <nav>
-        <ul className={styles.navList}>
-          <li className={styles.navItem}>
-            <a className={classNames(styles.navLink, styles.isActive)}
+      <ul className={styles.navList}>
+        <li className={styles.navItem}>
+          <a className={classNames(styles.navLink, styles.isActive)}
             href="#home">Home
-            </a>
-          </li>
-          <li className={styles.navItem}>
-            <a className={styles.navLink} href="#phones">Phones</a>
-          </li>
-          <li className={styles.navItem}>
-            <a className={styles.navLink} href="#tablets">Tablets</a>
-          </li>
-          <li className={styles.navItem}>
-            <a className={classNames(styles.navLink, styles.isActive)}
+          </a>
+        </li>
+        <li className={styles.navItem}>
+          <a className={styles.navLink} href="#phones">Phones</a>
+        </li>
+        <li className={styles.navItem}>
+          <a className={styles.navLink} href="#tablets">Tablets</a>
+        </li>
+        <li className={styles.navItem}>
+          <a className={classNames(styles.navLink, styles.isActive)}
             href="#accessories">Accessories</a>
-          </li>
-        </ul>
-      </nav>
+        </li>
+      </ul>
+    </nav>
     <footer className={styles.menu_footer}>
-    <a className={styles.iconLink} href="#home">
+      <a className={styles.iconLink} href="#home">
         <img
-        src={heart_icon}
-        alt="icon"
-        className={styles.icon}
+          src={heart_icon}
+          alt="icon"
+          className={styles.icon}
         />
       </a>
       <a className={styles.iconLink} href="#home">
         <img
-        src={bag_icon}
-        alt="icon"
-        className={styles.icon}
+          src={bag_icon}
+          alt="icon"
+          className={styles.icon}
         />
       </a>
     </footer>
