@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import styles from './ProductCard.module.scss';
-import Image from '.images/image.jpg';
+import Image from './images/image.jpg';
 import Like from './images/like.svg';
 import { PhoneInformation } from '../PhoneInformation';
+import cn from 'classnames';
 
 export const ProductCard: React.FC = () => {
   // const [selectedPhones, setSelectedPhones] = useState([]);
@@ -42,48 +43,41 @@ export const ProductCard: React.FC = () => {
         </p>
 
         <p className={styles.pastPrice}>
-        {phoneInfo.pastPrice}
+          {phoneInfo.pastPrice}
         </p>
       </div>
 
       <div className={styles.line}></div>
 
-        <PhoneInformation
-           text={phoneInfo.screenText}
-           value={phoneInfo.sreenValue}
-        />
+      <PhoneInformation
+        text={phoneInfo.screenText}
+        value={phoneInfo.screenValue}
+      />
 
-        <PhoneInformation
-           text={phoneInfo.capacityText}
-           value={phoneInfo.capacityValue}
-        />
+      <PhoneInformation
+        text={phoneInfo.capacityText}
+        value={phoneInfo.capacityValue}
+      />
 
-        <PhoneInformation
-           text={phoneInfo.ramText}
-           value={phoneInfo.ramValue}
-        />
+      <PhoneInformation
+        text={phoneInfo.ramText}
+        value={phoneInfo.ramValue}
+      />
 
       <div className={styles.buttonInfo}>
-        {isActive
-          ? (
-          <a
+        <a
           href="#"
-          className={styles.buttonSelected}
+          className={cn({
+            [styles.buttonSelected]: isActive,
+            [styles.button]: !isActive
+          })}
           onClick={handleClick}
         >
-          Added
+          {isActive
+            ? 'Added'
+            : 'Add to cart'}
         </a>
-            )
-          : (
-          <a
-          href="#"
-          className={styles.button}
-          onClick={handleClick}
-        >
-          Add to cart
-        </a>
-            )}
-
+        
         <div className={styles.like}>
           <img
             src={Like}
@@ -92,6 +86,6 @@ export const ProductCard: React.FC = () => {
           />
         </div>
       </div>
-      </div>
+    </div>
   );
 };
