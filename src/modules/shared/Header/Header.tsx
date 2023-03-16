@@ -2,9 +2,9 @@ import React from 'react';
 import classNames from 'classnames';
 import styles from './Header.module.scss';
 import logo from '../../../images/logo.svg';
-import heart_icon from '../../../images/heart_icon.svg';
-import bag_icon from '../../../images/bag_icon.svg';
-import burger_icon from '../../../images/burger-menu_icon.svg';
+import heart_icon from '../../../images/icons/heart_icon.svg';
+import bag_icon from '../../../images/icons/bag_icon.svg';
+import burger_icon from '../../../images/icons/burger-menu_icon.svg';
 
 export const Header: React.FC = () => (
   <header className={styles.header}>

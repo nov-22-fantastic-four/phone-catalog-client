@@ -1,10 +1,10 @@
 import React from 'react';
 import styles from './Menu.module.scss';
 import classNames from 'classnames';
-import logo from '../../../images/logo.svg';
-import close_icon from '../../../images/close-menu_icon.svg';
-import heart_icon from '../../../images/heart_icon.svg';
-import bag_icon from '../../../images/bag_icon.svg';
+import logo from '../../../../../images/logo.svg';
+import close_icon from '../../../../../images/icons/close-menu_icon.svg';
+import heart_icon from '../../../../../images/icons/heart_icon.svg';
+import bag_icon from '../../../../../images/icons/bag_icon.svg';
 
 export const Menu: React.FC = () => (
   <div className={styles.menu}>
