@@ -15,7 +15,10 @@ export const ProductCard: React.FC = () => {
 
   const phoneInfo = {
     screenText: 'Screen',
-    screenValue: '5.8” OLED',
+    title: 'Apple iPhone Xs 64GB Silver (iMT9G2FS/A)',
+    sreenValue: '5.8” OLED',
+    currentPrice: '$799',
+    pastPrice: '$899',
     capacityText: 'Capacity',
     capacityValue: '64 GB',
     ramText: 'RAM',
@@ -26,21 +29,21 @@ export const ProductCard: React.FC = () => {
     <div className={styles.card}>
       <img
         src={Image}
-        alt="Apple iPhone Xs 64GB Silver (iMT9G2FS/A)"
+        alt={phoneInfo.title}
         className={styles.image}
       />
 
       <h2 className={styles.title}>
-        Apple iPhone Xs 64GB Silver (iMT9G2FS/A)
+        {phoneInfo.title}
       </h2>
 
       <div className={styles.phonePrice}>
         <p className={styles.currentPrice}>
-          $799
+          {phoneInfo.currentPrice}
         </p>
 
         <p className={styles.pastPrice}>
-          $899
+          {phoneInfo.pastPrice}
         </p>
       </div>
 
@@ -74,6 +77,7 @@ export const ProductCard: React.FC = () => {
             ? 'Added'
             : 'Add to cart'}
         </a>
+        
         <div className={styles.like}>
           <img
             src={Like}
