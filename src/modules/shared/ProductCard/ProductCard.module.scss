@@ -58,14 +58,16 @@
 
 .buttonInfo {
   display: flex;
+  height: 40px;
   align-items: end;
 }
 
 .button {
+  box-sizing: border-box;
   margin-top: 16px;
   margin-right: 8px;
   width: 160px;
-  padding: 10px 0;
+  padding: 8px 0;
   background-color: #313237;;
   font-weight: 700;
   font-size: 14px;
@@ -73,6 +75,7 @@
   text-align: center;
   color: #fff;
   text-decoration: none;
+  transition: box-shadow .3s ease;
 
   &:hover {
     box-shadow: 0px 3px 13px rgba(23, 32, 49, 0.4);
@@ -84,7 +87,7 @@
   margin-top: 16px;
   margin-right: 8px;
   width: 160px;
-  padding: 10px 0;
+  padding: 9px 0;
   font-weight: 700;
   font-size: 14px;
   line-height: 21px;
@@ -101,6 +104,11 @@
   width: 40px;
   height: 40px;
   padding: 12px; 
+  transition: border .3s ease;
+
+  &:hover {
+    border: 1px solid #313237;
+  }
 }
 
 .likeButton {
