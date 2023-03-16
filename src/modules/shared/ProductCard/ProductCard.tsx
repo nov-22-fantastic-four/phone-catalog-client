@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import styles from './ProductCard.module.scss';
-import Image from './images/image.jpg';
+import Image from '.images/image.jpg';
 import Like from './images/like.svg';
 import { PhoneInformation } from '../PhoneInformation';
 
