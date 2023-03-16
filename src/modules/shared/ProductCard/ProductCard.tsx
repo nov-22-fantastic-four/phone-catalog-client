@@ -1,10 +1,17 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styles from './ProductCard.module.scss';
 import Image from './images/image.jpg';
 import Like from './images/like.svg';
 import { PhoneInformation } from '../PhoneInformation';
 
 export const ProductCard: React.FC = () => {
+  // const [selectedPhones, setSelectedPhones] = useState([]);
+  const [isActive, setActive] = useState(false);
+
+  const handleClick = (): void => {
+    setActive(!isActive);
+  };
+
   const phoneInfo = {
     screenText: 'Screen',
     sreenValue: '5.8” OLED',
@@ -54,13 +61,25 @@ export const ProductCard: React.FC = () => {
         />
 
       <div className={styles.buttonInfo}>
-        <a
+        {isActive
+          ? (
+          <a
+          href="#"
+          className={styles.buttonSelected}
+          onClick={handleClick}
+        >
+          Added
+        </a>
+            )
+          : (
+          <a
           href="#"
           className={styles.button}
-          data-qa="hover"
+          onClick={handleClick}
         >
           Add to cart
         </a>
+            )}
 
         <div className={styles.like}>
           <img
