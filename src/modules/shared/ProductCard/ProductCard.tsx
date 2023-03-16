@@ -1,15 +1,21 @@
 import React, { useState } from 'react';
 import styles from './ProductCard.module.scss';
 import Image from './images/image.jpg';
-import Like from './images/like.svg';
+import heartIcon from '../../../images/icons/heart_icon.svg';
+import redHeartIcon from '../../../images/icons/red_heart_icon.svg';
 import { PhoneInformation } from '../PhoneInformation';
 import cn from 'classnames';
 
 export const ProductCard: React.FC = () => {
-  const [isActive, setActive] = useState(false);
+  const [isAdded, setIsAdded] = useState(false);
+  const [isLiked, setIsLiked] = useState(false);
 
-  const handleClick = (): void => {
-    setActive(!isActive);
+  const handleClickAdded = (): void => {
+    setIsAdded(!isAdded);
+  };
+
+  const handleClickLiked = (): void => {
+    setIsLiked(!isLiked);
   };
 
   const phoneInfo = {
@@ -66,22 +72,34 @@ export const ProductCard: React.FC = () => {
       <div className={styles.buttonInfo}>
         <button
           className={cn({
-            [styles.buttonSelected]: isActive,
-            [styles.button]: !isActive
+            [styles.buttonSelected]: isAdded,
+            [styles.button]: !isAdded
           })}
-          onClick={handleClick}
+          onClick={handleClickAdded}
         >
-          {isActive
+          {isAdded
             ? 'Added'
             : 'Add to cart'}
         </button>
 
-        <div className={styles.like}>
-          <img
-            src={Like}
-            alt="like"
-            className={styles.likeButton}
-          />
+        <div
+          className={styles.like}
+          onClick={handleClickLiked}
+        >
+          {isLiked
+            ? (
+              <img
+                src={redHeartIcon}
+                alt="like"
+                className={styles.likeButton}
+              />)
+            : (
+              <img
+                src={heartIcon}
+                alt="like"
+                className={styles.likeButton}
+              />)
+          }
         </div>
       </div>
     </div>
