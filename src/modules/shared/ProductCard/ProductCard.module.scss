@@ -63,10 +63,11 @@
 }
 
 .button {
+  box-sizing: border-box;
   margin-top: 16px;
   margin-right: 8px;
   width: 160px;
-  padding: 10px 0;
+  padding: 8px 0;
   background-color: #313237;;
   font-weight: 700;
   font-size: 14px;
@@ -86,7 +87,7 @@
   margin-top: 16px;
   margin-right: 8px;
   width: 160px;
-  padding: 10px 0;
+  padding: 9px 0;
   font-weight: 700;
   font-size: 14px;
   line-height: 21px;

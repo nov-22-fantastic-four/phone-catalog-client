@@ -6,7 +6,6 @@ import { PhoneInformation } from '../PhoneInformation';
 import cn from 'classnames';
 
 export const ProductCard: React.FC = () => {
-  // const [selectedPhones, setSelectedPhones] = useState([]);
   const [isActive, setActive] = useState(false);
 
   const handleClick = (): void => {
@@ -16,7 +15,7 @@ export const ProductCard: React.FC = () => {
   const phoneInfo = {
     screenText: 'Screen',
     title: 'Apple iPhone Xs 64GB Silver (iMT9G2FS/A)',
-    sreenValue: '5.8” OLED',
+    screenValue: '5.8” OLED',
     currentPrice: '$799',
     pastPrice: '$899',
     capacityText: 'Capacity',
@@ -65,8 +64,7 @@ export const ProductCard: React.FC = () => {
       />
 
       <div className={styles.buttonInfo}>
-        <a
-          href="#"
+        <button
           className={cn({
             [styles.buttonSelected]: isActive,
             [styles.button]: !isActive
@@ -76,8 +74,8 @@ export const ProductCard: React.FC = () => {
           {isActive
             ? 'Added'
             : 'Add to cart'}
-        </a>
-        
+        </button>
+
         <div className={styles.like}>
           <img
             src={Like}
