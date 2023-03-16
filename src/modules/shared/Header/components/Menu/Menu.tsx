@@ -1,24 +1,30 @@
 import React from 'react';
+import styles from './Menu.module.scss';
 import classNames from 'classnames';
-import styles from './Header.module.scss';
 import logo from '../../../images/logo.svg';
+import close_icon from '../../../images/close-menu_icon.svg';
 import heart_icon from '../../../images/heart_icon.svg';
 import bag_icon from '../../../images/bag_icon.svg';
-import burger_icon from '../../../images/burger-menu_icon.svg';
 
-export const Header: React.FC = () => (
-  <header className={styles.header}>
-      <nav>
-        <ul className={styles.navList}>
-        <li className={styles.navItem}>
-        <a href="#home">
+export const Menu: React.FC = () => (
+  <div className={styles.menu}>
+    <div className={styles.menu_header}>
+      <a href="#home">
         <img
-        src={logo}
-        alt="icon"
-        className={styles.logo}
-        />
+          src={logo}
+          alt="icon"
+          className={styles.logo} />
       </a>
-          </li>
+
+      <a className={styles.burger} href="#menu">
+        <img
+          src={close_icon}
+          alt="icon"
+          className={styles.menu_icon} />
+      </a>
+    </div>
+    <nav>
+        <ul className={styles.navList}>
           <li className={styles.navItem}>
             <a className={classNames(styles.navLink, styles.isActive)}
             href="#home">Home
@@ -31,13 +37,13 @@ export const Header: React.FC = () => (
             <a className={styles.navLink} href="#tablets">Tablets</a>
           </li>
           <li className={styles.navItem}>
-            <a className={styles.navLink} href="#accessories">Accessories</a>
+            <a className={classNames(styles.navLink, styles.isActive)}
+            href="#accessories">Accessories</a>
           </li>
         </ul>
       </nav>
-
-      <div className={styles.iconList}>
-      <a className={styles.iconLink} href="#home">
+    <footer className={styles.menu_footer}>
+    <a className={styles.iconLink} href="#home">
         <img
         src={heart_icon}
         alt="icon"
@@ -51,13 +57,6 @@ export const Header: React.FC = () => (
         className={styles.icon}
         />
       </a>
-      <a className={styles.burger} href="#menu">
-        <img
-        src={burger_icon}
-        alt="icon"
-        className={styles.menu_icon}
-        />
-      </a>
-      </div>
-    </header>
+    </footer>
+  </div>
 );
