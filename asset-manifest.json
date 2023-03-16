@@ -1,16 +1,19 @@
 {
   "files": {
-    "main.css": "/phone-catalog-client/static/css/main.073c9b0a.css",
-    "main.js": "/phone-catalog-client/static/js/main.c3d2f976.js",
-    "static/js/787.99e43e5c.chunk.js": "/phone-catalog-client/static/js/787.99e43e5c.chunk.js",
-    "static/media/logo.svg": "/phone-catalog-client/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
+    "main.css": "/phone-catalog-client/static/css/main.dae734a1.css",
+    "main.js": "/phone-catalog-client/static/js/main.0aa78356.js",
+    "static/media/logo.svg": "/phone-catalog-client/static/media/logo.0909646ca933dccfb4150fb11fa0a24f.svg",
+    "static/media/image.jpg": "/phone-catalog-client/static/media/image.7257fc38903a49e73cc4.jpg",
+    "static/media/bag_icon.svg": "/phone-catalog-client/static/media/bag_icon.f9632dca8fdaed9bb696b99ac28006ba.svg",
+    "static/media/like.svg": "/phone-catalog-client/static/media/like.73331cc5187a77c7d93eb67ea775455e.svg",
+    "static/media/heart_icon.svg": "/phone-catalog-client/static/media/heart_icon.a8c9169d64844cc9c3362b63129f9e4e.svg",
     "index.html": "/phone-catalog-client/index.html",
-    "main.073c9b0a.css.map": "/phone-catalog-client/static/css/main.073c9b0a.css.map",
-    "main.c3d2f976.js.map": "/phone-catalog-client/static/js/main.c3d2f976.js.map",
-    "787.99e43e5c.chunk.js.map": "/phone-catalog-client/static/js/787.99e43e5c.chunk.js.map"
+    "static/media/burger-menu_icon.svg": "/phone-catalog-client/static/media/burger-menu_icon.7d886604721a2522b7ee9d3609bcd8e8.svg",
+    "main.dae734a1.css.map": "/phone-catalog-client/static/css/main.dae734a1.css.map",
+    "main.0aa78356.js.map": "/phone-catalog-client/static/js/main.0aa78356.js.map"
   },
   "entrypoints": [
-    "static/css/main.073c9b0a.css",
-    "static/js/main.c3d2f976.js"
+    "static/css/main.dae734a1.css",
+    "static/js/main.0aa78356.js"
   ]
 }
