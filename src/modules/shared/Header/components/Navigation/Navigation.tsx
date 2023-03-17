@@ -6,7 +6,7 @@ export const Navigation: React.FC = () => (
   <nav>
     <ul className={styles.navList}>
       <li className={styles.navItem}>
-        <NavigationLink to="/home" text="Home" />
+        <NavigationLink to="/" text="Home" />
       </li>
       <li className={styles.navItem}>
         <NavigationLink to="/phones" text="Phones" />

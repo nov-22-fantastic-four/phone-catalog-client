@@ -1,9 +1,9 @@
 import React from 'react';
-import styles from './ProductCards.module.scss';
+import styles from './CatalogGrid.module.scss';
 
 import { ProductCard } from '../shared/ProductCard';
 
-export const ProductCards: React.FC = () => {
+export const CatalogGrid: React.FC = () => {
   return (
     <>
       <div className={styles.catalog}>

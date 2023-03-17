@@ -8,6 +8,7 @@ import { IconLink } from '../IconLink';
 export const Menu: React.FC = () => (
   <div className={styles.menu}>
     <Navigation />
+
     <div className={styles.menu_footer}>
       <IconLink
         to="/favorite"

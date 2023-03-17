@@ -4,7 +4,7 @@ import { Header } from './modules/shared/Header';
 import { HomePage } from './modules/HomePage';
 import { PhonesPage } from './modules/PhonesPage';
 import { NotFoundPage } from './modules/NotFoundPage';
-import { Footer } from './modules/shared/Footer';
+// import { Footer } from './modules/shared/Footer';
 
 import './App.scss';
 
@@ -24,7 +24,7 @@ const App: React.FC = () => {
         </Routes>
       </main>
 
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 };
