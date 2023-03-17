@@ -1,19 +1,24 @@
-import React from 'react';
-import { useLocation } from 'react-router';
+import React, { useContext } from 'react';
 import { CatalogGrid } from '../CatalogGrid';
 import { BreadCrumbs } from '../shared/BreadCrumbs';
 import { Container } from '../shared/Container';
 import styles from './FavoritesPage.module.scss';
+import { FavoritesContext } from '../../context';
 
 export const FavoritesPage: React.FC = () => {
-  const locationPathName = useLocation().pathname;
+  const { favorites } = useContext(FavoritesContext);
 
   return (
     <Container>
-      <BreadCrumbs locationPathName={locationPathName}/>
+      <BreadCrumbs />
+
       <h1 className={styles.title}>Favourites</h1>
-      <p>5 items</p>
-      <CatalogGrid />
+
+      <p>
+        {`${favorites.length} items`}
+      </p>
+
+      <CatalogGrid products={[]} />
     </Container>
   );
 };
