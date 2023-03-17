@@ -44,7 +44,7 @@ export const Footer: React.FC = () => {
         <div className={styles.scroll}>
           <p className={styles.scroll_text}>Back to top</p>
           <button className={styles.scroll_button} onClick={handleScrollToTop}>
-            <img src={vector} alt="scroll to the top"/>
+            {/* <img src={vector} alt="scroll to the top"/> */}
           </button>
 
         </div>
