@@ -1,24 +1,7 @@
-.menu {
-  display: block;
-  min-width: 320px;
-}
-
 .menu_icon {
   display: flex;
   box-shadow: -1px 0px 0px #E2E6E9;
   padding: 19px 17px;
-}
-
-.logo {
-  width: 64px;
-};
-
-.menu_header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding-left: 16px;
-  box-shadow: 0px 1px 0px #E2E6E9;
 }
 
 .navList {
@@ -74,3 +57,9 @@
 .iconLink {
   display: flex;
 }
+
+@media (min-width: 640px) {
+  .menu {
+   display: none;
+  }
+ }

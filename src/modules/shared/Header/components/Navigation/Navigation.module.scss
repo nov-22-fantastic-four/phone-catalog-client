@@ -1,0 +1,35 @@
+.navList {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  gap: 64px;
+  margin: 0;
+  padding: 0;
+}
+
+.isActive {
+  position: relative;
+  color: #313237;
+}
+
+.isActive:after {
+  content: "";
+  position: absolute;
+  height: 4px;
+  width: 100%;
+  left: 0;
+  bottom: 0;
+  background-color: #313237;
+}
+
+@media (max-width: 1200px) {
+  .navList {
+    gap: 32px;
+  }
+}
+
+@media (max-width: 640px) {
+  .navList {
+    flex-direction: column;
+  }
+}
