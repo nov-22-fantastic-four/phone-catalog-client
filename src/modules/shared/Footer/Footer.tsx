@@ -2,7 +2,7 @@ import React, { useCallback } from 'react';
 import { Container } from '../Container';
 import styles from './Footer.module.scss';
 import logo from '../../../images/logo.svg';
-import vector from '../../../images/vector.svg';
+import vector from '../../../images/icons/shevron-up.svg';
 
 export const Footer: React.FC = () => {
   const handleScrollToTop = useCallback(() => {
@@ -15,14 +15,14 @@ export const Footer: React.FC = () => {
   return (
     <Container>
       <div className={styles.footer}>
-      <div className={styles.logo_icon}>
-        <a href="#home">
-        <img
-        src={logo}
-        alt="logo"
-        className={styles.logo}
-        />
-      </a>
+        <div className={styles.logo_icon}>
+          <a href="#home">
+            <img
+              src={logo}
+              alt="logo"
+              className={styles.logo}
+            />
+          </a>
         </div>
 
         <nav className={styles.nav}>
@@ -50,6 +50,5 @@ export const Footer: React.FC = () => {
         </div>
       </div>
     </Container>
-
   );
 };
