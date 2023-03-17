@@ -8,6 +8,7 @@ import { ProductPage } from './modules/ProductPage';
 // import { Footer } from './modules/shared/Footer';
 
 import './App.scss';
+import { FavoritesPage } from './modules/FavoritesPage';
 
 const App: React.FC = () => {
   return (
@@ -23,6 +24,8 @@ const App: React.FC = () => {
             <Route index element={<PhonesPage /> } />
             <Route path=":phoneId" element={<ProductPage /> } />
           </Route>
+
+          <Route path="/favorites" element={<FavoritesPage /> } />
 
           <Route path="*" element={<NotFoundPage /> } />
         </Routes>

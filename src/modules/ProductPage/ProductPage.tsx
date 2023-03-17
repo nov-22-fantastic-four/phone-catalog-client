@@ -17,7 +17,7 @@ export const ProductPage: React.FC = () => {
       setPhone(fetchedPhone);
     };
 
-    fetchPhone();
+    void fetchPhone();
   }, []);
 
   return (

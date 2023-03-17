@@ -1,0 +1,19 @@
+.link {
+  text-decoration: none;
+  color: #89939A;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.bread_crumb {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  gap: 15px;
+}
+
+.icon {
+  height: 16px;
+  width: 16px;
+}
