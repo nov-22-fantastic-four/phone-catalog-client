@@ -1,4 +1,4 @@
-$card-width-desctop: 272px;
+$card-width-desktop: 272px;
 $card-width-tablet-mobile: 288px;
 $column-gap: 16px;
 
@@ -9,7 +9,7 @@ $column-gap: 16px;
     grid-template-columns: 1fr;
     column-gap: $column-gap;
     row-gap: 40px;
-  
+
     @media (min-width: 640px) {
         max-width: $card-width-tablet-mobile * 2 + $column-gap * 2;
         grid-template-columns: 1fr 1fr;
@@ -24,7 +24,7 @@ $column-gap: 16px;
         max-width: $card-width-tablet-mobile * 4 + $column-gap * 3;
         grid-template-columns: 1fr 1fr 1fr 1fr;
       }
-  
+
     &__item {
       display: flex;
       justify-content: center;

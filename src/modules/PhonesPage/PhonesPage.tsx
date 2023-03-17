@@ -1,5 +1,5 @@
 import React from 'react';
-import { ProductCards } from '../ProductCards';
+import { CatalogGrid } from '../CatalogGrid';
 import { Container } from '../shared/Container';
 
 export const PhonesPage: React.FC = () => {
@@ -9,7 +9,7 @@ export const PhonesPage: React.FC = () => {
         Phones Page
       </h1>
 
-      <ProductCards />
+      <CatalogGrid />
     </Container>
   );
 };
