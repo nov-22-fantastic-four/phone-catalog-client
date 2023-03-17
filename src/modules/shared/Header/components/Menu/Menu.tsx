@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './Menu.module.scss';
-import heart_icon from '../../../../../images/icons/heart_icon.svg';
+import heart_icon from '../../../../../images/icons/heart-empty.svg';
 import bag_icon from '../../../../../images/icons/bag_icon.svg';
 import { Navigation } from '../Navigation';
 import { IconLink } from '../IconLink';

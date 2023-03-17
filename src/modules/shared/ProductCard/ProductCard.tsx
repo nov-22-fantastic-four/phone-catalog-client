@@ -1,72 +1,90 @@
-import React, { useState } from 'react';
+import React, { useContext } from 'react';
 import styles from './ProductCard.module.scss';
-import Image from './images/image.jpg';
-import heartIcon from '../../../images/icons/heart_icon.svg';
-import redHeartIcon from '../../../images/icons/red_heart_icon.svg';
 import { PhoneInformation } from '../PhoneInformation';
 import cn from 'classnames';
+import { type Product } from '../../../types';
+import { Image } from '../Image';
+import { CartContext, FavoritesContext } from '../../../context';
 
-export const ProductCard: React.FC = () => {
-  const [isAdded, setIsAdded] = useState(false);
-  const [isLiked, setIsLiked] = useState(false);
+interface Props {
+  product: Product,
+}
+
+export const ProductCard: React.FC<Props> = ({ product }) => {
+  const cartContext = useContext(CartContext);
+  const favoritesContext = useContext(FavoritesContext);
+
+  const {
+    id,
+    name,
+    ram,
+    capacity,
+    price,
+    fullPrice,
+    screen,
+    image,
+  } = product;
+
+  const isAdded = cartContext.isAdded(id);
+  const isFavorite = favoritesContext.isFavorite(id);
 
   const handleClickAdded = (): void => {
-    setIsAdded(!isAdded);
+    if (isAdded) {
+      cartContext.removeOne(id);
+
+      return;
+    }
+
+    cartContext.addOne(id);
   };
 
   const handleClickLiked = (): void => {
-    setIsLiked(!isLiked);
-  };
+    if (isFavorite) {
+      favoritesContext.removeFavorite(id);
 
-  const phoneInfo = {
-    screenText: 'Screen',
-    title: 'Apple iPhone Xs 64GB Silver (iMT9G2FS/A)',
-    screenValue: '5.8” OLED',
-    currentPrice: '$799',
-    pastPrice: '$899',
-    capacityText: 'Capacity',
-    capacityValue: '64 GB',
-    ramText: 'RAM',
-    ramValue: '4 GB'
+      return;
+    }
+
+    favoritesContext.addFavorite(id);
   };
 
   return (
     <div className={styles.card}>
-      <img
-        src={Image}
-        alt={phoneInfo.title}
+      <Image
+        src={image}
+        alt={name}
         className={styles.image}
       />
 
-      <h2 className={styles.title}>
-        {phoneInfo.title}
+      <h2 className={styles.name}>
+        {name}
       </h2>
 
       <div className={styles.phonePrice}>
-        <p className={styles.currentPrice}>
-          {phoneInfo.currentPrice}
+        <p className={styles.price}>
+          {price}
         </p>
 
-        <p className={styles.pastPrice}>
-          {phoneInfo.pastPrice}
+        <p className={styles.fullPrice}>
+          {fullPrice}
         </p>
       </div>
 
-      <div className={styles.line}></div>
+      <div className={styles.line} />
 
       <PhoneInformation
-        text={phoneInfo.screenText}
-        value={phoneInfo.screenValue}
+        text="Screen"
+        value={screen}
       />
 
       <PhoneInformation
-        text={phoneInfo.capacityText}
-        value={phoneInfo.capacityValue}
+        text="Capacity"
+        value={capacity}
       />
 
       <PhoneInformation
-        text={phoneInfo.ramText}
-        value={phoneInfo.ramValue}
+        text="RAM"
+        value={ram}
       />
 
       <div className={styles.buttonInfo}>
@@ -86,20 +104,12 @@ export const ProductCard: React.FC = () => {
           className={styles.like}
           onClick={handleClickLiked}
         >
-          {isLiked
-            ? (
-              <img
-                src={redHeartIcon}
-                alt="like"
-                className={styles.likeButton}
-              />)
-            : (
-              <img
-                src={heartIcon}
-                alt="like"
-                className={styles.likeButton}
-              />)
-          }
+          <img
+            alt="like"
+            className={cn(styles.heartImg, {
+              [styles.heartImgActive]: isFavorite,
+            })}
+          />
         </div>
       </div>
     </div>

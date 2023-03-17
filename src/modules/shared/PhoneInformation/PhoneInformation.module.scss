@@ -1,19 +1,17 @@
-.phoneInformation {
+.container {
   display: flex;
   justify-content: space-between;
 }
-  
-.phoneInformationText {
+
+.text {
   font-weight: 600;
   font-size: 12px;
   margin-bottom: 8px;
   color: #89939a;
 }
 
-.phoneInformationValue {
-  font-weight: 600;
-  font-size: 12px;
-  margin-bottom: 8px;
+.value {
+  composes: text;
   text-align: right;
   color: #313237;
 }
