@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import classNames from 'classnames';
 import { useWindowSize } from 'usehooks-ts';
 import styles from './Header.module.scss';
-import heart_icon from '../../../images/icons/heart_icon.svg';
+import heart_icon from '../../../images/icons/heart-empty.svg';
 import bag_icon from '../../../images/icons/bag_icon.svg';
 import burger_icon from '../../../images/icons/burger-menu_icon.svg';
 import close_icon from '../../../images/icons/close-menu_icon.svg';
@@ -10,10 +10,13 @@ import { Navigation } from './components/Navigation';
 import { IconLink } from './components/IconLink';
 import { Menu } from './components/Menu';
 import { LogoLink } from '../LogoLink';
+import { CartContext, FavoritesContext } from '../../../context';
 
 export const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { width } = useWindowSize();
+  const { cartItems } = useContext(CartContext);
+  const { favorites } = useContext(FavoritesContext);
 
   const notMobileVersion = width > 641;
 
@@ -34,14 +37,14 @@ export const Header: React.FC = () => {
               to="/favorite"
               alt="favorites"
               icon={heart_icon}
-              items={3}
+              items={favorites.length}
             />
 
             <IconLink
               to="/cart"
               alt="cartIcon"
               icon={bag_icon}
-              items={10}
+              items={cartItems.length}
             />
           </div>}
 

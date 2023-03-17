@@ -25,6 +25,7 @@
         "@typescript-eslint/strict-boolean-expressions": "off",
         "@typescript-eslint/no-floating-promises": "warn",
         "@typescript-eslint/member-delimiter-style": "off",
+        "@typescript-eslint/comma-dangle": "off",
         "indent": ["error", 2],
         "max-len": ["error", { "code": 80,
             "comments": 80,

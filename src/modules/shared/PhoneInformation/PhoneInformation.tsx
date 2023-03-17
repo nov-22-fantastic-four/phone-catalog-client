@@ -8,12 +8,12 @@ interface Props {
 
 export const PhoneInformation: React.FC<Props> = ({ text, value }) => {
   return (
-    <div className={styles.phoneInformation}>
-      <p className={styles.phoneInformationText}>
+    <div className={styles.container}>
+      <p className={styles.text}>
         {text}
       </p>
 
-      <p className={styles.phoneInformationValue}>
+      <p className={styles.value}>
         {value}
       </p>
     </div>
