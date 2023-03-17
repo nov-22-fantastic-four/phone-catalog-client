@@ -29,9 +29,10 @@ export const Header: React.FC = () => {
         {notMobileVersion && <Navigation />}
 
         {notMobileVersion &&
-          <div className={classNames(styles.iconList, styles.leftIcon)}>
+          <div className={classNames(styles.iconList, styles.leftIcon)}
+          >
             <IconLink
-              to="/favorite"
+              to="/favorites"
               alt="favorites"
               icon={heart_icon}
               items={3}
