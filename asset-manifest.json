@@ -1,19 +1,23 @@
 {
   "files": {
-    "main.css": "/phone-catalog-client/static/css/main.dae734a1.css",
-    "main.js": "/phone-catalog-client/static/js/main.0aa78356.js",
+    "main.css": "/phone-catalog-client/static/css/main.fac74a67.css",
+    "main.js": "/phone-catalog-client/static/js/main.d706bdcf.js",
     "static/media/logo.svg": "/phone-catalog-client/static/media/logo.0909646ca933dccfb4150fb11fa0a24f.svg",
+    "static/media/Mont-Regular.otf": "/phone-catalog-client/static/media/Mont-Regular.1d26d89f7339866d3133.otf",
+    "static/media/Mont-SemiBold.otf": "/phone-catalog-client/static/media/Mont-SemiBold.8979d71a3146ca1d761f.otf",
+    "static/media/Mont-Bold.otf": "/phone-catalog-client/static/media/Mont-Bold.03c8c2f6127c1da0fc39.otf",
     "static/media/image.jpg": "/phone-catalog-client/static/media/image.7257fc38903a49e73cc4.jpg",
     "static/media/bag_icon.svg": "/phone-catalog-client/static/media/bag_icon.f9632dca8fdaed9bb696b99ac28006ba.svg",
-    "static/media/like.svg": "/phone-catalog-client/static/media/like.73331cc5187a77c7d93eb67ea775455e.svg",
     "static/media/heart_icon.svg": "/phone-catalog-client/static/media/heart_icon.a8c9169d64844cc9c3362b63129f9e4e.svg",
+    "static/media/red_heart_icon.svg": "/phone-catalog-client/static/media/red_heart_icon.d554a185325e4fb0609231b1cff64b18.svg",
     "index.html": "/phone-catalog-client/index.html",
+    "static/media/close-menu_icon.svg": "/phone-catalog-client/static/media/close-menu_icon.3ea864f59fecb8596c4be9c8a455c02a.svg",
     "static/media/burger-menu_icon.svg": "/phone-catalog-client/static/media/burger-menu_icon.7d886604721a2522b7ee9d3609bcd8e8.svg",
-    "main.dae734a1.css.map": "/phone-catalog-client/static/css/main.dae734a1.css.map",
-    "main.0aa78356.js.map": "/phone-catalog-client/static/js/main.0aa78356.js.map"
+    "main.fac74a67.css.map": "/phone-catalog-client/static/css/main.fac74a67.css.map",
+    "main.d706bdcf.js.map": "/phone-catalog-client/static/js/main.d706bdcf.js.map"
   },
   "entrypoints": [
-    "static/css/main.dae734a1.css",
-    "static/js/main.0aa78356.js"
+    "static/css/main.fac74a67.css",
+    "static/js/main.d706bdcf.js"
   ]
 }
