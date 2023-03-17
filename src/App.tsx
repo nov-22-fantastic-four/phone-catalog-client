@@ -4,6 +4,7 @@ import { Header } from './modules/shared/Header';
 import { HomePage } from './modules/HomePage';
 import { PhonesPage } from './modules/PhonesPage';
 import { NotFoundPage } from './modules/NotFoundPage';
+import { ProductPage } from './modules/ProductPage';
 // import { Footer } from './modules/shared/Footer';
 
 import './App.scss';
@@ -18,7 +19,10 @@ const App: React.FC = () => {
           <Route path="/" element={<HomePage /> } />
           <Route path="/home" element={<Navigate to="/" replace />} />
 
-          <Route path="/phones" element={<PhonesPage /> } />
+          <Route path="/phones" >
+            <Route index element={<PhonesPage /> } />
+            <Route path=":phoneId" element={<ProductPage /> } />
+          </Route>
 
           <Route path="*" element={<NotFoundPage /> } />
         </Routes>
