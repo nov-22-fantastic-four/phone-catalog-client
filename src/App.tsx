@@ -1,22 +1,21 @@
 import React from 'react';
 import { Navigate, Route, Routes } from 'react-router';
-import { Header } from './modules/shared/Header';
+import { Footer, Header } from './modules/shared';
 import { HomePage } from './modules/HomePage';
 import { PhonesPage } from './modules/PhonesPage';
 import { NotFoundPage } from './modules/NotFoundPage';
 import { ProductPage } from './modules/ProductPage';
-// import { Footer } from './modules/shared/Footer';
-
-import './App.scss';
 import { FavoritesPage } from './modules/FavoritesPage';
 import { CartPage } from './modules/CartPage';
 
+import styles from './App.module.scss';
+
 const App: React.FC = () => {
   return (
-    <div className="App">
+    <div className={styles.app}>
       <Header />
 
-      <main>
+      <main className={styles.main}>
         <Routes>
           <Route path="/" element={<HomePage /> } />
           <Route path="/home" element={<Navigate to="/" replace />} />
@@ -33,7 +32,7 @@ const App: React.FC = () => {
         </Routes>
       </main>
 
-      {/* <Footer /> */}
+      <Footer />
     </div>
   );
 };
