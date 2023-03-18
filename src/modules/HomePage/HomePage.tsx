@@ -1,12 +1,12 @@
 import React from 'react';
-import { Container } from '../shared/Container';
+import { Container, PageTitle } from '../shared';
 
 export const HomePage: React.FC = () => {
   return (
     <Container>
-      <h1>
-        Home Page
-      </h1>
+      <PageTitle>
+        Welcome!
+      </PageTitle>
     </Container>
   );
 };

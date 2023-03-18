@@ -19,7 +19,7 @@ export const FavoritesPage: React.FC = () => {
     };
 
     fetchData();
-  }, []);
+  }, [favorites]);
 
   return (
     <Container>

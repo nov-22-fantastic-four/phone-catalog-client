@@ -1,6 +1,6 @@
 .link {
   text-decoration: none;
-  color: #89939A;
+  color: #313237;
   font-size: 12px;
   font-weight: 700;
   display: flex;
@@ -8,7 +8,7 @@
 
 .noLink {
   composes: link;
-  color: #313237;
+  color: #89939A;
 }
 
 .bread_crumb {

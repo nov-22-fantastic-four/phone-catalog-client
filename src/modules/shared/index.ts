@@ -8,3 +8,4 @@ export * from './ItemCount';
 export * from './LogoLink';
 export * from './PageTitle';
 export * from './ProductCard';
+export * from './BackButton';
