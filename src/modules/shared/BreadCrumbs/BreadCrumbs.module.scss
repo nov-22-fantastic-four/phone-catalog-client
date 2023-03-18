@@ -3,17 +3,27 @@
   color: #89939A;
   font-size: 12px;
   font-weight: 700;
+  display: flex;
+}
+
+.noLink {
+  composes: link;
+  color: #313237;
 }
 
 .bread_crumb {
-  margin-top: 20px;
+  margin-top: 24px;
   display: flex;
   flex-direction: row;
   justify-content: start;
-  gap: 15px;
+  align-items: center;
+  gap: 13px;
 }
 
 .icon {
-  height: 16px;
-  width: 16px;
+  height: 15px;
+}
+
+.shevron {
+  height: 13px;
 }
