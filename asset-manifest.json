@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/phone-catalog-client/static/css/main.396934ad.css",
-    "main.js": "/phone-catalog-client/static/js/main.fd0144de.js",
+    "main.css": "/phone-catalog-client/static/css/main.c08120cf.css",
+    "main.js": "/phone-catalog-client/static/js/main.f0ef235e.js",
     "static/media/logo.svg": "/phone-catalog-client/static/media/logo.0909646ca933dccfb4150fb11fa0a24f.svg",
     "static/media/Mont-Regular.otf": "/phone-catalog-client/static/media/Mont-Regular.1d26d89f7339866d3133.otf",
     "static/media/Mont-SemiBold.otf": "/phone-catalog-client/static/media/Mont-SemiBold.8979d71a3146ca1d761f.otf",
@@ -17,11 +17,11 @@
     "static/media/shevron-left-grey.svg": "/phone-catalog-client/static/media/shevron-left-grey.f26374195e19e331e6ca021ec8218fbc.svg",
     "static/media/shevron-right.svg": "/phone-catalog-client/static/media/shevron-right.430253ec9b176107e53e4d6b896a6395.svg",
     "static/media/shevron-up.svg": "/phone-catalog-client/static/media/shevron-up.56f1354eaa26cdd0ebb60b65a6abe529.svg",
-    "main.396934ad.css.map": "/phone-catalog-client/static/css/main.396934ad.css.map",
-    "main.fd0144de.js.map": "/phone-catalog-client/static/js/main.fd0144de.js.map"
+    "main.c08120cf.css.map": "/phone-catalog-client/static/css/main.c08120cf.css.map",
+    "main.f0ef235e.js.map": "/phone-catalog-client/static/js/main.f0ef235e.js.map"
   },
   "entrypoints": [
-    "static/css/main.396934ad.css",
-    "static/js/main.fd0144de.js"
+    "static/css/main.c08120cf.css",
+    "static/js/main.f0ef235e.js"
   ]
 }
