@@ -1,0 +1,28 @@
+@import "src/style/mixins";
+
+.backContainer {
+  margin-top: 24px;
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+  gap: 9px;
+
+  @include onTablet {
+    margin-top: 40px;
+  }
+}
+
+.button {
+  all: unset;
+  cursor: pointer;
+  text-decoration: none;
+  color: #89939A;
+  font-size: 12px;
+  font-weight: 700;
+  display: flex;
+}
+
+.icon {
+  height: 9px;
+}
