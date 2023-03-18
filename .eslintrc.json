@@ -26,11 +26,13 @@
         "@typescript-eslint/no-floating-promises": "warn",
         "@typescript-eslint/member-delimiter-style": "off",
         "@typescript-eslint/comma-dangle": "off",
+        "@typescript-eslint/promise-function-async": "off",
         "indent": ["error", 2],
         "max-len": ["error", { "code": 80,
             "comments": 80,
             "ignoreTemplateLiterals": true
         }],
+        "react/display-name": "off",
         "no-shadow": "error",
         "semi": ["error", "always"],
         "newline-before-return": "error",
