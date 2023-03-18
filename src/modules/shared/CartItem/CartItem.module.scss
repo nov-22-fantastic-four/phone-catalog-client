@@ -1,0 +1,89 @@
+@import "src/style/mixins";
+
+.CartContainer {
+  border: 1px solid #E2E6E9;
+  width: 288px;
+  display: flex;
+  align-items: center;
+  padding: 16px;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  margin-bottom: 16px;
+  box-sizing: border-box;
+
+  @include onTablet {
+    width: 592px;
+  }
+
+  @include onDesktop {
+    display: inline-flex;
+    width: 752px;
+    margin: 0 16px 16px 0;
+  }
+}
+
+.imageContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80px;
+  height: 80px;
+}
+
+.image {
+  height: 100%;
+}
+
+.button {
+  cursor: pointer;
+  height: 32px;
+  width: 32px;
+  color: #B4BDC3;
+  border: 1px solid #E2E6E9;
+  background-color: #fff;
+
+  &:hover {
+    color: #313237;
+    border-color: #B4BDC3;
+  }
+}
+
+.removeButton {
+  composes: button;
+  border: none;
+}
+
+.name {
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 21px;
+  color: #313237;
+  text-decoration: none;
+  width: 37%;
+
+  @include onTablet {
+    width: 30%;
+  }
+
+  @include onDesktop {
+    width: 40%;
+  }
+}
+
+.price {
+  color: #313237;
+  font-weight: 700;
+  font-size: 22px;
+  line-height: 140%;
+  margin-left: auto;
+
+  &:before {
+    content: "$";
+  }
+}
+
+.count {
+  width: 16px;
+  text-align: center;
+}
