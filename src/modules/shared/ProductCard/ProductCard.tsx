@@ -5,6 +5,7 @@ import cn from 'classnames';
 import { type Product } from '../../../types';
 import { Image } from '../Image';
 import { CartContext, FavoritesContext } from '../../../context';
+import { Link } from 'react-router-dom';
 
 interface Props {
   product: Product,
@@ -23,6 +24,8 @@ export const ProductCard: React.FC<Props> = ({ product }) => {
     fullPrice,
     screen,
     image,
+    itemId,
+    category,
   } = product;
 
   const isAdded = cartContext.isAdded(id);
@@ -56,9 +59,12 @@ export const ProductCard: React.FC<Props> = ({ product }) => {
         className={styles.image}
       />
 
-      <h2 className={styles.name}>
+      <Link
+        to={`/${category}/${itemId}`}
+        className={styles.name}
+      >
         {name}
-      </h2>
+      </Link>
 
       <div className={styles.phonePrice}>
         <p className={styles.price}>
@@ -90,7 +96,7 @@ export const ProductCard: React.FC<Props> = ({ product }) => {
       <div className={styles.buttonInfo}>
         <button
           className={cn({
-            [styles.buttonSelected]: isAdded,
+            [styles.buttonAdded]: isAdded,
             [styles.button]: !isAdded
           })}
           onClick={handleClickAdded}

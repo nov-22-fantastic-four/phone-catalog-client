@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { CatalogGrid } from '../CatalogGrid';
-import { Container, PageTitle, ItemCount } from '../shared';
+import { Container, PageTitle, ItemCount, BreadCrumbs } from '../shared';
 import { type Product } from '../../types';
 import { getCount, getWithPagination } from '../../api/products';
 
@@ -27,6 +27,8 @@ export const PhonesPage: React.FC = () => {
 
   return (
     <Container>
+      <BreadCrumbs />
+
       <PageTitle>
         Mobile Phones
       </PageTitle>

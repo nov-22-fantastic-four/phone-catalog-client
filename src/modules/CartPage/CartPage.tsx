@@ -1,22 +1,22 @@
 import React, { useContext } from 'react';
 import { CartContext } from '../../context';
-import { Container } from '../shared/Container';
-import { BreadCrumbs } from '../shared/BreadCrumbs';
-import styles from './CartPage.module.scss';
 import { CatalogGrid } from '../CatalogGrid';
+import { ItemCount, PageTitle, Container, BackButton } from '../shared';
 
 export const CartPage: React.FC = () => {
   const { cartItems } = useContext(CartContext);
 
   return (
     <Container>
-      <BreadCrumbs />
+      <BackButton />
 
-      <h1 className={styles.title}>Cart</h1>
+      <PageTitle>
+        Cart
+      </PageTitle>
 
-      <p>
+      <ItemCount>
         {`${cartItems.length} items`}
-      </p>
+      </ItemCount>
 
       <CatalogGrid products={[]} />
     </Container>

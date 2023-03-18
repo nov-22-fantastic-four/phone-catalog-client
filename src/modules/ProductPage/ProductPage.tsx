@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { type Phone } from '../../types';
+import { BreadCrumbs, Container, BackButton } from '../shared';
 
 const samplePhoneLink =
   'https://phone-catalog-api.onrender.com/phones/apple-iphone-7-32gb-black';
@@ -21,8 +22,9 @@ export const ProductPage: React.FC = () => {
   }, []);
 
   return (
-    <h1>
-      Lol
-    </h1>
+    <Container>
+      <BreadCrumbs phoneName={phone?.name} />
+      <BackButton />
+    </Container>
   );
 };
