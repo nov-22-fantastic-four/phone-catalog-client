@@ -1,24 +1,39 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { CatalogGrid } from '../CatalogGrid';
-import { BreadCrumbs } from '../shared/BreadCrumbs';
-import { Container } from '../shared/Container';
-import styles from './FavoritesPage.module.scss';
+import { BreadCrumbs, Container, PageTitle, ItemCount } from '../shared';
 import { FavoritesContext } from '../../context';
+import { type Product } from '../../types';
+import { getById } from '../../api/products';
 
 export const FavoritesPage: React.FC = () => {
   const { favorites } = useContext(FavoritesContext);
+  const [products, setProducts] = useState<Product[]>([]);
+
+  useEffect(() => {
+    const fetchData = async(): Promise<void> => {
+      const fetchedProducts = await Promise.all(
+        favorites.map(id => getById(id))
+      );
+
+      setProducts(fetchedProducts);
+    };
+
+    fetchData();
+  }, []);
 
   return (
     <Container>
       <BreadCrumbs />
 
-      <h1 className={styles.title}>Favourites</h1>
+      <PageTitle>
+        Favorites
+      </PageTitle>
 
-      <p>
+      <ItemCount>
         {`${favorites.length} items`}
-      </p>
+      </ItemCount>
 
-      <CatalogGrid products={[]} />
+      <CatalogGrid products={products} />
     </Container>
   );
 };

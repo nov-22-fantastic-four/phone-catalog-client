@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './CatalogGrid.module.scss';
 
-import { ProductCard } from '../shared/ProductCard';
+import { ProductCard } from '../shared';
 import { type Product } from '../../types';
 
 interface Props {
@@ -9,14 +9,12 @@ interface Props {
 }
 
 export const CatalogGrid: React.FC<Props> = ({ products }) => (
-  <div className={styles.catalog}>
+  <div className={styles.grid}>
     {products.map((product) => (
-      <div
+      <ProductCard
         key={product.id}
-        className={styles.catalog__item}
-      >
-        <ProductCard product={product} />
-      </div>
+        product={product}
+      />
     ))}
   </div>
 );

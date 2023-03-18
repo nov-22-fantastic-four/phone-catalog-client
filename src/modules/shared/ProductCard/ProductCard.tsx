@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import styles from './ProductCard.module.scss';
-import { PhoneInformation } from '../PhoneInformation';
+import { PhoneInformation } from './PhoneInformation';
 import cn from 'classnames';
 import { type Product } from '../../../types';
 import { Image } from '../Image';

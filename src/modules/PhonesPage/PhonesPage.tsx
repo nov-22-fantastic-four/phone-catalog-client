@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import { CatalogGrid } from '../CatalogGrid';
-import { Container } from '../shared/Container';
+import { Container, PageTitle, ItemCount } from '../shared';
 import { type Product } from '../../types';
-import { getWithPagination } from '../../api/phones';
+import { getCount, getWithPagination } from '../../api/products';
 
 export const PhonesPage: React.FC = () => {
   const [phones, setPhones] = useState<Product[]>([]);
+  const [totalCount, setTotalCount] = useState(0);
 
   useEffect(() => {
     const fetchData = async(): Promise<void> => {
@@ -14,14 +15,25 @@ export const PhonesPage: React.FC = () => {
       setPhones(fetchedPhones);
     };
 
+    const fetchItemCount = async(): Promise<void> => {
+      const fetchedCount = await getCount();
+
+      setTotalCount(fetchedCount);
+    };
+
     fetchData();
+    fetchItemCount();
   }, []);
 
   return (
     <Container>
-      <h1>
+      <PageTitle>
         Mobile Phones
-      </h1>
+      </PageTitle>
+
+      <ItemCount>
+        {`${totalCount} models`}
+      </ItemCount>
 
       <CatalogGrid products={phones} />
     </Container>
