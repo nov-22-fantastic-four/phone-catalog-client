@@ -63,8 +63,6 @@
 
 .line {
   margin-bottom: 8px;
-  //width: 208px;
-  //width: 100%;
   border: 1px solid #E2E6E9;
 }
 
@@ -121,7 +119,6 @@
 
 .heartImg {
   content: url("/images/icons/heart-empty.svg");
-  object-fit: contain;
   width: 16px;
   height: 16px;
 }
