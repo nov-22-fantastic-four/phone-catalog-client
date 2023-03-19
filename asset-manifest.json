@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/phone-catalog-client/static/css/main.a85530d0.css",
-    "main.js": "/phone-catalog-client/static/js/main.0b7e04c0.js",
+    "main.css": "/phone-catalog-client/static/css/main.12a4f3c2.css",
+    "main.js": "/phone-catalog-client/static/js/main.ebe064f3.js",
     "static/media/logo.svg": "/phone-catalog-client/static/media/logo.0909646ca933dccfb4150fb11fa0a24f.svg",
     "static/media/Mont-Regular.otf": "/phone-catalog-client/static/media/Mont-Regular.1d26d89f7339866d3133.otf",
     "static/media/Mont-SemiBold.otf": "/phone-catalog-client/static/media/Mont-SemiBold.8979d71a3146ca1d761f.otf",
@@ -15,13 +15,17 @@
     "static/media/close-menu_icon.svg": "/phone-catalog-client/static/media/close-menu_icon.3ea864f59fecb8596c4be9c8a455c02a.svg",
     "static/media/burger-menu_icon.svg": "/phone-catalog-client/static/media/burger-menu_icon.7d886604721a2522b7ee9d3609bcd8e8.svg",
     "static/media/shevron-left-grey.svg": "/phone-catalog-client/static/media/shevron-left-grey.f26374195e19e331e6ca021ec8218fbc.svg",
+    "static/media/chevron-left-black.svg": "/phone-catalog-client/static/media/chevron-left-black.e4a733b4c6963cb8a0dedc5187befe38.svg",
+    "static/media/chevron-right-black.svg": "/phone-catalog-client/static/media/chevron-right-black.6034963e25521a7811f49291e9dee0a7.svg",
     "static/media/shevron-right.svg": "/phone-catalog-client/static/media/shevron-right.430253ec9b176107e53e4d6b896a6395.svg",
+    "static/media/chevron-down.svg": "/phone-catalog-client/static/media/chevron-down.a81b6dc2cbad8cc23906.svg",
     "static/media/shevron-up.svg": "/phone-catalog-client/static/media/shevron-up.56f1354eaa26cdd0ebb60b65a6abe529.svg",
-    "main.a85530d0.css.map": "/phone-catalog-client/static/css/main.a85530d0.css.map",
-    "main.0b7e04c0.js.map": "/phone-catalog-client/static/js/main.0b7e04c0.js.map"
+    "static/media/chevron-up-grey.svg": "/phone-catalog-client/static/media/chevron-up-grey.301662ee1dfa8b74cad5.svg",
+    "main.12a4f3c2.css.map": "/phone-catalog-client/static/css/main.12a4f3c2.css.map",
+    "main.ebe064f3.js.map": "/phone-catalog-client/static/js/main.ebe064f3.js.map"
   },
   "entrypoints": [
-    "static/css/main.a85530d0.css",
-    "static/js/main.0b7e04c0.js"
+    "static/css/main.12a4f3c2.css",
+    "static/js/main.ebe064f3.js"
   ]
 }
