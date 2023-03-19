@@ -1,10 +1,21 @@
 import { type Product } from '../types';
 import { API_URL } from './constants';
 
+export const getAll = async(): Promise<Product[]> => {
+  const response = await fetch(`${API_URL}/products`);
+  const products = await response.json();
+
+  return products;
+};
+
 export const getWithPagination = async(
   page: number,
   perPage: number,
 ): Promise<Product[]> => {
+  if (!perPage) {
+    return await getAll();
+  }
+
   const response = await fetch(`${API_URL}/products?page=${page}&perPage=${perPage}`);
   const products = await response.json();
 

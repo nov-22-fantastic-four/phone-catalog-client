@@ -38,16 +38,18 @@ export const CartPage: React.FC = () => {
       <ItemCount>
         {`${cartItems.length} items`}
       </ItemCount>
-      {cartItems.length && <div className={styles.box}>
-        {products.map(product => (
-          <CartItem
-            key={product.id}
-            product={product}
-            count={getCount(product.id)}
-          />
-        ))}
-        <TotalCost totalCost={totalCost} />
-      </div>}
+      {!!cartItems.length && (
+        <div className={styles.box}>
+          {products.map(product => (
+            <CartItem
+              key={product.id}
+              product={product}
+              count={getCount(product.id)}
+            />
+          ))}
+          <TotalCost totalCost={totalCost} />
+        </div>
+      )}
     </Container>
   );
 };

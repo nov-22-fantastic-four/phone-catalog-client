@@ -9,3 +9,5 @@ export * from './LogoLink';
 export * from './PageTitle';
 export * from './ProductCard';
 export * from './BackButton';
+export * from './ProductFilter';
+export * from './Pagination';

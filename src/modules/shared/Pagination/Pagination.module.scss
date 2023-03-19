@@ -1,0 +1,47 @@
+.container {
+  display: flex;
+  gap: 16px;
+  width: max-content;
+  margin: 32px auto 0;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 21px;
+
+  text-align: center;
+
+  color: #313237;
+}
+
+.pages {
+  display: flex;
+  gap: 8px;
+}
+
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 32px;
+  height: 32px;
+  border: 1px solid #E2E6E9;
+  cursor: pointer;
+  background: white;
+
+  &:disabled {
+    cursor: default;
+  }
+}
+
+.arrow {
+  composes: button;
+  border: 1px solid #B4BDC3;
+
+  &:disabled {
+    opacity: 0.5;
+  }
+}
+
+.current {
+  background: #313237;
+  color: white;
+}
