@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/phone-catalog-client/static/css/main.285462f2.css",
+    "main.css": "/phone-catalog-client/static/css/main.1d0df003.css",
     "main.js": "/phone-catalog-client/static/js/main.8b244304.js",
     "static/media/logo.svg": "/phone-catalog-client/static/media/logo.0909646ca933dccfb4150fb11fa0a24f.svg",
     "static/media/Mont-Regular.otf": "/phone-catalog-client/static/media/Mont-Regular.1d26d89f7339866d3133.otf",
@@ -25,11 +25,11 @@
     "static/media/chevron-down.svg": "/phone-catalog-client/static/media/chevron-down.a81b6dc2cbad8cc23906.svg",
     "static/media/shevron-up.svg": "/phone-catalog-client/static/media/shevron-up.56f1354eaa26cdd0ebb60b65a6abe529.svg",
     "static/media/chevron-up-grey.svg": "/phone-catalog-client/static/media/chevron-up-grey.301662ee1dfa8b74cad5.svg",
-    "main.285462f2.css.map": "/phone-catalog-client/static/css/main.285462f2.css.map",
+    "main.1d0df003.css.map": "/phone-catalog-client/static/css/main.1d0df003.css.map",
     "main.8b244304.js.map": "/phone-catalog-client/static/js/main.8b244304.js.map"
   },
   "entrypoints": [
-    "static/css/main.285462f2.css",
+    "static/css/main.1d0df003.css",
     "static/js/main.8b244304.js"
   ]
 }
