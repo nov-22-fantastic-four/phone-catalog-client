@@ -21,6 +21,9 @@ export const CartItem: React.FC<Props> = ({ product, count }) => {
     category,
   } = product;
 
+  const isRemovingDisabled = count === 1;
+  const isAddingDisabled = count > 9;
+
   return (
     <div className={styles.CartContainer}>
       <div className={styles.left}>
@@ -52,7 +55,7 @@ export const CartItem: React.FC<Props> = ({ product, count }) => {
           <button
             className={styles.button}
             onClick={() => { removeOne(product.id); }}
-            disabled={count === 1}
+            disabled={isRemovingDisabled}
           >
             <MinusIcon className={styles.icon} />
           </button>
@@ -64,6 +67,7 @@ export const CartItem: React.FC<Props> = ({ product, count }) => {
             onClick={() => {
               addOne(product.id);
             }}
+            disabled={isAddingDisabled}
           >
             <PlusIcon className={styles.icon} />
           </button>
