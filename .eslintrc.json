@@ -31,7 +31,8 @@
         "indent": ["error", 2],
         "max-len": ["error", { "code": 80,
             "comments": 80,
-            "ignoreTemplateLiterals": true
+            "ignoreTemplateLiterals": true,
+            "ignorePattern": "d=\"([\\s\\S]*?)\""
         }],
         "react/display-name": "off",
         "no-shadow": "off",

@@ -1,13 +1,14 @@
+@import "src/style/utils";
+
 .card {
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
-  //width: 272px;
-  width: 100%;
+  width: 288px;
   padding: 32px 32px;
 
-  background: #fff;
-  border: 1px solid #e2e6e9;
+  background: $c-white;
+  border: 1px solid $c-elements;
   border-radius: 5px;
   cursor: pointer;
 
@@ -29,7 +30,7 @@
   font-size: 14px;
   line-height: 21px;
   min-height: 42px;
-  color: #313237;
+  color: $c-primary;
   text-decoration: none;
 }
 
@@ -40,7 +41,7 @@
 .price {
   display: flex;
   justify-content: space-between;
-  color: #313237;
+  color: $c-primary;
   margin-top: 12px;
   margin-bottom: 12px;
   margin-right: 8px;
@@ -55,7 +56,7 @@
 
 .fullPrice {
   composes: price;
-  color: #89939A;
+  color: $c-secondary;
   font-weight: 500;
   line-height: 28px;
   text-decoration-line: line-through;
@@ -63,7 +64,7 @@
 
 .line {
   margin-bottom: 8px;
-  border: 1px solid #E2E6E9;
+  border: 1px solid $c-elements;
 }
 
 .buttonInfo {
@@ -80,12 +81,12 @@
   width: 100%;
   height: 40px;
   padding: 8px 0;
-  background-color: #313237;;
+  background-color: $c-primary;
   font-weight: 700;
   font-size: 14px;
   line-height: 21px;
   text-align: center;
-  color: #fff;
+  color: $c-white;
   text-decoration: none;
   transition: box-shadow .3s ease;
   border: 1px solid transparent;
@@ -99,13 +100,13 @@
 .buttonAdded {
   composes: button;
 
-  background-color: #fff;
-  border-color: #e2e6e9;
-  color: #27AE60;
+  background-color: $c-white;
+  border-color: $c-elements;
+  color: $c-green;
 }
 
 .like {
-  border: 1px solid #b4bdc4;
+  border: 1px solid $c-icons;
   box-sizing: border-box;
   width: 40px;
   height: 40px;
@@ -113,16 +114,14 @@
   transition: border .3s ease;
 
   &:hover {
-    border: 1px solid #313237;
+    border: 1px solid $c-primary;
   }
 }
 
-.heartImg {
-  content: url("/images/icons/heart-empty.svg");
-  width: 16px;
-  height: 16px;
+.fullHeart {
+  fill: $c-red;
 }
 
-.heartImgActive {
-  content: url("/images/icons/heart-red.svg");
+.emptyHeart {
+  fill: $c-primary;
 }

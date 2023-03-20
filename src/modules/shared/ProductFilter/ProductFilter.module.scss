@@ -1,4 +1,4 @@
-@import "src/style/mixins";
+@import "src/style/utils";
 
 .container {
   margin-top: 24px;
@@ -24,5 +24,5 @@
   font-size: 12px;
   line-height: 15px;
 
-  color: #89939A;
+  color: $c-secondary;
 }

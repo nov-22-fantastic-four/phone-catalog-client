@@ -1,21 +1,23 @@
+@import "src/style/utils";
+
 .navLink {
   text-decoration: none;
   font-size: 12px;
   font-weight: 800;
   text-transform: uppercase;
-  color: #89939A;
+  color: $c-secondary;
   display: flex;
   padding: 24px 0;
 
   &:hover {
-    color: #313237;
-    
+    color: $c-primary;
+
   }
 }
 
 .isActive {
   position: relative;
-  color: #313237;
+  color: $c-primary;
 }
 
 .isActive:after {
@@ -25,7 +27,7 @@
   width: 100%;
   left: 0;
   bottom: 0;
-  background-color: #313237;
+  background-color: $c-primary;
 }
 
 @media (max-width: 1200px) {

@@ -22,9 +22,13 @@ export const ProductPage: React.FC = () => {
     void fetchPhone();
   }, []);
 
+  if (!phone) {
+    return <p>Loading...</p>;
+  }
+
   return (
     <Container>
-      <BreadCrumbs phoneName={phone?.name} />
+      <BreadCrumbs phoneName={phone.name} />
       <BackButton />
       <PhoneItem
         phone={phone}

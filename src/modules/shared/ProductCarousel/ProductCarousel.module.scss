@@ -1,0 +1,64 @@
+@import "src/style/utils";
+
+.top {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 24px;
+}
+
+.title {
+  font-weight: 800;
+  font-size: 32px;
+  line-height: 41px;
+  letter-spacing: -0.01em;
+
+  color: $c-primary;
+}
+
+.carousel {
+  width: 100%;
+  overflow: hidden;
+
+}
+
+.list {
+  display: flex;
+  gap: 16px;
+
+  transition: transform 0.3s;
+}
+
+.item {
+  width: 288px;
+}
+
+.actions {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 32px;
+  height: 32px;
+  background: white;
+  border: 1px solid $c-icons;
+  cursor: pointer;
+
+  &:hover {
+    border-color: $c-primary;
+  }
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: default;
+    border-color: $c-icons;
+  }
+}
+
+.icon {
+  fill: $c-primary;
+}
