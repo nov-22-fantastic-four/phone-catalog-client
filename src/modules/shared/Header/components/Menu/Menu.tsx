@@ -1,28 +1,40 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import styles from './Menu.module.scss';
 import heart_icon from '../../../../../images/icons/heart-empty.svg';
 import bag_icon from '../../../../../images/icons/bag_icon.svg';
 import { Navigation } from '../Navigation';
 import { IconLink } from '../IconLink';
+import { CartContext, FavoritesContext } from '../../../../../context';
 
-export const Menu: React.FC = () => (
-  <div className={styles.menu}>
-    <Navigation />
+interface Props {
+  closeMenu: () => void
+}
 
-    <div className={styles.menu_footer}>
-      <IconLink
-        to="/favorite"
-        alt="favorites"
-        icon={heart_icon}
-        items={3}
-      />
+export const Menu: React.FC<Props> = ({ closeMenu }) => {
+  const { cartItems } = useContext(CartContext);
+  const { favorites } = useContext(FavoritesContext);
 
-      <IconLink
-        to="/cart"
-        alt="cartIcon"
-        icon={bag_icon}
-        items={10}
-      />
+  return (
+    <div className={styles.menu}>
+      <Navigation closeMenu={closeMenu}/>
+
+      <div className={styles.menu_footer}>
+        <IconLink
+          to="/favorites"
+          alt="favorites"
+          icon={heart_icon}
+          items={favorites.length}
+          closeMenu={closeMenu}
+        />
+
+        <IconLink
+          to="/cart"
+          alt="cartIcon"
+          icon={bag_icon}
+          items={cartItems.length}
+          closeMenu={closeMenu}
+        />
+      </div>
     </div>
-  </div>
-);
+  );
+};

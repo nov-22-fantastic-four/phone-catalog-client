@@ -25,7 +25,7 @@ export const HomePage: React.FC = () => {
       <PageTitle>
         Welcome!
       </PageTitle>
-      
+
       <TopSlider />
 
       <section className={styles.section}>

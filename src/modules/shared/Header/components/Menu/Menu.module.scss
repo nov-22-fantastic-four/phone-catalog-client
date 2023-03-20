@@ -1,5 +1,20 @@
+@import "src/style/utils";
+
 .menu {
+  position: fixed;
+  z-index: 50;
+  top: 49px;
+  left: 0;
+  right: 0;
+  background-color: $c-white;
+  overflow-y: auto;
   height: 100vh;
+  box-sizing: border-box;
+
+  @include onTablet {
+    position: static;
+    display: none;
+  }
 }
 
 .menu_icon {
@@ -62,9 +77,3 @@
 .iconLink {
   display: flex;
 }
-
-@media (min-width: 640px) {
-  .menu {
-   display: none;
-  }
- }
