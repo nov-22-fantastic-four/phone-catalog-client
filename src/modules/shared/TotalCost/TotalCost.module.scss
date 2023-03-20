@@ -1,4 +1,4 @@
-@import "src/style/mixins";
+@import "src/style/utils";
 
 .total {
   width: 288px;
@@ -7,7 +7,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  border: 1px solid #E2E6E9;
+  border: 1px solid $c-elements;
   padding: 24px;
   box-sizing: border-box;
 
@@ -26,13 +26,13 @@
 
 .button {
   box-sizing: border-box;
-  background-color: #313237;
+  background-color: $c-primary;
   height: 48px;
   font-weight: 500;
   font-size: 14px;
   line-height: 21px;
   text-align: center;
-  color: #fff;
+  color: $c-white;
   width: 100%;
   transition: box-shadow .3s ease;
   border: 1px solid transparent;
@@ -58,5 +58,5 @@
   width: 100%;
   border: none;
   height: 1px;
-  background-color: #E2E6E9;
+  background-color: $c-elements;
 }

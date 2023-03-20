@@ -1,4 +1,4 @@
-@import "src/style/mixins";
+@import "src/style/utils";
 
 .title {
   margin-top: 24px;
@@ -10,7 +10,7 @@
 
   letter-spacing: -0.01em;
 
-  color: #313237;
+  color: $c-primary;
 
   @include onTablet {
     margin-top: 32px;

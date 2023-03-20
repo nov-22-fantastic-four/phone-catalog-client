@@ -1,3 +1,5 @@
+@import "src/style/utils";
+
 .container {
   display: flex;
   gap: 16px;
@@ -9,7 +11,7 @@
 
   text-align: center;
 
-  color: #313237;
+  color: $c-primary;
 }
 
 .pages {
@@ -23,7 +25,7 @@
   align-items: center;
   width: 32px;
   height: 32px;
-  border: 1px solid #E2E6E9;
+  border: 1px solid $c-elements;
   cursor: pointer;
   background: white;
 
@@ -34,7 +36,7 @@
 
 .arrow {
   composes: button;
-  border: 1px solid #B4BDC3;
+  border: 1px solid $c-icons;
 
   &:disabled {
     opacity: 0.5;
@@ -42,6 +44,6 @@
 }
 
 .current {
-  background: #313237;
+  background: $c-primary;
   color: white;
 }

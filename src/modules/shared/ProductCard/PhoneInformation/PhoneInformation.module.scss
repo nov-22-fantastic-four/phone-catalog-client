@@ -1,3 +1,5 @@
+@import "src/style/utils";
+
 .container {
   display: flex;
   justify-content: space-between;
@@ -7,11 +9,11 @@
   font-weight: 600;
   font-size: 12px;
   margin-bottom: 8px;
-  color: #89939a;
+  color: $c-secondary;
 }
 
 .value {
   composes: text;
   text-align: right;
-  color: #313237;
+  color: $c-primary;
 }

@@ -21,10 +21,27 @@ export const ProductPage: React.FC = () => {
     void fetchPhone();
   }, []);
 
+  if (!phone) {
+    return <p>Loading...</p>;
+  }
+
   return (
     <Container>
-      <BreadCrumbs phoneName={phone?.name} />
+      <BreadCrumbs phoneName={phone.name} />
       <BackButton />
+
+      {phone.description.map(description => (
+        <section key={description.title}>
+          <h3>{description.title}</h3>
+
+          {description.text.map(text => (
+            <p key={text}>
+              {text}
+              <hr />
+            </p>
+          ))}
+        </section>
+      ))}
     </Container>
   );
 };
