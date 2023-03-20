@@ -1,3 +1,5 @@
+@import "src/style/utils";
+
 .navLink {
   position: relative;
   display: flex;
@@ -11,18 +13,26 @@
   border-radius: 50%;
   width: 14px;
   height: 14px;
-  border: 1px solid #fff;
-  background-color: #EB5757;
+  border: 1px solid $c-white;
+  background-color: $c-red;
   font-size: 9px;
-  color: #fff;
+  color: $c-white;
   top: 25%;
   left: 50%;
   overflow: hidden;
+
+  @include onTablet {
+    top: 20%;
+  }
+
+  @include onDesktop {
+    top: 25%;
+  }
 }
 
 .isActive {
   position: relative;
-  color: #313237;
+  color: $c-primary;
 }
 
 .isActive:after {
@@ -32,27 +42,19 @@
   width: 100%;
   left: 0;
   bottom: 0;
-  background-color: #313237;
+  background-color: $c-primary;
 }
 
 .icon {
-  box-shadow: -1px 0px 0px #E2E6E9;
-  padding: 24px;
-}
-
-@media (max-width: 1200px) {
-  .icon {
+  padding: 16px 25vw;
+  box-shadow: -1px 0px 0px $c-elements;
+  box-shadow: -1px 0px 0px $c-elements;
+  
+  @include onTablet {
     padding: 16px;
   }
-
-  .counter {
-    top: 20%;
+  
+  @include onDesktop {
+    padding: 24px;
   }
 }
-
-@media (max-width: 640px) {
-  .icon {
-    padding: 16px 25vw;
-    box-shadow: -1px 0px 0px #E2E6E9;
-  }
- }

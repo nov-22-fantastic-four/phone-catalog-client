@@ -6,15 +6,19 @@ import { NavLink } from 'react-router-dom';
 interface Props {
   to: string
   text: string
+  closeMenu?: () => void
 };
 
-export const NavigationLink: React.FC<Props> = ({ to, text }) => (
-  <NavLink
-    className={({ isActive }) => classNames(styles.navLink, {
-      [styles.isActive]: isActive
-    })}
-    to={to}
-  >
-    {text}
-  </NavLink>
-);
+export const NavigationLink: React.FC<Props> = ({ to, text, closeMenu }) => {
+  return (
+    <NavLink
+      className={({ isActive }) => classNames(styles.navLink, {
+        [styles.isActive]: isActive
+      })}
+      to={to}
+      onClick={closeMenu}
+    >
+      {text}
+    </NavLink>
+  );
+};
