@@ -1,0 +1,76 @@
+@import "~slick-carousel/slick/slick.scss";
+@import "~slick-carousel/slick/slick-theme.scss";
+
+@import "src/style/mixins";
+
+.top-slider {
+  margin-bottom: 90px;
+  width: 100%;
+  margin: 0 auto;
+  height: 100%;
+}
+
+.top-slider-photo {
+  width: 100%;
+}
+
+.top-slider-icon {
+  display: flex;
+  align-self: center;
+}
+
+.slick-slider {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.slick-arrow {
+  position: static;
+  width: 32px;
+  height: inherit;
+  border: 1px solid #b4bdc4;
+  display: none;
+  transform: translateY(0);
+
+    &:hover {
+    border-color: #313237;
+  }
+
+  @include onTablet {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.slick-prev::before {
+  content: '';
+}
+
+.slick-next::before {
+  content: '';
+}
+
+.slick-list {
+  width: 100vw;
+  height: 100%;
+}
+
+.slick-dots {
+  bottom: -38px;
+  left: 0;
+}
+
+.slick-dots li button:before {
+  content: "";
+  width: 14px;
+  height: 4px;
+  background-color: #313237;
+  opacity: 0.25;
+}
+
+.slick-dots li.slick-active button:before {
+  background-color: #313237;
+  opacity: 0.75;
+}

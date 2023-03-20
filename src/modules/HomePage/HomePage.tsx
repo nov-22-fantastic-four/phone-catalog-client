@@ -3,6 +3,7 @@ import { Container, PageTitle } from '../shared';
 import { ProductCarousel } from '../shared/ProductCarousel/ProductCarousel';
 import { type Product } from '../../types';
 import { getWithPagination } from '../../api/products';
+import { TopSlider } from '../shared/TopSlider';
 
 import styles from './HomePage.module.scss';
 
@@ -24,6 +25,8 @@ export const HomePage: React.FC = () => {
       <PageTitle>
         Welcome!
       </PageTitle>
+      
+      <TopSlider />
 
       <section className={styles.section}>
         <ProductCarousel
