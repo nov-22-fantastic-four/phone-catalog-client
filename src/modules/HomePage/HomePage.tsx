@@ -1,5 +1,6 @@
 import React from 'react';
 import { Container, PageTitle } from '../shared';
+import { TopSlider } from '../shared/TopSlider';
 
 export const HomePage: React.FC = () => {
   return (
@@ -7,6 +8,7 @@ export const HomePage: React.FC = () => {
       <PageTitle>
         Welcome!
       </PageTitle>
+      <TopSlider />
     </Container>
   );
 };
