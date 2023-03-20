@@ -56,13 +56,34 @@
   margin-bottom: 25px;
 }
 
-.color {
+.containerForColor {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 30px;
   height: 30px;
-  border-radius: 50%;
+  border-radius: 36px;
   margin-right: 8px;
   border: 1px solid #e2e6e9;
+  transition: border .3s ease;
   cursor: pointer;
+
+  &:hover {
+    border: 1px solid #b4bdc4;
+  }
+}
+
+.color {
+  width: 28px;
+  height: 28px;
+  box-sizing: border-box;
+  border-radius: 36px;
+  border: none;
+  cursor: pointer;
+}
+
+.selectedColor {
+  border-radius: 1px solid #313237;
 }
 
 .line {
@@ -197,4 +218,22 @@
   font-size: 22px;
   line-height: 140%;
   color: #313237;
+}
+
+.textTitle {
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 26px;
+  color: #313237;
+}
+
+.text {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 21px;
+  color: #89939A;
+}
+
+.textContainer {
+  margin-bottom: 80px;
 }
