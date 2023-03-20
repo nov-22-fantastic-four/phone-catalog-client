@@ -118,12 +118,10 @@
   }
 }
 
-.heartImg {
-  content: url("/images/icons/heart-empty.svg");
-  width: 16px;
-  height: 16px;
+.fullHeart {
+  fill: $c-red;
 }
 
-.heartImgActive {
-  content: url("/images/icons/heart-red.svg");
+.emptyHeart {
+  fill: $c-primary;
 }

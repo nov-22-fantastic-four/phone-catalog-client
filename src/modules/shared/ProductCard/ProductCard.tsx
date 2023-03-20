@@ -6,6 +6,7 @@ import { type Product } from '../../../types';
 import { Image } from '../Image';
 import { CartContext, FavoritesContext } from '../../../context';
 import { Link } from 'react-router-dom';
+import { EmptyHeartIcon, FullHeartIcon } from '../../icons';
 
 interface Props {
   product: Product,
@@ -110,12 +111,9 @@ export const ProductCard: React.FC<Props> = ({ product }) => {
           className={styles.like}
           onClick={handleClickLiked}
         >
-          <img
-            alt="like"
-            className={cn(styles.heartImg, {
-              [styles.heartImgActive]: isFavorite,
-            })}
-          />
+          {isFavorite
+            ? <FullHeartIcon className={styles.fullHeart} />
+            : <EmptyHeartIcon className={styles.emptyHeart} />}
         </div>
       </div>
     </div>
