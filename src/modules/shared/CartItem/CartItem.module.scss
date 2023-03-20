@@ -1,25 +1,38 @@
 @import "src/style/utils";
 
 .CartContainer {
-  border: 1px solid #E2E6E9;
-  width: 288px;
+  border: 1px solid $c-elements;
+  width: 100%;
   display: flex;
+  flex-direction: column;
   align-items: center;
   padding: 16px;
   gap: 20px;
-  flex-wrap: wrap;
-  margin: 0 auto;
-  margin-bottom: 16px;
   box-sizing: border-box;
 
   @include onTablet {
-    width: 592px;
+    flex-direction: row;
   }
+}
 
-  @include onDesktop {
-    display: inline-flex;
-    width: 752px;
-    margin: 0 16px 16px 0;
+.left {
+  display: flex;
+  align-items: center;
+  //justify-content: space-between;
+  gap: 24px;
+  width: 100%;
+
+  @include onTablet {
+    width: 70%;
+  }
+}
+
+.right {
+  composes: left;
+  justify-content: space-between;
+
+  @include onTablet {
+    width: 30%;
   }
 }
 
@@ -31,22 +44,43 @@
   height: 80px;
 }
 
+.actions {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
 .image {
   height: 100%;
 }
 
 .button {
-  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   height: 32px;
   width: 32px;
-  color: #B4BDC3;
-  border: 1px solid #E2E6E9;
-  background-color: #fff;
+
+  color: $c-icons;
+  background-color: $c-white;
+  border: 1px solid $c-icons;
+
+  cursor: pointer;
 
   &:hover {
-    color: #313237;
-    border-color: #B4BDC3;
+    color: $c-secondary;
+    border-color: $c-secondary;
   }
+
+  &:disabled {
+    opacity: 0.5;
+    border-color: $c-icons;
+    cursor: default;
+  }
+}
+
+.icon {
+  fill: $c-primary;
 }
 
 .removeButton {
@@ -58,25 +92,24 @@
   font-weight: 600;
   font-size: 14px;
   line-height: 21px;
-  color: #313237;
+  color: $c-primary;
   text-decoration: none;
-  width: 37%;
+  //width: 37%;
 
-  @include onTablet {
-    width: 30%;
-  }
-
-  @include onDesktop {
-    width: 40%;
-  }
+  //@include onTablet {
+  //  width: 30%;
+  //}
+  //
+  //@include onDesktop {
+  //  width: 40%;
+  //}
 }
 
 .price {
-  color: #313237;
+  color: $c-primary;
   font-weight: 700;
   font-size: 22px;
   line-height: 140%;
-  margin-left: auto;
 
   &:before {
     content: "$";

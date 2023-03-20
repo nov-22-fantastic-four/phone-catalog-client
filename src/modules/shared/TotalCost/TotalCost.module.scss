@@ -1,7 +1,8 @@
 @import "src/style/utils";
 
 .total {
-  width: 288px;
+  width: 100%;
+  height: 206px;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
@@ -11,22 +12,15 @@
   padding: 24px;
   box-sizing: border-box;
 
-  @include onTablet {
-    width: 592px;
-  }
-
   @include onDesktop {
-    display: inline-flex;
     width: 368px;
-    margin: 0;
-    position: absolute;
-    top: 0;
   }
 }
 
 .button {
   box-sizing: border-box;
   background-color: $c-primary;
+  margin-top: 16px;
   height: 48px;
   font-weight: 500;
   font-size: 14px;

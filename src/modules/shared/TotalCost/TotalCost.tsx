@@ -17,12 +17,15 @@ export const TotalCost: React.FC<Props> = ({ totalCost }) => {
       <p className={styles.price}>
         {totalCost}
       </p>
+
       <ItemCount>
         {`Total for ${totalItem} items`}
       </ItemCount>
-      <hr className={styles.line}/>
+
+      <div className={styles.line}/>
+
       <button className={styles.button}>
-      Checkout
+        Checkout
       </button>
     </div>
   );
