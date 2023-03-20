@@ -10,8 +10,41 @@
 .container {
   margin-top: 40px;
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 76px;
+  grid-template-columns: 1fr;
+  flex-direction: column;
+
+  @media (min-width: 640px) {
+    grid-template-columns: 1fr 1fr;
+    flex-direction: row;
+    gap: 10px
+  }
+
+  @media (min-width: 980px) {
+    gap: 40px
+  }
+
+  @media (min-width: 1030px) {
+    gap: 76px
+  }
+}
+
+.containerInfo {
+  margin-top: 40px;
+  display: grid;
+  width: 100%;
+  grid-template-columns: 1fr;
+  margin-bottom: 50px;
+//   gap: 76px;
+
+  @media (min-width: 640px) {
+    margin-bottom: 56px;
+  }
+
+  @media (min-width: 1200px) {
+    grid-template-columns: 1fr 1fr;
+    margin-bottom: 80px;
+    gap: 76px;
+  }
 }
 
 .photoContainer {
@@ -23,9 +56,34 @@
 
 .photos {
   display: flex;
+  flex-direction: column-reverse;
+
+  @media (min-width: 640px) {
+    flex-direction: row;
+  }
+}
+
+.smallPhoto {
+  display: flex;
+  justify-content: space-between;
+
+  @media (min-width: 639px) {
+    flex-direction: column;
+  }
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  margin-right: 8px;
+
+  @media (min-width: 640px) {
+    margin-right: 200px;
+  }
 }
 
 .photo {
+  display: flex;
   box-sizing: border-box;
   width: 100%;
   height: 100%;
@@ -95,10 +153,14 @@
 
 
 .lineForm {
-  width: 320px;
+  width: 97%;
   height: 1px;
   background-color: #e2e6e9;
   margin-bottom: 24px;
+
+  @media (min-width: 990px) {
+    width: 320px;
+  }
 }
 
 .capacity {
@@ -157,7 +219,7 @@
   box-sizing: border-box;
   margin-top: 16px;
   margin-right: 8px;
-  width: 263px;
+  width: 90%;
   height: 40px;
   padding: 8px 0;
   background-color: #313237;;
@@ -170,6 +232,11 @@
   transition: box-shadow .3s ease;
   border: 1px solid transparent;
   cursor: pointer;
+
+  @media (min-width: 640px) {
+    width: 263px;
+  }
+
   
   &:hover {
     box-shadow: 0 3px 13px rgba(23, 32, 49, 0.4);
@@ -210,7 +277,11 @@
   
 .phoneInfo {
   margin-top: 32px;
-  width: 314px;
+  width: 98%;
+
+  @media (min-width: 640px) {
+    width: 314px;
+  }
 }
 
 .titleInfo {
@@ -234,6 +305,14 @@
   color: #89939A;
 }
 
-.textContainer {
-  margin-bottom: 80px;
+.colorPlusId {
+  display: flex;
+  justify-content: space-between;
+}
+
+.id {
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 15px;
+  color: #b4bdc4;
 }
