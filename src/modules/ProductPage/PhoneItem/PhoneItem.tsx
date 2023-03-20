@@ -1,35 +1,65 @@
-import React, { useState } from 'react';
+import React, { useContext } from 'react';
 import { type Phone } from '../../../types';
 import { Image } from '../../shared/Image';
 // import { CartContext, FavoritesContext } from '../../../context';
 import cn from 'classnames';
 import styles from './PhoneItem.module.scss';
 import { PhoneInformation } from '../../shared/ProductCard/PhoneInformation';
+import { CartContext, FavoritesContext } from '../../../context';
 
 interface Props {
   phone: Phone | null,
 };
 
 export const PhoneItem: React.FC<Props> = ({ phone }) => {
+  const cartContext = useContext(CartContext);
+  const favoritesContext = useContext(FavoritesContext);
   //   const [selectedPhoto, setSelectedPhoto] = useState(phone?.images[0]);
-  const [isAdded, setIsAdded] = useState(false);
-  const [isFavorite, setIsFavorite] = useState(false);
+
+  if (!phone) {
+    return <p>Loading...</p>;
+  }
+
+  const {
+    id,
+    name,
+    priceRegular,
+    priceDiscount,
+    screen,
+    resolution,
+    processor,
+    ram,
+    capacity,
+    camera,
+    zoom,
+  } = phone;
+
+  const isAdded = cartContext.isAdded(+id);
+  const isFavorite = favoritesContext.isFavorite(+id);
 
   const handleClickAdded = (): void => {
-    setIsAdded(!isAdded);
+    if (isAdded) {
+      cartContext.removeOne(+id);
+
+      return;
+    }
+
+    cartContext.addOne(+id);
   };
 
   const handleClickLiked = (): void => {
-    setIsFavorite(!isFavorite);
-  };
+    if (isFavorite) {
+      favoritesContext.removeFavorite(+id);
 
-  //   const handleClickAdded = (src: string): void => {
-  //     setSelectedPhoto(src);
-  //   };
+      return;
+    }
+
+    favoritesContext.addFavorite(+id);
+  };
 
   return (
     <>
-      <h2 className={styles.title}>{phone?.name}</h2>
+      <h2 className={styles.title}>{name}</h2>
 
       <div className={styles.container}>
         <div className={styles.photos}>
@@ -38,7 +68,7 @@ export const PhoneItem: React.FC<Props> = ({ phone }) => {
               <div key={phone.id} className={styles.photoContainer}>
                 <Image
                   src={photo}
-                  alt={phone?.name}
+                  alt={name}
                   className={styles.photo}
                 //   onClick={() => { handleClickAdded(photo); }}
                 />
@@ -61,7 +91,7 @@ export const PhoneItem: React.FC<Props> = ({ phone }) => {
           <div className={styles.availableColor}>
             {phone?.colorsAvailable.map(currentColor => (
               <button
-                key={phone.id}
+                key={id}
                 className={styles.color}
                 style={ { backgroundColor: currentColor }}
               ></button>
@@ -75,7 +105,7 @@ export const PhoneItem: React.FC<Props> = ({ phone }) => {
           <div className={styles.availableCapacity}>
             {phone?.capacityAvailable.map(currentCapacity => (
               <button
-                key={phone.id}
+                key={id}
                 className={styles.capacity}
               >{currentCapacity}</button>
             ))}
@@ -85,10 +115,10 @@ export const PhoneItem: React.FC<Props> = ({ phone }) => {
 
           <div className={styles.prices}>
             <div className={styles.priceRegular}>
-              ${phone?.priceRegular}
+              ${priceRegular}
             </div>
             <div className={styles.priceDiscount}>
-              ${phone?.priceDiscount}
+              ${priceDiscount}
             </div>
           </div>
 
@@ -122,28 +152,28 @@ export const PhoneItem: React.FC<Props> = ({ phone }) => {
             {phone && (
               <PhoneInformation
                 text="Screen"
-                value={phone?.screen}
+                value={screen}
               />
             )}
 
             {phone && (
               <PhoneInformation
                 text="Resolution"
-                value={phone?.resolution}
+                value={resolution}
               />
             )}
 
             {phone && (
               <PhoneInformation
                 text="Processor"
-                value={phone?.processor}
+                value={processor}
               />
             )}
 
             {phone && (
               <PhoneInformation
                 text="RAM"
-                value={phone?.ram}
+                value={ram}
               />
             )}
           </div>
@@ -162,54 +192,40 @@ export const PhoneItem: React.FC<Props> = ({ phone }) => {
 
           <div className={styles.line}></div>
           <div className={styles.phoneTechSpecs}>
-            {phone && (
-              <PhoneInformation
-                text="Screen"
-                value={phone?.screen}
-              />
-            )}
+            <PhoneInformation
+              text="Screen"
+              value={screen}
+            />
 
-            {phone && (
-              <PhoneInformation
-                text="Resolution"
-                value={phone?.resolution}
-              />
-            )}
+            <PhoneInformation
+              text="Resolution"
+              value={resolution}
+            />
 
-            {phone && (
-              <PhoneInformation
-                text="Processor"
-                value={phone?.processor}
-              />
-            )}
+            <PhoneInformation
+              text="Processor"
+              value={processor}
+            />
 
-            {phone && (
-              <PhoneInformation
-                text="RAM"
-                value={phone?.ram}
-              />
-            )}
+            <PhoneInformation
+              text="RAM"
+              value={ram}
+            />
 
-            {phone && (
-              <PhoneInformation
-                text="Built in memory"
-                value={phone?.capacity}
-              />
-            )}
+            <PhoneInformation
+              text="Built in memory"
+              value={capacity}
+            />
 
-            {phone && (
-              <PhoneInformation
-                text="Camera"
-                value={phone?.camera}
-              />
-            )}
+            <PhoneInformation
+              text="Camera"
+              value={camera}
+            />
 
-            {phone && (
-              <PhoneInformation
-                text="Zoom"
-                value={phone?.zoom}
-              />
-            )}
+            <PhoneInformation
+              text="Zoom"
+              value={zoom}
+            />
             {/* capacity!!! */}
           </div>
         </div>
