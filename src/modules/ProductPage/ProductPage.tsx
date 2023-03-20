@@ -2,21 +2,22 @@ import React, { useEffect, useState } from 'react';
 import { type Phone } from '../../types';
 import { BreadCrumbs, Container, BackButton } from '../shared';
 import { PhoneItem } from './PhoneItem';
-
-const samplePhoneLink =
-  'https://phone-catalog-api.onrender.com/phones/apple-iphone-7-32gb-black';
+import { useParams } from 'react-router';
+import { getById } from '../../api/phones';
 
 export const ProductPage: React.FC = () => {
+  const { phoneId } = useParams();
   const [phone, setPhone] = useState<Phone | null>(null);
 
   console.log(phone);
 
   useEffect(() => {
     const fetchPhone = async(): Promise<void> => {
-      const res = await fetch(samplePhoneLink);
-      const fetchedPhone = await res.json();
+      if (phoneId) {
+        const fetchedPhone = await getById(phoneId);
 
-      setPhone(fetchedPhone);
+        setPhone(fetchedPhone);
+      }
     };
 
     void fetchPhone();

@@ -1,10 +1,11 @@
 import React, { useContext, useState } from 'react';
 import { type Phone } from '../../../types';
-import { Image } from '../../shared/Image';
+import { Image } from '../../shared';
 import cn from 'classnames';
 import styles from './PhoneItem.module.scss';
 import { PhoneInformation } from '../../shared/ProductCard/PhoneInformation';
 import { CartContext, FavoritesContext } from '../../../context';
+import { EmptyHeartIcon, FullHeartIcon } from '../../icons';
 
 interface Props {
   phone: Phone | null,
@@ -19,8 +20,6 @@ export const PhoneItem: React.FC<Props> = ({ phone }) => {
   }
 
   const [selectedPhoto, setSelectedPhoto] = useState(phone.images[0]);
-  //   const [selectedColor, setSelectedColor]
-  //   = useState(phone.colorsAvailable[0]);
 
   const handleSelectedPhoto = (photo: string): void => {
     setSelectedPhoto(photo);
@@ -39,6 +38,7 @@ export const PhoneItem: React.FC<Props> = ({ phone }) => {
     camera,
     zoom,
     cell,
+    color,
   } = phone;
 
   const isAdded = cartContext.isAdded(+id);
@@ -71,8 +71,8 @@ export const PhoneItem: React.FC<Props> = ({ phone }) => {
       <div className={styles.container}>
         <div className={styles.photos}>
           <div className={styles.smallPhoto}>
-            {phone?.images.map(photo => (
-              <div key={phone.id} className={styles.photoContainer}>
+            {phone.images.map(photo => (
+              <div key={photo} className={styles.photoContainer}>
                 <Image
                   src={photo}
                   alt={name}
@@ -96,8 +96,13 @@ export const PhoneItem: React.FC<Props> = ({ phone }) => {
           <p className={styles.formTitle}>Available colors</p>
 
           <div className={styles.availableColor}>
-            {phone?.colorsAvailable.map(currentColor => (
-              <div key={id} className={styles.containerForColor}>
+            {phone.colorsAvailable.map(currentColor => (
+              <div
+                key={currentColor}
+                className={cn(styles.containerForColor, {
+                  [styles.selectedColor]: currentColor === color,
+                })}
+              >
                 <div
                   className={styles.color}
                   style={ { backgroundColor: currentColor }}
@@ -111,10 +116,12 @@ export const PhoneItem: React.FC<Props> = ({ phone }) => {
           <p className={styles.formTitle}>Select capacity</p>
 
           <div className={styles.availableCapacity}>
-            {phone?.capacityAvailable.map(currentCapacity => (
+            {phone.capacityAvailable.map(currentCapacity => (
               <button
-                key={id}
-                className={styles.capacity}
+                key={currentCapacity}
+                className={cn(styles.capacity, {
+                  [styles.selectedCapacity]: currentCapacity === capacity,
+                })}
               >{currentCapacity}</button>
             ))}
           </div>
@@ -147,12 +154,9 @@ export const PhoneItem: React.FC<Props> = ({ phone }) => {
               className={styles.like}
               onClick={handleClickLiked}
             >
-              <img
-                alt="like"
-                className={cn(styles.heartImg, {
-                  [styles.heartImgActive]: isFavorite,
-                })}
-              />
+              {isFavorite
+                ? <FullHeartIcon className={styles.fullHeart} />
+                : <EmptyHeartIcon className={styles.emptyHeart} />}
             </div>
           </div>
 
@@ -186,15 +190,18 @@ export const PhoneItem: React.FC<Props> = ({ phone }) => {
           <div className={styles.line}></div>
 
           <div className={styles.textContainer}>
-            {phone.description.map(dec => (
-              <>
-                <h3 className={styles.textTitle}>{dec.title}</h3>
+            {phone.description.map(description => (
+              <React.Fragment key={description.title}>
+                <h3 className={styles.textTitle}>
+                  {description.title}
+                </h3>
 
-                {dec.text.map(el => (
-                  <p key={el} className={styles.text}>{el}</p>
+                {description.text.map(text => (
+                  <p key={text} className={styles.text}>
+                    {text}
+                  </p>
                 ))}
-              </>
-
+              </React.Fragment>
             ))}
           </div>
         </div>
