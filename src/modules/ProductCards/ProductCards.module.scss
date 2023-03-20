@@ -11,9 +11,9 @@ $column-gap: 16px;
     row-gap: 40px;
   
     @media (min-width: 640px) {
-        max-width: $card-width-tablet-mobile * 2 + $column-gap;
-        grid-template-columns: 1fr 1fr;
-      }
+      max-width: $card-width-tablet-mobile * 2 + $column-gap;
+      grid-template-columns: 1fr 1fr;
+    }
 
     @media (min-width: 900px) {
       max-width: $card-width-tablet-mobile * 3 + $column-gap * 2;

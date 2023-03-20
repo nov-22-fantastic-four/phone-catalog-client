@@ -180,7 +180,7 @@ export const PhoneItem: React.FC<Props> = ({ phone }) => {
         </div>
       </div>
 
-      <div className={styles.container}>
+      <div className={styles.containerInfo}>
         <div className={styles.about}>
           <h3 className={styles.titleInfo}>About</h3>
           <div className={styles.line}></div>
