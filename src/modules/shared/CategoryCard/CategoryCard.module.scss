@@ -1,0 +1,76 @@
+@import "src/style/utils";
+
+.category {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+
+  @include onTablet {
+  flex-direction: row;
+  justify-content: space-around;;
+  gap: 16px;
+  }
+}
+
+.title {
+  font-size: 32px;
+  font-weight: 800;
+  line-height: 41px;
+  padding-bottom: 24px;
+  color: $c-primary;
+  letter-spacing: -0.01em;
+}
+.image_link {
+display: block;
+transition: transform 0.3s ease-in-out;
+text-decoration: none;
+border-radius: 5px;
+
+  &:hover {
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+  }
+}
+
+
+.image {
+  display: block;
+  height: 288px;
+  width: 288px;
+  cursor: pointer;
+  background-color: #6D6474;
+  
+
+  @include onTablet {
+    height: 188px;
+    width: 188px;
+
+    }
+
+  @include onDesktop {
+    height: 368px;
+    width: 368px;
+    }
+  }
+
+  .image_tablet {
+    background-color: #8D8D92;
+  }
+
+ .image_accessories {
+    background-color: #973D5F;
+  }
+
+.text_category {
+  font-size: 20px;
+  font-weight: 700;
+  color: $c-primary;
+  padding-top: 24px;
+}
+
+.text_count {
+  font-size: 14px;
+  font-weight: 600;
+  color: $c-secondary;
+  padding-top: 4px;
+}
