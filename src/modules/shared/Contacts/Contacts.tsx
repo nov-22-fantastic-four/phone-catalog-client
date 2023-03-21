@@ -15,14 +15,6 @@ export const Contacts: React.FC = () => {
 
       <div className={styles.container}>
         <div className={styles.ourContacts}>
-          {/* <h2 className={styles.title}>
-          Connect with Us for Your Every Recruitment Need
-          </h2> */}
-          {/* <p className={styles.text}>
-            Helping companies elevate their operations
-            by directly delivering the ideal candidate.
-          </p> */}
-
           <p className={styles.text}>Telegram:</p>
 
           <ul className={styles.contactsList}>
@@ -62,34 +54,55 @@ export const Contacts: React.FC = () => {
               </a>
             </li>
           </ul>
+
+          <p className={styles.text}>LinkedIn:</p>
+
+          <ul className={styles.contactsList}>
+            <li className={styles.listItem}>
+              <a
+                href="https://www.linkedin.com/in/nzrii-kysel/"
+                className={styles.contact}
+              >
+                Kyselevych Nazarii
+              </a>
+            </li>
+
+            <li className={styles.listItem}>
+              <a
+                href="https://www.linkedin.com/in/ivan-stadnytskyi-287ab7265/"
+                className={styles.contact}
+              >
+                Stadnytskyy Ivan
+              </a>
+            </li>
+
+            <li className={styles.listItem}>
+              <a
+                // eslint-disable-next-line max-len
+                href="https://www.linkedin.com/in/anastasiia-kravchenko-959b0a252/"
+                className={styles.contact}
+              >
+                Kravchenko Anastasiia
+              </a>
+            </li>
+
+            <li className={styles.listItem}>
+              <a
+                href="https://www.linkedin.com/in/olga-zaiets-009a261ab/"
+                className={styles.contact}
+              >
+                Zaiets Olya
+              </a>
+            </li>
+          </ul>
         </div>
 
-        <div className={styles.formContainer}>
-          <h2 className={styles.titleSmall}>How can we help?</h2>
-          <form action="" method="get" className={styles.form}>
-            <input
-              type="text"
-              name="name"
-              placeholder="Name:"
-              className={styles.formField}
-              required
-            />
-            <input
-              type="email"
-              placeholder="Email:"
-              className={styles.formField}
-              required
-            />
-            <textarea
-              placeholder="Message"
-              className={styles.textarea}
-              name="message"
-              required
-            ></textarea>
-            <button className={styles.button} type="submit">
-              Send
-            </button>
-          </form>
+        <div>
+          <img
+            className={styles.photo}
+            // eslint-disable-next-line max-len
+            src="https://cdn.discordapp.com/attachments/1084940437254578336/1087782359606239233/6a91d394ddaef4c0b5f931e31847f0bf.png"
+            alt="" />
         </div>
       </div>
     </Container>
