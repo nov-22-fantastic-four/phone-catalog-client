@@ -9,6 +9,7 @@ import { FavoritesPage } from './modules/FavoritesPage';
 import { CartPage } from './modules/CartPage';
 
 import styles from './App.module.scss';
+import { Contacts } from './modules/shared/Contacts';
 
 const App: React.FC = () => {
   return (
@@ -27,6 +28,8 @@ const App: React.FC = () => {
 
           <Route path="/favorites" element={<FavoritesPage /> } />
           <Route path="/cart" element={<CartPage /> } />
+
+          <Route path='/contacts' element={<Contacts />} />
 
           <Route path="*" element={<NotFoundPage /> } />
         </Routes>

@@ -3,6 +3,7 @@ import styles from './Footer.module.scss';
 import vector from '../../../images/icons/shevron-up.svg';
 import { LogoLink } from '../LogoLink';
 import { Container } from '../Container';
+import { NavLink } from 'react-router-dom';
 
 export const Footer: React.FC = () => {
   const handleScrollToTop = useCallback(() => {
@@ -31,7 +32,18 @@ export const Footer: React.FC = () => {
               </li>
 
               <li className={styles.nav_item}>
-                <a className={styles.nav_link} href="#contacts">Contacts</a>
+                {/* <a
+                  className={styles.nav_link}
+                  href="#contacts"
+                >
+                    Contacts
+                </a> */}
+                <NavLink
+                  className={styles.nav_link}
+                  to={'/contacts'}
+                >
+                  Contacts
+                </NavLink>
               </li>
 
               <li className={styles.nav_item}>
