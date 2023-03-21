@@ -9,7 +9,7 @@ import { EmptyHeartIcon, FullHeartIcon } from '../../icons';
 
 interface Props {
   phone: Phone | null,
-};
+}
 
 export const PhoneItem: React.FC<Props> = ({ phone }) => {
   const cartContext = useContext(CartContext);
@@ -45,23 +45,23 @@ export const PhoneItem: React.FC<Props> = ({ phone }) => {
   const isFavorite = favoritesContext.isFavorite(+id);
 
   const handleClickAdded = (): void => {
-    if (isAdded) {
-      cartContext.removeOne(+id);
-
-      return;
-    }
-
-    cartContext.addOne(+id);
+    // if (isAdded) {
+    //   cartContext.removeOne(+id);
+    //
+    //   return;
+    // }
+    //
+    // cartContext.addOne(+id);
   };
 
   const handleClickLiked = (): void => {
-    if (isFavorite) {
-      favoritesContext.removeFavorite(+id);
-
-      return;
-    }
-
-    favoritesContext.addFavorite(+id);
+    // if (isFavorite) {
+    //   favoritesContext.removeFavorite(+id);
+    //
+    //   return;
+    // }
+    //
+    // favoritesContext.addFavorite(+id);
   };
 
   return (

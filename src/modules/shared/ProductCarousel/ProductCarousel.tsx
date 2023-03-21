@@ -8,9 +8,14 @@ import styles from './ProductCarousel.module.scss';
 interface Props {
   title: string,
   products: Product[],
+  showFullPrice?: boolean,
 }
 
-export const ProductCarousel: React.FC<Props> = ({ title, products }) => {
+export const ProductCarousel: React.FC<Props> = ({
+  title,
+  products,
+  showFullPrice = false,
+}) => {
   const [position, setPosition] = useState(0);
 
   const isBackDisabled = position === 0;
@@ -59,7 +64,10 @@ export const ProductCarousel: React.FC<Props> = ({ title, products }) => {
         >
           {products.map(product => (
             <div key={product.id} className={styles.item}>
-              <ProductCard product={product} />
+              <ProductCard
+                product={product}
+                showFullPrice={showFullPrice}
+              />
             </div>
           ))}
         </div>
