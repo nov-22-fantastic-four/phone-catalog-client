@@ -159,10 +159,10 @@ export const PhoneItem: React.FC<Props> = ({ phone }) => {
 
           <div className={styles.prices}>
             <div className={styles.priceRegular}>
-              ${priceRegular}
+              ${priceDiscount}
             </div>
             <div className={styles.priceDiscount}>
-              ${priceDiscount}
+              ${priceRegular}
             </div>
           </div>
 

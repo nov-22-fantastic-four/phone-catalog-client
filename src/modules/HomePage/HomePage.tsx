@@ -2,22 +2,30 @@ import React, { useEffect, useState } from 'react';
 import { Container, PageTitle } from '../shared';
 import { ProductCarousel } from '../shared/ProductCarousel/ProductCarousel';
 import { type Product } from '../../types';
-import { getNew } from '../../api/products';
+import { getDiscount, getNew } from '../../api/products';
 import { TopSlider } from '../shared/TopSlider';
 
 import styles from './HomePage.module.scss';
 
 export const HomePage: React.FC = () => {
   const [newProducts, setNewProducts] = useState<Product[]>([]);
+  const [hotProducts, setHotProducts] = useState<Product[]>([]);
 
   useEffect(() => {
-    const fetchProducts = async(): Promise<void> => {
+    const fetchNew = async(): Promise<void> => {
       const fetchedData = await getNew();
 
       setNewProducts(fetchedData);
     };
 
-    fetchProducts();
+    const fetchDiscount = async(): Promise<void> => {
+      const fetchedData = await getDiscount();
+
+      setHotProducts(fetchedData);
+    };
+
+    fetchNew();
+    fetchDiscount();
   }, []);
 
   return (
@@ -38,7 +46,7 @@ export const HomePage: React.FC = () => {
       <section className={styles.section}>
         <ProductCarousel
           title="Hot prices"
-          products={newProducts}
+          products={hotProducts}
           showFullPrice
         />
       </section>

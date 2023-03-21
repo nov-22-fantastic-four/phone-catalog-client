@@ -8,7 +8,7 @@ import {
   ProductFilter, Pagination,
 } from '../shared';
 import { type Product } from '../../types';
-import { getCount, getWithPagination } from '../../api/products';
+import { getCount, getWithParams } from '../../api/products';
 import { useSearchParams } from 'react-router-dom';
 
 export const PhonesPage: React.FC = () => {
@@ -16,14 +16,13 @@ export const PhonesPage: React.FC = () => {
   const [phones, setPhones] = useState<Product[]>([]);
   const [totalCount, setTotalCount] = useState(0);
 
-  const page = searchParams.get('page') || 1;
   const perPage = searchParams.get('perPage') || 16;
 
   const hasPagination = perPage !== 'all';
 
   useEffect(() => {
     const fetchData = async(): Promise<void> => {
-      const fetchedPhones = await getWithPagination(+page, +perPage);
+      const fetchedPhones = await getWithParams(searchParams);
 
       setPhones(fetchedPhones);
     };

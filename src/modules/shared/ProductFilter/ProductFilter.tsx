@@ -9,7 +9,7 @@ const perPageOptions: Option[] = ['All', '16', '8', '4'].map(optionName => (
   [optionName, optionName.toLowerCase()]
 ));
 
-const defaultSort = SortBy.Alphabetically;
+const defaultSort = SortBy.None;
 const defaultPerPage = '16';
 
 export const ProductFilter: React.FC = () => {
@@ -22,6 +22,10 @@ export const ProductFilter: React.FC = () => {
       searchParams.delete('sort');
     } else {
       searchParams.set('sort', sort);
+    }
+
+    if (sort !== currentSort) {
+      searchParams.delete('page');
     }
 
     setSearchParams(searchParams);
