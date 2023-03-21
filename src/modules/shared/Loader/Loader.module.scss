@@ -1,0 +1,51 @@
+@import "src/style/utils";
+
+.loader {
+  width: max-content;
+  margin: 0 auto;
+  display: flex;
+  gap: 16px;
+  padding: 8px;
+}
+
+
+.dot {
+  width: 25px;
+  height: 25px;
+  background: $c-secondary;
+  border-radius: 50%;
+  animation: dots 1s linear infinite;
+}
+
+.centerDot {
+  composes: dot;
+  animation-delay: 0.5s;
+}
+
+@keyframes dots {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  25% {
+    transform: scale(1.1);
+    opacity: 0.8;
+  }
+
+  50% {
+    transform: scale(1.2);
+    opacity: 0.6;
+  }
+
+  75% {
+    transform: scale(1.1);
+    opacity: 0.8;
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+

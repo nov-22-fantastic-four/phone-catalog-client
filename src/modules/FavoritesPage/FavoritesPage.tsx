@@ -1,6 +1,16 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, {
+  useContext,
+  useEffect,
+  useState,
+} from 'react';
 import { CatalogGrid } from '../CatalogGrid';
-import { BreadCrumbs, Container, PageTitle, ItemCount } from '../shared';
+import {
+  BreadCrumbs,
+  Container,
+  PageTitle,
+  ItemCount,
+  Loader,
+} from '../shared';
 import { FavoritesContext } from '../../context';
 import { type Product } from '../../types';
 import { getById } from '../../api/products';
@@ -8,6 +18,7 @@ import { getById } from '../../api/products';
 export const FavoritesPage: React.FC = () => {
   const { favorites } = useContext(FavoritesContext);
   const [products, setProducts] = useState<Product[]>([]);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     const fetchData = async(): Promise<void> => {
@@ -16,9 +27,10 @@ export const FavoritesPage: React.FC = () => {
       );
 
       setProducts(fetchedProducts);
+      setIsLoading(false);
     };
 
-    fetchData();
+    void fetchData();
   }, [favorites]);
 
   return (
@@ -33,7 +45,9 @@ export const FavoritesPage: React.FC = () => {
         {`${favorites.length} items`}
       </ItemCount>
 
-      <CatalogGrid products={products} />
+      {isLoading
+        ? <Loader />
+        : <CatalogGrid products={products} />}
     </Container>
   );
 };

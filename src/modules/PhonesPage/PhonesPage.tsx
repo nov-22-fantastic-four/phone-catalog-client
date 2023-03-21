@@ -5,7 +5,8 @@ import {
   PageTitle,
   ItemCount,
   BreadCrumbs,
-  ProductFilter, Pagination,
+  ProductFilter,
+  Pagination,
 } from '../shared';
 import { type Product } from '../../types';
 import { getCount, getWithParams } from '../../api/products';
@@ -14,6 +15,7 @@ import { useSearchParams } from 'react-router-dom';
 export const PhonesPage: React.FC = () => {
   const [searchParams] = useSearchParams();
   const [phones, setPhones] = useState<Product[]>([]);
+  // const [isLoading, setIsLoading] = useState(false);
   const [totalCount, setTotalCount] = useState(0);
 
   const perPage = searchParams.get('perPage') || 16;
@@ -22,12 +24,15 @@ export const PhonesPage: React.FC = () => {
 
   useEffect(() => {
     const fetchData = async(): Promise<void> => {
+      // setIsLoading(true);
+
       const fetchedPhones = await getWithParams(searchParams);
 
       setPhones(fetchedPhones);
+      // setIsLoading(false);
     };
 
-    fetchData();
+    void fetchData();
   }, [searchParams]);
 
   useEffect(() => {
@@ -37,7 +42,7 @@ export const PhonesPage: React.FC = () => {
       setTotalCount(fetchedCount);
     };
 
-    fetchItemCount();
+    void fetchItemCount();
   }, []);
 
   return (
@@ -55,8 +60,7 @@ export const PhonesPage: React.FC = () => {
       <ProductFilter />
 
       <CatalogGrid products={phones} />
-
-      {hasPagination && <Pagination totalItems={totalCount} /> }
+      {hasPagination && <Pagination totalItems={totalCount} />}
     </Container>
   );
 };
