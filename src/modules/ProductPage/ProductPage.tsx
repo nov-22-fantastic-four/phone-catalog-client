@@ -1,15 +1,16 @@
 import React, { useEffect, useState } from 'react';
-import { type Phone } from '../../types';
+import { type Phone, type Product } from '../../types';
 import { BreadCrumbs, Container, BackButton } from '../shared';
 import { PhoneItem } from './PhoneItem';
 import { useParams } from 'react-router';
 import { getById } from '../../api/phones';
+import { ProductCarousel } from '../shared/ProductCarousel/ProductCarousel';
+import { getWithPagination } from '../../api/products';
 
 export const ProductPage: React.FC = () => {
   const { phoneId } = useParams();
   const [phone, setPhone] = useState<Phone | null>(null);
-
-  console.log(phone);
+  const [recommended, setRecommended] = useState<Product[]>([]);
 
   useEffect(() => {
     const fetchPhone = async(): Promise<void> => {
@@ -20,7 +21,14 @@ export const ProductPage: React.FC = () => {
       }
     };
 
-    void fetchPhone();
+    const fetchRecommended = async(): Promise<void> => {
+      const fetchedProducts = await getWithPagination(1, 8);
+
+      setRecommended(fetchedProducts);
+    };
+
+    fetchRecommended();
+    fetchPhone();
   }, []);
 
   if (!phone) {
@@ -31,9 +39,8 @@ export const ProductPage: React.FC = () => {
     <Container>
       <BreadCrumbs phoneName={phone.name} />
       <BackButton />
-      <PhoneItem
-        phone={phone}
-      />
+      <PhoneItem phone={phone}/>
+      <ProductCarousel title="You may also like" products={recommended} />
     </Container>
   );
 };
