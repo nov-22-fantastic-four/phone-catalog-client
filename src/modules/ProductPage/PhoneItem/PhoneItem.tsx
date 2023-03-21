@@ -7,7 +7,6 @@ import { PhoneInformation } from '../../shared/ProductCard/PhoneInformation';
 import { CartContext, FavoritesContext } from '../../../context';
 import { EmptyHeartIcon, FullHeartIcon } from '../../icons';
 import { Link } from 'react-router-dom';
-import { getColorHex } from './utils';
 
 interface Props {
   phone: Phone,
@@ -126,7 +125,7 @@ export const PhoneItem: React.FC<Props> = ({ phone }) => {
                 >
                   <div
                     className={styles.color}
-                    style={ { backgroundColor: getColorHex(currentColor) }}
+                    style={ { backgroundColor: currentColor }}
                   ></div>
                 </Link>
               );
