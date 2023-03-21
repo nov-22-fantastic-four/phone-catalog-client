@@ -10,9 +10,13 @@ import { EmptyHeartIcon, FullHeartIcon } from '../../icons';
 
 interface Props {
   product: Product,
+  showFullPrice?: boolean,
 }
 
-export const ProductCard: React.FC<Props> = ({ product }) => {
+export const ProductCard: React.FC<Props> = ({
+  product,
+  showFullPrice = false,
+}) => {
   const cartContext = useContext(CartContext);
   const favoritesContext = useContext(FavoritesContext);
 
@@ -72,9 +76,11 @@ export const ProductCard: React.FC<Props> = ({ product }) => {
           {price}
         </p>
 
-        <p className={styles.fullPrice}>
-          {fullPrice}
-        </p>
+        {showFullPrice && (
+          <p className={styles.fullPrice}>
+            {fullPrice}
+          </p>
+        )}
       </div>
 
       <div className={styles.line} />

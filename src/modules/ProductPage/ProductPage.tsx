@@ -40,7 +40,11 @@ export const ProductPage: React.FC = () => {
       <BreadCrumbs phoneName={phone.name} />
       <BackButton />
       <PhoneItem phone={phone}/>
-      <ProductCarousel title="You may also like" products={recommended} />
+      <ProductCarousel
+        title="You may also like"
+        products={recommended}
+        showFullPrice
+      />
     </Container>
   );
 };

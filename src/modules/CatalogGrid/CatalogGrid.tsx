@@ -14,6 +14,7 @@ export const CatalogGrid: React.FC<Props> = ({ products }) => (
       <ProductCard
         key={product.id}
         product={product}
+        showFullPrice
       />
     ))}
   </div>

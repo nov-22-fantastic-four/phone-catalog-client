@@ -35,3 +35,10 @@ export const getCount = async(): Promise<number> => {
 
   return data.count;
 };
+
+export const getNew = async(): Promise<Product[]> => {
+  const response = await fetch(`${API_URL}/products/new`);
+  const products = await response.json();
+
+  return products;
+};

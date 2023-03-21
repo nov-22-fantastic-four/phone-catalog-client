@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Container, PageTitle } from '../shared';
 import { ProductCarousel } from '../shared/ProductCarousel/ProductCarousel';
 import { type Product } from '../../types';
-import { getWithPagination } from '../../api/products';
+import { getNew } from '../../api/products';
 import { TopSlider } from '../shared/TopSlider';
 
 import styles from './HomePage.module.scss';
@@ -12,7 +12,7 @@ export const HomePage: React.FC = () => {
 
   useEffect(() => {
     const fetchProducts = async(): Promise<void> => {
-      const fetchedData = await getWithPagination(1, 8);
+      const fetchedData = await getNew();
 
       setNewProducts(fetchedData);
     };
@@ -39,6 +39,7 @@ export const HomePage: React.FC = () => {
         <ProductCarousel
           title="Hot prices"
           products={newProducts}
+          showFullPrice
         />
       </section>
     </Container>
