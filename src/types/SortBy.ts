@@ -1,5 +1,6 @@
 export enum SortBy {
+  None = '',
   Alphabetically = 'name',
-  Newest = 'age',
+  Newest = 'year',
   Cheapest = 'price',
 }

@@ -8,6 +8,25 @@ export const getAll = async(): Promise<Product[]> => {
   return products;
 };
 
+export const getWithParams = async(
+  urlSearchParams: URLSearchParams,
+): Promise<Product[]> => {
+  const params = new URLSearchParams(urlSearchParams);
+
+  if (!params.has('perPage')) {
+    params.set('perPage', '16');
+  }
+
+  if (params.get('perPage') === 'all') {
+    params.delete('perPage');
+  }
+
+  const response = await fetch(`${API_URL}/products?${params.toString()}`);
+  const products = await response.json();
+
+  return products;
+};
+
 export const getWithPagination = async(
   page: number,
   perPage: number,
@@ -38,6 +57,20 @@ export const getCount = async(): Promise<number> => {
 
 export const getNew = async(): Promise<Product[]> => {
   const response = await fetch(`${API_URL}/products/new`);
+  const products = await response.json();
+
+  return products;
+};
+
+export const getDiscount = async(): Promise<Product[]> => {
+  const response = await fetch(`${API_URL}/products/discount`);
+  const products = await response.json();
+
+  return products;
+};
+
+export const getRecommended = async(id: number): Promise<Product[]> => {
+  const response = await fetch(`${API_URL}/products/${id}/recommended`);
   const products = await response.json();
 
   return products;
