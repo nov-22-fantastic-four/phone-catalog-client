@@ -1,5 +1,6 @@
 export interface Phone {
   id: string,
+  productId: number,
   name: string,
   namespaceId: string,
   capacityAvailable: string[],

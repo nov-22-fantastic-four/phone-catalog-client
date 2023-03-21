@@ -18,15 +18,15 @@
   @media (min-width: 640px) {
     grid-template-columns: 1fr 1fr;
     flex-direction: row;
-    gap: 10px
+    gap: 16px
   }
 
   @media (min-width: 980px) {
-    gap: 40px
+    gap: 48px
   }
 
   @media (min-width: 1030px) {
-    gap: 76px
+    gap: 64px
   }
 }
 
@@ -52,7 +52,6 @@
   width: 80px;
   height: 80px;
   border: 1px solid #c4c4c4;
-  margin-bottom: 16px;
 }
 
 .photos {
@@ -66,21 +65,30 @@
 
 .smallPhoto {
   display: flex;
-  justify-content: space-between;
+  justify-content: start;
+  gap: 16px;
+  margin-bottom: 16px;
 
-  @media (min-width: 639px) {
+  @include onTablet {
+    margin-bottom: 0;
     flex-direction: column;
   }
 }
 
 .form {
+  position: relative;
   display: flex;
   flex-direction: column;
   margin-right: 8px;
 
-  @media (min-width: 640px) {
-    margin-right: 200px;
-  }
+  //@media (min-width: 640px) {
+  //  margin-right: 200px;
+  //}
+}
+
+.id {
+  position: absolute;
+  right: 0;
 }
 
 .photo {
@@ -91,12 +99,13 @@
   object-fit: contain;
   object-position: center center;
   padding: 7px;
+  cursor: pointer;
 }
 
 .mainPhoto {
   width: 442px;
   height:  442px;
-  margin-right: 28px;
+  //margin-right: 28px;
   object-fit: contain;
   object-position: center center;
   padding: 20px;
@@ -169,12 +178,16 @@
 }
 
 .capacity {
-  width: 63px;
-  padding: 7px 4px 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 8px;
   border: 1px solid #b4bdc3;
   cursor: pointer;
   background-color: #fff;
   margin-bottom: 24px;
+  text-decoration: none;
+  color: $c-primary;
 }
 
 .prices {
@@ -263,6 +276,7 @@
   height: 40px;
   padding: 12px;
   transition: border .3s ease;
+  cursor: pointer;
 
   &:hover {
     border: 1px solid #313237;
