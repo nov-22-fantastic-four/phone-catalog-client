@@ -8,7 +8,7 @@
 
   @include onTablet {
   flex-direction: row;
-  justify-content: space-around;;
+  justify-content: space-between;
   gap: 16px;
   }
 }
@@ -28,7 +28,7 @@ text-decoration: none;
 border-radius: 5px;
 
   &:hover {
-    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+    //box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
   }
 }
 
@@ -39,19 +39,25 @@ border-radius: 5px;
   width: 288px;
   cursor: pointer;
   background-color: #6D6474;
-  
+  border-radius: 5px;
+  transition: transform 0.3s;
+
+  &:hover {
+    transform: scale(1.03);
+  }
+
 
   @include onTablet {
     height: 188px;
     width: 188px;
 
-    }
+  }
 
   @include onDesktop {
     height: 368px;
     width: 368px;
-    }
   }
+}
 
   .image_tablet {
     background-color: #8D8D92;
