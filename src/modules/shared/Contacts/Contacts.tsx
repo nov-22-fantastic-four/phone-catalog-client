@@ -64,7 +64,7 @@ export const Contacts: React.FC = () => {
           </ul>
         </div>
 
-        <div>
+        <div className={styles.formContainer}>
           <h2 className={styles.titleSmall}>How can we help?</h2>
           <form action="" method="get" className={styles.form}>
             <input
