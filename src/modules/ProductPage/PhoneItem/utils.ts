@@ -7,5 +7,5 @@ enum Color {
 }
 
 export const getColorHex = (color: string): string => (
-  Color[color as typeof Color] || color
+  Color[color as keyof Color] || color
 );

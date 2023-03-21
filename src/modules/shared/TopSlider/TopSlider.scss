@@ -10,8 +10,22 @@
   height: 100%;
 }
 
-.top-slider-photo {
+#top-slider-photo-mobile {
   width: 100%;
+
+  @include onTablet {
+    display: none;
+    width: 100%;
+  }
+}
+
+#top-slider-photo {
+  display: none;
+
+  @include onTablet {
+    display: block;
+    width: 100%;
+  }
 }
 
 .top-slider-icon {
@@ -23,6 +37,10 @@
   display: flex;
   justify-content: space-between;
   gap: 16px;
+}
+
+.slick-slide {
+  position: relative;
 }
 
 .slick-arrow {
