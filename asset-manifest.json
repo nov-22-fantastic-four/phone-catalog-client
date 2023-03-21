@@ -1,12 +1,20 @@
 {
   "files": {
-    "main.css": "/phone-catalog-client/static/css/main.d16f83a7.css",
-    "main.js": "/phone-catalog-client/static/js/main.e8a65edd.js",
+    "main.css": "/phone-catalog-client/static/css/main.0fbee72a.css",
+    "main.js": "/phone-catalog-client/static/js/main.de63c247.js",
     "static/media/logo.svg": "/phone-catalog-client/static/media/logo.0909646ca933dccfb4150fb11fa0a24f.svg",
+    "static/media/banner-desktop-iphone11proMax.png": "/phone-catalog-client/static/media/banner-desktop-iphone11proMax.ded7b88aacf469e18020.png",
+    "static/media/banner-desktop-iphone11pro.png": "/phone-catalog-client/static/media/banner-desktop-iphone11pro.8b055ae13a52f24a88d0.png",
+    "static/media/banner-mobile-iphone11proMax.png": "/phone-catalog-client/static/media/banner-mobile-iphone11proMax.fcf0265e8436f141bf7f.png",
     "static/media/Mont-Regular.otf": "/phone-catalog-client/static/media/Mont-Regular.1d26d89f7339866d3133.otf",
     "static/media/Mont-SemiBold.otf": "/phone-catalog-client/static/media/Mont-SemiBold.8979d71a3146ca1d761f.otf",
     "static/media/Mont-Bold.otf": "/phone-catalog-client/static/media/Mont-Bold.03c8c2f6127c1da0fc39.otf",
-    "static/media/banner-desktop.png": "/phone-catalog-client/static/media/banner-desktop.d050523a38b733655d0b.png",
+    "static/media/banner-desktop-iphone11.png": "/phone-catalog-client/static/media/banner-desktop-iphone11.4ef860acd7e21b1b3a9b.png",
+    "static/media/banner-mobile-iphone11pro.png": "/phone-catalog-client/static/media/banner-mobile-iphone11pro.2c3f19bbeb31d4c48df9.png",
+    "static/media/banner-mobile-iphone11.png": "/phone-catalog-client/static/media/banner-mobile-iphone11.85a468662b83be57c128.png",
+    "static/media/category-accessories.png": "/phone-catalog-client/static/media/category-accessories.ca41c40df628caa719e1.png",
+    "static/media/category-tablets.png": "/phone-catalog-client/static/media/category-tablets.ab269482f54393432fe6.png",
+    "static/media/category-phones.png": "/phone-catalog-client/static/media/category-phones.86adecc8baf6f6ff4adb.png",
     "static/media/404_error_image.svg": "/phone-catalog-client/static/media/404_error_image.c85b0d18794f2cedf182d6faf7031e70.svg",
     "static/media/slick.svg": "/phone-catalog-client/static/media/slick.2630a3e3eab21c607e21.svg",
     "static/media/slick.eot": "/phone-catalog-client/static/media/slick.a4e97f5a2a64f0ab1323.eot",
@@ -25,11 +33,11 @@
     "static/media/chevron-down.svg": "/phone-catalog-client/static/media/chevron-down.a81b6dc2cbad8cc23906.svg",
     "static/media/shevron-up.svg": "/phone-catalog-client/static/media/shevron-up.56f1354eaa26cdd0ebb60b65a6abe529.svg",
     "static/media/chevron-up-grey.svg": "/phone-catalog-client/static/media/chevron-up-grey.301662ee1dfa8b74cad5.svg",
-    "main.d16f83a7.css.map": "/phone-catalog-client/static/css/main.d16f83a7.css.map",
-    "main.e8a65edd.js.map": "/phone-catalog-client/static/js/main.e8a65edd.js.map"
+    "main.0fbee72a.css.map": "/phone-catalog-client/static/css/main.0fbee72a.css.map",
+    "main.de63c247.js.map": "/phone-catalog-client/static/js/main.de63c247.js.map"
   },
   "entrypoints": [
-    "static/css/main.d16f83a7.css",
-    "static/js/main.e8a65edd.js"
+    "static/css/main.0fbee72a.css",
+    "static/js/main.de63c247.js"
   ]
 }
