@@ -29,7 +29,7 @@ export const ProductPage: React.FC = () => {
 
     fetchRecommended();
     fetchPhone();
-  }, []);
+  }, [phoneId]);
 
   if (!phone) {
     return <p>Loading...</p>;

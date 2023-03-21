@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { type Phone } from '../../../types';
 import { Image } from '../../shared';
 import cn from 'classnames';
@@ -6,18 +6,16 @@ import styles from './PhoneItem.module.scss';
 import { PhoneInformation } from '../../shared/ProductCard/PhoneInformation';
 import { CartContext, FavoritesContext } from '../../../context';
 import { EmptyHeartIcon, FullHeartIcon } from '../../icons';
+import { Link } from 'react-router-dom';
+import { getColorHex } from './utils';
 
 interface Props {
-  phone: Phone | null,
+  phone: Phone,
 }
 
 export const PhoneItem: React.FC<Props> = ({ phone }) => {
   const cartContext = useContext(CartContext);
   const favoritesContext = useContext(FavoritesContext);
-
-  if (!phone) {
-    return <p>Loading...</p>;
-  }
 
   const [selectedPhoto, setSelectedPhoto] = useState(phone.images[0]);
 
@@ -25,9 +23,22 @@ export const PhoneItem: React.FC<Props> = ({ phone }) => {
     setSelectedPhoto(photo);
   };
 
+  useEffect(() => {
+    setSelectedPhoto(phone.images[0]);
+  }, [phone]);
+
+  const buildPhoneId = (
+    namespace: string,
+    capacity: string,
+    color: string,
+  ): string => (
+    [namespace, capacity, color].join('-').toLowerCase()
+  );
+
   const {
-    id,
+    productId,
     name,
+    namespaceId,
     priceRegular,
     priceDiscount,
     screen,
@@ -41,27 +52,28 @@ export const PhoneItem: React.FC<Props> = ({ phone }) => {
     color,
   } = phone;
 
-  const isAdded = cartContext.isAdded(+id);
-  const isFavorite = favoritesContext.isFavorite(+id);
+  const isAdded = cartContext.isAdded(productId);
+  const isFavorite = favoritesContext.isFavorite(productId);
+  const displayedId = productId.toString().padStart(6, '0');
 
   const handleClickAdded = (): void => {
-    // if (isAdded) {
-    //   cartContext.removeOne(+id);
-    //
-    //   return;
-    // }
-    //
-    // cartContext.addOne(+id);
+    if (isAdded) {
+      cartContext.removeOne(productId);
+
+      return;
+    }
+
+    cartContext.addOne(productId);
   };
 
   const handleClickLiked = (): void => {
-    // if (isFavorite) {
-    //   favoritesContext.removeFavorite(+id);
-    //
-    //   return;
-    // }
-    //
-    // favoritesContext.addFavorite(+id);
+    if (isFavorite) {
+      favoritesContext.removeFavorite(productId);
+
+      return;
+    }
+
+    favoritesContext.addFavorite(productId);
   };
 
   return (
@@ -93,22 +105,32 @@ export const PhoneItem: React.FC<Props> = ({ phone }) => {
         </div>
 
         <div className={styles.form}>
+          <p className={styles.id}>
+            {`ID: ${displayedId}`}
+          </p>
+
           <p className={styles.formTitle}>Available colors</p>
 
           <div className={styles.availableColor}>
-            {phone.colorsAvailable.map(currentColor => (
-              <div
-                key={currentColor}
-                className={cn(styles.containerForColor, {
-                  [styles.selectedColor]: currentColor === color,
-                })}
-              >
-                <div
-                  className={styles.color}
-                  style={ { backgroundColor: currentColor }}
-                ></div>
-              </div>
-            ))}
+            {phone.colorsAvailable.map(currentColor => {
+              const isSelected = currentColor === color;
+              const linkId = buildPhoneId(namespaceId, capacity, currentColor);
+
+              return (
+                <Link
+                  to={`/phones/${linkId}`}
+                  key={currentColor}
+                  className={cn(styles.containerForColor, {
+                    [styles.selectedColor]: isSelected,
+                  })}
+                >
+                  <div
+                    className={styles.color}
+                    style={ { backgroundColor: getColorHex(currentColor) }}
+                  ></div>
+                </Link>
+              );
+            })}
           </div>
 
           <div className={styles.lineForm}></div>
@@ -116,14 +138,22 @@ export const PhoneItem: React.FC<Props> = ({ phone }) => {
           <p className={styles.formTitle}>Select capacity</p>
 
           <div className={styles.availableCapacity}>
-            {phone.capacityAvailable.map(currentCapacity => (
-              <button
-                key={currentCapacity}
-                className={cn(styles.capacity, {
-                  [styles.selectedCapacity]: currentCapacity === capacity,
-                })}
-              >{currentCapacity}</button>
-            ))}
+            {phone.capacityAvailable.map(currentCapacity => {
+              const isSelected = currentCapacity === capacity;
+              const linkId = buildPhoneId(namespaceId, currentCapacity, color);
+
+              return (
+                <Link
+                  to={`/phones/${linkId}`}
+                  key={currentCapacity}
+                  className={cn(styles.capacity, {
+                    [styles.selectedCapacity]: isSelected,
+                  })}
+                >
+                  {currentCapacity}
+                </Link>
+              );
+            })}
           </div>
 
           <div className={styles.lineForm}></div>
