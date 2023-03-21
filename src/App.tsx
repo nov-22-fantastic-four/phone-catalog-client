@@ -10,6 +10,8 @@ import { CartPage } from './modules/CartPage';
 
 import styles from './App.module.scss';
 import { Contacts } from './modules/shared/Contacts';
+import { TabletsPage } from './modules/TabletsPage';
+import { AccessoriesPage } from './modules/AccessoriesPage';
 
 const App: React.FC = () => {
   return (
@@ -25,6 +27,9 @@ const App: React.FC = () => {
             <Route index element={<PhonesPage /> } />
             <Route path=":phoneId" element={<ProductPage /> } />
           </Route>
+
+          <Route path='/tablets' element={<TabletsPage />} />
+          <Route path='/accessories' element={<AccessoriesPage />} />
 
           <Route path="/favorites" element={<FavoritesPage /> } />
           <Route path="/cart" element={<CartPage /> } />

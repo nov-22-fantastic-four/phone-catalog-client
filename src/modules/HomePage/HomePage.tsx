@@ -4,6 +4,7 @@ import { ProductCarousel } from '../shared/ProductCarousel/ProductCarousel';
 import { type Product } from '../../types';
 import { getDiscount, getNew } from '../../api/products';
 import { TopSlider } from '../shared/TopSlider';
+import { CategoryCard } from '../shared/CategoryCard';
 
 import styles from './HomePage.module.scss';
 
@@ -41,6 +42,10 @@ export const HomePage: React.FC = () => {
           title="Brand new models"
           products={newProducts}
         />
+      </section>
+
+      <section className={styles.section}>
+        <CategoryCard />
       </section>
 
       <section className={styles.section}>
