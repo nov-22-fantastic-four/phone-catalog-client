@@ -27,8 +27,8 @@ export const ProductPage: React.FC = () => {
       setRecommended(fetchedProducts);
     };
 
-    fetchRecommended();
-    fetchPhone();
+    void fetchRecommended();
+    void fetchPhone();
   }, [phoneId]);
 
   if (!phone) {

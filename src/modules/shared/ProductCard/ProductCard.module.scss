@@ -11,9 +11,12 @@
   border: 1px solid $c-elements;
   border-radius: 5px;
   cursor: pointer;
+  transition: box-shadow 0.3s;
 
-  &:hover {
-    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+  @include onTablet {
+    &:hover {
+      box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+    }
   }
 }
 
@@ -22,6 +25,13 @@
   height: 196px;
   align-self: center;
   object-fit: contain;
+  transition: transform 0.3s;
+
+  @include onTablet {
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
 }
 
 .name {

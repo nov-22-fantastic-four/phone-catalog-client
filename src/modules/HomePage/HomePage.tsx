@@ -25,8 +25,8 @@ export const HomePage: React.FC = () => {
       setHotProducts(fetchedData);
     };
 
-    fetchNew();
-    fetchDiscount();
+    void fetchNew();
+    void fetchDiscount();
   }, []);
 
   return (
