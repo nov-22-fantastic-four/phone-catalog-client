@@ -3,6 +3,8 @@ import styles from './Contacts.module.scss';
 import { Container } from '../Container';
 import { BreadCrumbs } from '../BreadCrumbs';
 import { PageTitle } from '../PageTitle';
+import { TelegramIcon } from '../../icons/TelegramIcon';
+import { LinkedInIcon } from '../../icons/LinkedInIcon';
 
 export const Contacts: React.FC = () => {
   return (
@@ -13,10 +15,16 @@ export const Contacts: React.FC = () => {
         Contacts
       </PageTitle>
 
-      <div className={styles.container}>
-        <div className={styles.ourContacts}>
-          <p className={styles.text}>Telegram:</p>
+      <div className={styles.background}>
+        Let&apos;s create something awesome together!
+      </div>
 
+      <h2 className={styles.title}>Get in touch</h2>
+
+      <div className={styles.contacts}>
+        <div className={styles.telegram}>
+          <TelegramIcon />
+          <span className={styles.social}> Telegram</span>
           <ul className={styles.contactsList}>
             <li className={styles.listItem}>
               <a
@@ -26,7 +34,6 @@ export const Contacts: React.FC = () => {
                 Kyselevych Nazarii
               </a>
             </li>
-
             <li className={styles.listItem}>
               <a
                 href="https://t.me/vanst1"
@@ -35,7 +42,6 @@ export const Contacts: React.FC = () => {
                 Stadnytskyy Ivan
               </a>
             </li>
-
             <li className={styles.listItem}>
               <a
                 href="https://t.me/krstsss"
@@ -44,19 +50,20 @@ export const Contacts: React.FC = () => {
                 Kravchenko Anastasiia
               </a>
             </li>
-
             <li className={styles.listItem}>
               <a
                 href="https://t.me/Olia_Zaiets"
                 className={styles.contact}
               >
-                Zaiets Olya
+                Zaiets Olga
               </a>
             </li>
           </ul>
+        </div>
 
-          <p className={styles.text}>LinkedIn:</p>
-
+        <div className={styles.LinkedIn}>
+          <LinkedInIcon />
+          <span className={styles.social}>LinkedIn</span>
           <ul className={styles.contactsList}>
             <li className={styles.listItem}>
               <a
@@ -66,7 +73,6 @@ export const Contacts: React.FC = () => {
                 Kyselevych Nazarii
               </a>
             </li>
-
             <li className={styles.listItem}>
               <a
                 href="https://www.linkedin.com/in/ivan-stadnytskyi-287ab7265/"
@@ -75,7 +81,6 @@ export const Contacts: React.FC = () => {
                 Stadnytskyy Ivan
               </a>
             </li>
-
             <li className={styles.listItem}>
               <a
                 // eslint-disable-next-line max-len
@@ -85,24 +90,15 @@ export const Contacts: React.FC = () => {
                 Kravchenko Anastasiia
               </a>
             </li>
-
             <li className={styles.listItem}>
               <a
                 href="https://www.linkedin.com/in/olga-zaiets-009a261ab/"
                 className={styles.contact}
               >
-                Zaiets Olya
+                Zaiets Olga
               </a>
             </li>
           </ul>
-        </div>
-
-        <div>
-          <img
-            className={styles.photo}
-            // eslint-disable-next-line max-len
-            src="https://cdn.discordapp.com/attachments/1084940437254578336/1087782359606239233/6a91d394ddaef4c0b5f931e31847f0bf.png"
-            alt="" />
         </div>
       </div>
     </Container>
