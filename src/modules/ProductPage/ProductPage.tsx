@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { type Phone, type Product } from '../../types';
 import { BreadCrumbs, Container, BackButton } from '../shared';
 import { PhoneItem } from './PhoneItem';
-import { useParams } from 'react-router';
+import { useLocation, useParams } from 'react-router';
 import { getById } from '../../api/phones';
 import { ProductCarousel } from '../shared/ProductCarousel/ProductCarousel';
 import { getWithPagination } from '../../api/products';
@@ -11,6 +11,14 @@ export const ProductPage: React.FC = () => {
   const { phoneId } = useParams();
   const [phone, setPhone] = useState<Phone | null>(null);
   const [recommended, setRecommended] = useState<Product[]>([]);
+  const location = useLocation();
+
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  }, [location]);
 
   useEffect(() => {
     const fetchPhone = async(): Promise<void> => {
