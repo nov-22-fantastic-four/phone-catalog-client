@@ -10,6 +10,12 @@
   padding-left: 16px;
   min-width: 320px;
 
+  @include onTablet {
+    position: sticky;
+    top: 0;
+    z-index: 5;
+  }
+
   @include onDesktop {
     padding-left: 24px;
   }
