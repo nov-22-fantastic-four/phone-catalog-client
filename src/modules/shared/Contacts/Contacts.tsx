@@ -2,7 +2,6 @@ import React from 'react';
 import styles from './Contacts.module.scss';
 import { Container } from '../Container';
 import { BreadCrumbs } from '../BreadCrumbs';
-import { PageTitle } from '../PageTitle';
 import { TelegramIcon } from '../../icons/TelegramIcon';
 import { LinkedInIcon } from '../../icons/LinkedInIcon';
 
@@ -10,10 +9,6 @@ export const Contacts: React.FC = () => {
   return (
     <Container>
       <BreadCrumbs />
-
-      <PageTitle>
-        Contacts
-      </PageTitle>
 
       <div className={styles.background}>
         Let&apos;s create something awesome together!
@@ -40,7 +35,7 @@ export const Contacts: React.FC = () => {
                 href="https://t.me/vanst1"
                 className={styles.contact}
               >
-                Stadnytskyy Ivan
+                Stadnytskyi Ivan
               </a>
             </li>
 
