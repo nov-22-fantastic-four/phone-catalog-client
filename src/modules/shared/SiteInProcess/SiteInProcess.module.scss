@@ -1,0 +1,45 @@
+@import "src/style/utils";
+
+.container {
+  width: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  flex-direction: column;
+  }
+
+.title {
+  color: $c-primary;
+  font-weight: 800;
+  font-size: 28px;
+  line-height: 44px;
+  padding-bottom: 20px;
+
+  @include onTablet {
+    font-size: 44px;
+    line-height: 50px;
+  }
+}
+
+.photo {
+  max-width: 80%;
+}
+
+.button {
+  box-sizing: border-box;
+  height: 40px;
+  width: 172px;
+  background-color: $c-primary;
+  border: 1px solid transparent;
+  color: $c-white;
+  cursor: pointer;
+  transition: box-shadow .3s ease;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 21px;
+
+  &:hover {
+    box-shadow: 0 3px 13px rgba(23, 32, 49, 0.4);
+  }
+}
