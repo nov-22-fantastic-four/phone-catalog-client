@@ -1,53 +1,73 @@
-import React, { useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import { type Phone, type Product } from '../../types';
 import { BreadCrumbs, Container, BackButton } from '../shared';
 import { PhoneItem } from './PhoneItem';
 import { useLocation, useParams } from 'react-router';
 import { getById } from '../../api/phones';
 import { ProductCarousel } from '../shared/ProductCarousel/ProductCarousel';
-import { getWithPagination } from '../../api/products';
+import { getRecommended } from '../../api/products';
+import { scrollToTop } from '../../utils';
+import { useNavigate } from 'react-router-dom';
+import { Loading } from '../shared/Loading';
 
 export const ProductPage: React.FC = () => {
   const { phoneId } = useParams();
   const [phone, setPhone] = useState<Phone | null>(null);
+  const [isLoading, setIsLoading] = useState(false);
   const [recommended, setRecommended] = useState<Product[]>([]);
   const location = useLocation();
+  const navigate = useNavigate();
 
-  useEffect(() => {
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth'
-    });
-  }, [location]);
+  useEffect(scrollToTop, [location]);
 
-  useEffect(() => {
-    const fetchPhone = async(): Promise<void> => {
-      if (phoneId) {
+  const fetchPhone = useCallback(async(): Promise<void> => {
+    if (phoneId) {
+      try {
+        setIsLoading(true);
+
         const fetchedPhone = await getById(phoneId);
 
         setPhone(fetchedPhone);
+      } catch (err) {
+        navigate('/404', { replace: true });
+      } finally {
+        setIsLoading(false);
       }
-    };
+    }
+  }, [phoneId]);
 
-    const fetchRecommended = async(): Promise<void> => {
-      const fetchedProducts = await getWithPagination(1, 8);
+  const fetchRecommended = useCallback(async(): Promise<void> => {
+    if (phone) {
+      const fetchedProducts = await getRecommended(phone.productId);
 
       setRecommended(fetchedProducts);
-    };
+    }
+  }, [phoneId]);
 
+  useEffect(() => {
     void fetchRecommended();
     void fetchPhone();
   }, [phoneId]);
 
+  if (isLoading) {
+    return (
+      <Container>
+        <Loading />
+      </Container>
+    );
+  }
+
   if (!phone) {
-    return <p>Loading...</p>;
+    return null;
   }
 
   return (
     <Container>
       <BreadCrumbs phoneName={phone.name} />
       <BackButton />
+      {!phone && <Loading />}
       <PhoneItem phone={phone}/>
+
       <ProductCarousel
         title="You may also like"
         products={recommended}

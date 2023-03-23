@@ -1,14 +1,11 @@
 import React from 'react';
-import { BreadCrumbs, Container, PageTitle } from '../shared';
+import { BreadCrumbs, Container, SiteInProcess } from '../shared';
 
 export const TabletsPage: React.FC = () => {
   return (
     <Container>
       <BreadCrumbs />
-
-      <PageTitle>
-        Tablets
-      </PageTitle>
+      <SiteInProcess />
     </Container>
   );
 };

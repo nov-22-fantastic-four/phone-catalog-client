@@ -33,9 +33,9 @@ const App: React.FC = () => {
 
           <Route path="/favorites" element={<FavoritesPage /> } />
           <Route path="/cart" element={<CartPage /> } />
-          <Route path='/contacts' element={<Contacts />} />
+          {/* <Route path='/contacts' element={<Contacts />} /> */}
 
-          <Route path='/contacts' element={<Contacts />} />
+          <Route path='/team' element={<Contacts />} />
 
           <Route path="*" element={<NotFoundPage /> } />
         </Routes>
