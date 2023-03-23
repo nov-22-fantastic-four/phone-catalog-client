@@ -32,7 +32,7 @@ export const HomePage: React.FC = () => {
   return (
     <Container>
       <PageTitle>
-        Welcome!
+        Welcome to the world of Nice Gadgets!
       </PageTitle>
 
       <TopSlider />

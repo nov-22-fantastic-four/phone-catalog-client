@@ -1,6 +1,7 @@
 @import "src/style/utils";
 
 .container {
+  margin-top: 48px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -34,6 +35,9 @@
 }
 
 .button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   box-sizing: border-box;
   height: 40px;
   width: 172px;
@@ -45,6 +49,7 @@
   font-weight: 700;
   font-size: 14px;
   line-height: 21px;
+  text-decoration: none;
 
   &:hover {
     box-shadow: 0 3px 13px rgba(23, 32, 49, 0.4);
