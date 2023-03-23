@@ -25,6 +25,8 @@ export const Contacts: React.FC = () => {
               <a
                 href="https://t.me/nadzario"
                 className={styles.contact}
+                target="_blank"
+                rel="noopener noreferrer"
               >
                 Kyselevych Nazarii
               </a>
@@ -34,6 +36,8 @@ export const Contacts: React.FC = () => {
               <a
                 href="https://t.me/vanst1"
                 className={styles.contact}
+                target="_blank"
+                rel="noopener noreferrer"
               >
                 Stadnytskyi Ivan
               </a>
@@ -43,6 +47,8 @@ export const Contacts: React.FC = () => {
               <a
                 href="https://t.me/krstsss"
                 className={styles.contact}
+                target="_blank"
+                rel="noopener noreferrer"
               >
                 Kravchenko Anastasiia
               </a>
@@ -52,6 +58,8 @@ export const Contacts: React.FC = () => {
               <a
                 href="https://t.me/Olia_Zaiets"
                 className={styles.contact}
+                target="_blank"
+                rel="noopener noreferrer"
               >
                 Zaiets Olga
               </a>
@@ -67,6 +75,8 @@ export const Contacts: React.FC = () => {
               <a
                 href="https://www.linkedin.com/in/nzrii-kysel/"
                 className={styles.contact}
+                target="_blank"
+                rel="noopener noreferrer"
               >
                 Kyselevych Nazarii
               </a>
@@ -75,6 +85,8 @@ export const Contacts: React.FC = () => {
               <a
                 href="https://www.linkedin.com/in/ivan-stadnytskyi-287ab7265/"
                 className={styles.contact}
+                target="_blank"
+                rel="noopener noreferrer"
               >
                 Stadnytskyy Ivan
               </a>
@@ -84,6 +96,8 @@ export const Contacts: React.FC = () => {
                 // eslint-disable-next-line max-len
                 href="https://www.linkedin.com/in/anastasiia-kravchenko-959b0a252/"
                 className={styles.contact}
+                target="_blank"
+                rel="noopener noreferrer"
               >
                 Kravchenko Anastasiia
               </a>
@@ -92,6 +106,8 @@ export const Contacts: React.FC = () => {
               <a
                 href="https://www.linkedin.com/in/olga-zaiets-009a261ab/"
                 className={styles.contact}
+                target="_blank"
+                rel="noopener noreferrer"
               >
                 Zaiets Olga
               </a>

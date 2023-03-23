@@ -42,12 +42,15 @@ export const ProductPage: React.FC = () => {
 
       setRecommended(fetchedProducts);
     }
+  }, [phone]);
+
+  useEffect(() => {
+    void fetchPhone();
   }, [phoneId]);
 
   useEffect(() => {
     void fetchRecommended();
-    void fetchPhone();
-  }, [phoneId]);
+  }, [phone]);
 
   if (isLoading) {
     return (

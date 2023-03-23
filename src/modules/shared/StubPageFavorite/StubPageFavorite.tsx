@@ -1,6 +1,7 @@
 import React from 'react';
 import styles from './StubPageFavorite.module.scss';
 import brokenHeart from '../../../images/broken_heart.png';
+import { Link } from 'react-router-dom';
 
 export const StubPageFavorite: React.FC = () => {
   return (
@@ -13,9 +14,16 @@ export const StubPageFavorite: React.FC = () => {
       <p
         className={styles.text}
       >
-        You have no favorites yet. <br /> Why not add one?
+        You have no favorites yet.
+        <br />
+        Why not add one?
       </p>
-      <button className={styles.button}>Mark Favorite Now</button>
+      <Link
+        to="/phones"
+        className={styles.button}
+      >
+        Browse products
+      </Link>
     </div>
   );
 };

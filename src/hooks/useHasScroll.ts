@@ -13,9 +13,11 @@ export const useHasScroll = (): boolean => {
 
   useEffect(() => {
     document.addEventListener('scroll', updateHasScroll);
+    window.addEventListener('resize', updateHasScroll);
 
     return () => {
       document.removeEventListener('scroll', updateHasScroll);
+      window.removeEventListener('resize', updateHasScroll);
     };
   }, []);
 

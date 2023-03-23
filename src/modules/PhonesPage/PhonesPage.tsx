@@ -10,13 +10,14 @@ import {
 } from '../shared';
 import { type Product } from '../../types';
 import { getCount, getWithParams } from '../../api/products';
-import { useSearchParams } from 'react-router-dom';
+import { useNavigate, useSearchParams } from 'react-router-dom';
 
 export const PhonesPage: React.FC = () => {
   const [searchParams] = useSearchParams();
   const [phones, setPhones] = useState<Product[]>([]);
   // const [isLoading, setIsLoading] = useState(false);
   const [totalCount, setTotalCount] = useState(0);
+  const navigate = useNavigate();
 
   const perPage = searchParams.get('perPage') || 16;
 
@@ -26,9 +27,13 @@ export const PhonesPage: React.FC = () => {
     const fetchData = async(): Promise<void> => {
       // setIsLoading(true);
 
-      const fetchedPhones = await getWithParams(searchParams);
+      try {
+        const fetchedPhones = await getWithParams(searchParams);
 
-      setPhones(fetchedPhones);
+        setPhones(fetchedPhones);
+      } catch (err) {
+        navigate('404', { replace: true });
+      }
       // setIsLoading(false);
     };
 

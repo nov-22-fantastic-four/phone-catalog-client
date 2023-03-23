@@ -4,7 +4,11 @@
 @import "src/style/utils";
 
 .top-slider {
-  margin: 0 auto;
+  margin: 24px auto 0;
+
+  @include onTablet {
+    margin: 48px auto 0;
+  }
 }
 
 #top-slider-photo-mobile {
