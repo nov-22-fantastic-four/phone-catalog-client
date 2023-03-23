@@ -34,6 +34,7 @@ export const Contacts: React.FC = () => {
                 Kyselevych Nazarii
               </a>
             </li>
+
             <li className={styles.listItem}>
               <a
                 href="https://t.me/vanst1"
@@ -42,6 +43,7 @@ export const Contacts: React.FC = () => {
                 Stadnytskyy Ivan
               </a>
             </li>
+
             <li className={styles.listItem}>
               <a
                 href="https://t.me/krstsss"
@@ -50,6 +52,7 @@ export const Contacts: React.FC = () => {
                 Kravchenko Anastasiia
               </a>
             </li>
+
             <li className={styles.listItem}>
               <a
                 href="https://t.me/Olia_Zaiets"

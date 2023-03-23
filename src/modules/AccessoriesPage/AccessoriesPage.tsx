@@ -1,10 +1,12 @@
 import React from 'react';
-import { Container } from '../shared/Container';
+import { BreadCrumbs, PageTitle, Container } from '../shared';
 
 export const AccessoriesPage: React.FC = () => (
   <Container>
-    <h1>
-      Accessories Page
-    </h1>
+    <BreadCrumbs />
+
+    <PageTitle>
+      Accessories
+    </PageTitle>
   </Container>
 );

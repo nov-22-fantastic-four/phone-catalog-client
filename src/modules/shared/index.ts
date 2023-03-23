@@ -11,3 +11,4 @@ export * from './ProductCard';
 export * from './BackButton';
 export * from './ProductFilter';
 export * from './Pagination';
+export * from './Loader';

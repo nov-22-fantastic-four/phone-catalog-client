@@ -1,0 +1,72 @@
+@import "src/style/utils";
+
+.category {
+  gap: 24px;
+  display: grid;
+  grid-template-columns: 1fr;
+
+  @include onTablet {
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 16px;
+  }
+}
+
+.title {
+  font-size: 32px;
+  font-weight: 800;
+  line-height: 41px;
+  padding-bottom: 24px;
+  color: $c-primary;
+  letter-spacing: -0.01em;
+}
+
+.image_wrapper {
+  overflow: hidden;
+  border-radius: 5px;
+}
+
+.image_link {
+  display: block;
+  transition: transform 0.3s ease-in-out;
+  text-decoration: none;
+}
+
+
+.image {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1;
+
+  cursor: pointer;
+  background-color: #6D6474;
+  border-radius: 5px;
+  transition: transform 0.3s;
+
+  @include onTablet {
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+}
+
+.image_tablet {
+  background-color: #8D8D92;
+}
+
+.image_accessories {
+  background-color: #973D5F;
+}
+
+.text_category {
+  font-size: 20px;
+  font-weight: 700;
+  color: $c-primary;
+  padding-top: 24px;
+}
+
+.text_count {
+  font-size: 14px;
+  font-weight: 600;
+  color: $c-secondary;
+  padding-top: 4px;
+}

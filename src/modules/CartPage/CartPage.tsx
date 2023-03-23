@@ -2,7 +2,13 @@ import React, { useContext, useEffect, useState } from 'react';
 import { getById } from '../../api/products';
 import { CartContext } from '../../context';
 import { type Product } from '../../types';
-import { ItemCount, PageTitle, Container, BackButton } from '../shared';
+import {
+  PageTitle,
+  ItemCount,
+  Container,
+  BackButton,
+  Loader,
+} from '../shared';
 import { CartItem } from '../shared/CartItem';
 import { TotalCost } from '../shared/TotalCost';
 import styles from './CartPage.module.scss';
@@ -10,6 +16,7 @@ import styles from './CartPage.module.scss';
 export const CartPage: React.FC = () => {
   const { cartItems, getCount } = useContext(CartContext);
   const [products, setProducts] = useState<Product[]>([]);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     const fetchData = async(): Promise<void> => {
@@ -18,9 +25,10 @@ export const CartPage: React.FC = () => {
       );
 
       setProducts(fetchedProducts);
+      setIsLoading(false);
     };
 
-    fetchData();
+    void fetchData();
   }, [cartItems]);
 
   const totalCost = products.reduce(
@@ -39,22 +47,25 @@ export const CartPage: React.FC = () => {
         {`${cartItems.length} items`}
       </ItemCount>
 
-      <div className={styles.container}>
-        {!!cartItems.length && (
-          <>
-            <div className={styles.items}>
-              {products.map(product => (
-                <CartItem
-                  key={product.id}
-                  product={product}
-                  count={getCount(product.id)}
-                />
-              ))}
-            </div>
-            <TotalCost totalCost={totalCost} />
-          </>
-        )}
-      </div>
+      {isLoading
+        ? <Loader />
+        : (
+          <div className={styles.container}>
+            {!!cartItems.length && (
+              <>
+                <div className={styles.items}>
+                  {products.map(product => (
+                    <CartItem
+                      key={product.id}
+                      product={product}
+                      count={getCount(product.id)}
+                    />
+                  ))}
+                </div>
+                <TotalCost totalCost={totalCost} />
+              </>
+            )}
+          </div>)}
     </Container>
   );
 };
