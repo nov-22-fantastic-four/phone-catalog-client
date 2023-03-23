@@ -35,6 +35,8 @@ const App: React.FC = () => {
           <Route path="/cart" element={<CartPage /> } />
           <Route path='/contacts' element={<Contacts />} />
 
+          <Route path='/contacts' element={<Contacts />} />
+
           <Route path="*" element={<NotFoundPage /> } />
         </Routes>
       </main>

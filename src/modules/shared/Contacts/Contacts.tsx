@@ -3,6 +3,8 @@ import styles from './Contacts.module.scss';
 import { Container } from '../Container';
 import { BreadCrumbs } from '../BreadCrumbs';
 import { PageTitle } from '../PageTitle';
+import { TelegramIcon } from '../../icons/TelegramIcon';
+import { LinkedInIcon } from '../../icons/LinkedInIcon';
 
 export const Contacts: React.FC = () => {
   return (
@@ -13,18 +15,16 @@ export const Contacts: React.FC = () => {
         Contacts
       </PageTitle>
 
-      <div className={styles.container}>
-        <div className={styles.ourContacts}>
-          {/* <h2 className={styles.title}>
-          Connect with Us for Your Every Recruitment Need
-          </h2> */}
-          {/* <p className={styles.text}>
-            Helping companies elevate their operations
-            by directly delivering the ideal candidate.
-          </p> */}
+      <div className={styles.background}>
+        Let&apos;s create something awesome together!
+      </div>
 
-          <p className={styles.text}>Telegram:</p>
+      <h2 className={styles.title}>Get in touch</h2>
 
+      <div className={styles.contacts}>
+        <div className={styles.telegram}>
+          <TelegramIcon />
+          <span className={styles.social}> Telegram</span>
           <ul className={styles.contactsList}>
             <li className={styles.listItem}>
               <a
@@ -58,38 +58,50 @@ export const Contacts: React.FC = () => {
                 href="https://t.me/Olia_Zaiets"
                 className={styles.contact}
               >
-                Zaiets Olya
+                Zaiets Olga
               </a>
             </li>
           </ul>
         </div>
 
-        <div>
-          <h2 className={styles.titleSmall}>How can we help?</h2>
-          <form action="" method="get" className={styles.form}>
-            <input
-              type="text"
-              name="name"
-              placeholder="Name:"
-              className={styles.formField}
-              required
-            />
-            <input
-              type="email"
-              placeholder="Email:"
-              className={styles.formField}
-              required
-            />
-            <textarea
-              placeholder="Message"
-              className={styles.textarea}
-              name="message"
-              required
-            ></textarea>
-            <button className={styles.button} type="submit">
-              Send
-            </button>
-          </form>
+        <div className={styles.LinkedIn}>
+          <LinkedInIcon />
+          <span className={styles.social}>LinkedIn</span>
+          <ul className={styles.contactsList}>
+            <li className={styles.listItem}>
+              <a
+                href="https://www.linkedin.com/in/nzrii-kysel/"
+                className={styles.contact}
+              >
+                Kyselevych Nazarii
+              </a>
+            </li>
+            <li className={styles.listItem}>
+              <a
+                href="https://www.linkedin.com/in/ivan-stadnytskyi-287ab7265/"
+                className={styles.contact}
+              >
+                Stadnytskyy Ivan
+              </a>
+            </li>
+            <li className={styles.listItem}>
+              <a
+                // eslint-disable-next-line max-len
+                href="https://www.linkedin.com/in/anastasiia-kravchenko-959b0a252/"
+                className={styles.contact}
+              >
+                Kravchenko Anastasiia
+              </a>
+            </li>
+            <li className={styles.listItem}>
+              <a
+                href="https://www.linkedin.com/in/olga-zaiets-009a261ab/"
+                className={styles.contact}
+              >
+                Zaiets Olga
+              </a>
+            </li>
+          </ul>
         </div>
       </div>
     </Container>
