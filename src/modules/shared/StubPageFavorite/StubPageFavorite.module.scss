@@ -1,0 +1,52 @@
+@import "src/style/utils";
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 30px;
+ }
+
+.photo {
+  display: block;
+  width: 40px;
+  height: 40px;
+
+  @include onTablet {
+    width: 80px;
+    height: 80px;
+  }
+}
+
+.text {
+  display: flex;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 24px;
+  text-align: center;
+  flex-direction: column;
+
+  @include onTablet {
+    font-size: 32px;
+    line-height: 40px;
+  }
+}
+
+.button {
+  box-sizing: border-box;
+  height: 40px;
+  width: 172px;
+  background-color: $c-primary;
+  border: 1px solid transparent;
+  color: $c-white;
+  cursor: pointer;
+  transition: box-shadow .3s ease;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 21px;
+
+  &:hover {
+    box-shadow: 0 3px 13px rgba(23, 32, 49, 0.4);
+  }
+}
