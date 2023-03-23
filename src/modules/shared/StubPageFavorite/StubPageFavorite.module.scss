@@ -11,12 +11,17 @@
 
 .photo {
   display: block;
-  width: 40px;
+  width: 48px;
   height: 40px;
 
   @include onTablet {
-    width: 80px;
-    height: 80px;
+    width: 90px;
+    height: 75px;
+  }
+
+  @include onDesktop {
+    width: 144px;
+    height: 120px;
   }
 }
 
@@ -29,8 +34,13 @@
   flex-direction: column;
 
   @include onTablet {
-    font-size: 32px;
-    line-height: 40px;
+    font-size: 26px;
+    line-height: 34px;
+  }
+
+  @include onDesktop {
+    font-size: 40px;
+    line-height: 48px;
   }
 }
 
@@ -50,6 +60,19 @@
   font-size: 14px;
   line-height: 21px;
   text-decoration: none;
+  
+  // @include onTablet {
+  //   width: 220px;
+  //   font-size: 18px;
+  //   line-height: 24px;
+  // }
+
+  // @include onDesktop {
+  //   width: 260px;
+  //   font-size: 22px;
+  //   line-height: 28px;
+  // }
+  
 
   &:hover {
     box-shadow: 0 3px 13px rgba(23, 32, 49, 0.4);
