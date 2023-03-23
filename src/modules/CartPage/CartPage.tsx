@@ -11,12 +11,15 @@ import {
 } from '../shared';
 import { CartItem } from '../shared/CartItem';
 import { TotalCost } from '../shared/TotalCost';
+import emptyCart from '../../images/emty-cart-image.png';
 import styles from './CartPage.module.scss';
+import { Link } from 'react-router-dom';
 
 export const CartPage: React.FC = () => {
   const { cartItems, getCount } = useContext(CartContext);
   const [products, setProducts] = useState<Product[]>([]);
   const [isLoading, setIsLoading] = useState(true);
+  const noItems = cartItems.length === 0;
 
   useEffect(() => {
     const fetchData = async(): Promise<void> => {
@@ -40,12 +43,28 @@ export const CartPage: React.FC = () => {
       <BackButton />
 
       <PageTitle>
-        Cart
+        {noItems
+          ? 'Your cart is empty!'
+          : 'Cart'
+        }
       </PageTitle>
 
+      {!noItems &&
       <ItemCount>
         {`${cartItems.length} items`}
       </ItemCount>
+      }
+      {noItems &&
+      <div className={styles.emptyBox}>
+        <img
+          src={emptyCart}
+          alt="cart is empty"
+          className={styles.emptyCartImg}
+        />
+        <Link to='/' className={styles.button}>
+        Go To Homepage
+        </Link>
+      </div>}
 
       {isLoading
         ? <Loader />

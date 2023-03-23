@@ -1,3 +1,5 @@
+@import "src/style/utils";
+
 .container {
   display: flex;
   flex-direction: column;
@@ -6,17 +8,18 @@
 }
 
 .icon {
-  height: 60vh;
+  height: 50vh;
 }
 
 .button {
-  background-color: #313237;
-  color: #fff;
+  margin-top: 16px;
+  background-color: $c-primary;
+  color: $c-white;
   text-decoration: none;
   padding: 1vh 5vw;
   font-size: 14px;
   text-transform: uppercase;
   &:hover {
-    box-shadow: 0px 3px 13px rgba(23, 32, 49, 0.4);
+    box-shadow: 0 3px 13px rgba(23, 32, 49, 0.4);
   }
 }

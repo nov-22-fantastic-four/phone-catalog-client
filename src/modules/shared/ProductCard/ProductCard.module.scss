@@ -10,7 +10,6 @@
   background: $c-white;
   border: 1px solid $c-elements;
   border-radius: 5px;
-  cursor: pointer;
   transition: box-shadow 0.3s;
 
   @include onTablet {
@@ -122,6 +121,7 @@
   height: 40px;
   padding: 12px;
   transition: border .3s ease;
+  cursor: pointer;
 
   &:hover {
     border: 1px solid $c-primary;

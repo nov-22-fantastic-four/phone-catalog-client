@@ -1,6 +1,29 @@
-.title {
-  font-weight: 800;
-  font-size: 48px;
-  line-height: 1em;
-  margin-top: 40px;
+@import "src/style/utils";
+
+.emptyBox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.button {
+  display: flex;
+  justify-content: center;
+  padding: 10px 0;
+  background-color: $c-primary;
+  color: $c-white;
+  text-decoration: none;
+  width: 260px;
+  box-sizing: border-box;
+  font-size: 14px;
+  text-transform: uppercase;
+  &:hover {
+    box-shadow: 0px 3px 13px rgba(23, 32, 49, 0.4);
+  }
+}
+
+.emptyCartImg {
+  width: 260px;
 }

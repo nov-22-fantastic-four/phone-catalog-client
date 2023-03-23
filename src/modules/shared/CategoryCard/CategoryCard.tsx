@@ -20,7 +20,7 @@ export const CategoryCard: React.FC = () => {
           </div>
 
           <p className={styles.text_category}>Mobile phones</p>
-          <p className={styles.text_count}>95 models</p>
+          <p className={styles.text_count}>71 models</p>
         </Link>
 
         <Link className={styles.image_link} to="/tablets">
@@ -33,7 +33,7 @@ export const CategoryCard: React.FC = () => {
           </div>
 
           <p className={styles.text_category}>Tablets</p>
-          <p className={styles.text_count}>24 models</p>
+          <p className={styles.text_count}>Coming soon</p>
         </Link>
 
         <Link className={styles.image_link} to="/accessories">
@@ -46,7 +46,7 @@ export const CategoryCard: React.FC = () => {
           </div>
 
           <p className={styles.text_category}>Accessories</p>
-          <p className={styles.text_count}>100 models</p>
+          <p className={styles.text_count}>Coming soon</p>
         </Link>
       </div>
     </>

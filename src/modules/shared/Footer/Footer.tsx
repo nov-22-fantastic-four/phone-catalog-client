@@ -1,20 +1,17 @@
-import React, { useCallback } from 'react';
+import React from 'react';
 import styles from './Footer.module.scss';
 import vector from '../../../images/icons/shevron-up.svg';
 import { LogoLink } from '../LogoLink';
 import { Container } from '../Container';
 import { NavLink } from 'react-router-dom';
+import { scrollToTop } from '../../../utils';
+import { useHasScroll } from '../../../hooks';
+import cn from 'classnames';
 
 export const Footer: React.FC = () => {
-  const handleScrollToTop = useCallback(() => {
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth'
-    });
-  }, []);
+  const hasScroll = useHasScroll();
 
   return (
-
     <footer className={styles.footer}>
       <Container>
         <div className={styles.content}>
@@ -26,38 +23,46 @@ export const Footer: React.FC = () => {
                 <a
                   className={styles.nav_link}
                   href="https://github.com/nov-22-fantastic-four"
+                  target="_blank"
+                  rel="noreferrer noopener"
                 >
-                      Github
+                  Github
                 </a>
               </li>
 
               <li className={styles.nav_item}>
-                {/* <a
-                  className={styles.nav_link}
-                  href="#contacts"
-                >
-                    Contacts
-                </a> */}
                 <NavLink
                   className={styles.nav_link}
-                  to={'/contacts'}
+                  to={'/team'}
                 >
-                  Contacts
+                  Team
                 </NavLink>
               </li>
 
               <li className={styles.nav_item}>
-                <a className={styles.nav_link} href="#rights">Rights</a>
+                <a
+                  className={styles.nav_link}
+                  // eslint-disable-next-line max-len
+                  href="https://dictionary.cambridge.org/dictionary/english/rights"
+                  target="_blank"
+                  rel="noreferrer noopener"
+                >
+                  Rights
+                </a>
               </li>
             </ul>
           </nav>
 
-          <div className={styles.scroll}>
+          <div
+            className={cn(styles.scroll, {
+              [styles.hidden]: !hasScroll
+            })}
+            onClick={scrollToTop}
+          >
             <p className={styles.scroll_text}>Back to top</p>
 
             <button
               className={styles.scroll_button}
-              onClick={handleScrollToTop}
             >
               <img
                 src={vector}

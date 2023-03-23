@@ -4,10 +4,7 @@
 @import "src/style/utils";
 
 .top-slider {
-  //margin-bottom: 90px;
-  width: 100%;
   margin: 0 auto;
-  height: 100%;
 }
 
 #top-slider-photo-mobile {
@@ -15,7 +12,6 @@
 
   @include onTablet {
     display: none;
-    width: 100%;
   }
 }
 
@@ -47,12 +43,12 @@
   position: static;
   width: 32px;
   height: inherit;
-  border: 1px solid #b4bdc4;
+  border: 1px solid $c-icons;
   display: none;
   transform: translateY(0);
 
     &:hover {
-    border-color: #313237;
+    border-color: $c-primary;
   }
 
   @include onTablet {
@@ -84,11 +80,11 @@
   content: "";
   width: 14px;
   height: 4px;
-  background-color: #313237;
+  background-color: $c-primary;
   opacity: 0.25;
 }
 
 .slick-dots li.slick-active button:before {
-  background-color: #313237;
+  background-color: $c-primary;
   opacity: 0.75;
 }

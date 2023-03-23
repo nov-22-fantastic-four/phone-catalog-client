@@ -17,3 +17,27 @@
   flex-direction: column;
   gap: 16px;
 }
+
+.emptyBox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.button {
+  display: flex;
+  justify-content: center;
+  padding: 10px 0;
+  background-color: $c-primary;
+  color: $c-white;
+  text-decoration: none;
+  width: 253px;
+  box-sizing: border-box;
+  font-size: 14px;
+  text-transform: uppercase;
+  &:hover {
+    box-shadow: 0px 3px 13px rgba(23, 32, 49, 0.4);
+  }
+}
