@@ -9,11 +9,11 @@
   box-shadow: 0px 1px 0px $c-elements;
   padding-left: 16px;
   min-width: 320px;
+  z-index: 3;
 
   @include onTablet {
     position: sticky;
     top: 0;
-    z-index: 5;
   }
 
   @include onDesktop {

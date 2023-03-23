@@ -5,12 +5,17 @@ import styles from './TotalCost.module.scss';
 
 interface Props {
   totalCost: number
+  showModal: (isModal: boolean) => void
 }
 
-export const TotalCost: React.FC<Props> = ({ totalCost }) => {
+export const TotalCost: React.FC<Props> = ({ totalCost, showModal }) => {
   const { cartItems } = useContext(CartContext);
 
   const totalItem = cartItems.reduce((total, item) => total + item.count, 0);
+
+  const openModal = (): void => {
+    showModal(true);
+  };
 
   return (
     <div className={styles.total}>
@@ -24,7 +29,10 @@ export const TotalCost: React.FC<Props> = ({ totalCost }) => {
 
       <div className={styles.line}/>
 
-      <button className={styles.button}>
+      <button
+        className={styles.button}
+        onClick={openModal}
+      >
         Checkout
       </button>
     </div>

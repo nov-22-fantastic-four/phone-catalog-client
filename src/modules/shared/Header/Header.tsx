@@ -18,6 +18,9 @@ export const Header: React.FC = () => {
   const { favorites } = useContext(FavoritesContext);
   const notMobileVersion = useMediaQuery('(min-width: 640px)');
 
+  const totalCartItem =
+    cartItems.reduce((total, item) => total + item.count, 0);
+
   const handleClick = (): void => {
     setIsMenuOpen(!isMenuOpen);
   };
@@ -56,7 +59,7 @@ export const Header: React.FC = () => {
             to="/cart"
             alt="cartIcon"
             icon={bag_icon}
-            items={cartItems.length}
+            items={totalCartItem}
           />
         </div>
 
@@ -78,7 +81,10 @@ export const Header: React.FC = () => {
           }
         </button>
       </header>
-      {isMenuOpen && <Menu closeMenu={handleCloseMenu}/>}
+      <Menu
+        closeMenu={handleCloseMenu}
+        isMenuOpen={isMenuOpen}
+      />
     </>
   );
 };
