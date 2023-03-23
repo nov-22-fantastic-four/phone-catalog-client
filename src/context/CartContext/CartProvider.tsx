@@ -13,6 +13,7 @@ interface ContextType {
   isAdded: (productId: number) => boolean,
   getCount: (productId: number) => number,
   removeItem: (productId: number) => void,
+  removeAll: () => void,
 }
 
 const defaultValue: ContextType = {
@@ -22,6 +23,7 @@ const defaultValue: ContextType = {
   isAdded: () => false,
   getCount: () => 0,
   removeItem: () => {},
+  removeAll: () => {},
 };
 
 export const CartContext = createContext<ContextType>(defaultValue);
@@ -77,6 +79,10 @@ export const CartProvider: React.FC<Props> = ({ children }) => {
     });
   };
 
+  const removeAll = (): void => {
+    setCartItems([]);
+  };
+
   const isAdded = (productId: number): boolean => (
     cartItems.some(({ id }) => id === productId)
   );
@@ -88,6 +94,7 @@ export const CartProvider: React.FC<Props> = ({ children }) => {
     isAdded,
     getCount,
     removeItem,
+    removeAll,
   };
 
   return (

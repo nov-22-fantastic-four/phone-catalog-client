@@ -27,7 +27,9 @@ export const IconLink: React.FC<Props> = ({
   >
     {
       !!items && <div className={styles.counter}>
-        {items}
+        {items > 99
+          ? 99
+          : items}
       </div>
     }
     <img

@@ -5,17 +5,21 @@ import bag_icon from '../../../../../images/icons/bag_icon.svg';
 import { Navigation } from '../Navigation';
 import { IconLink } from '../IconLink';
 import { CartContext, FavoritesContext } from '../../../../../context';
+import classNames from 'classnames';
 
 interface Props {
   closeMenu: () => void
+  isMenuOpen: boolean
 }
 
-export const Menu: React.FC<Props> = ({ closeMenu }) => {
+export const Menu: React.FC<Props> = ({ closeMenu, isMenuOpen }) => {
   const { cartItems } = useContext(CartContext);
   const { favorites } = useContext(FavoritesContext);
 
   return (
-    <div className={styles.menu}>
+    <div className={classNames(styles.menu, {
+      [styles.menuOpen]: isMenuOpen,
+    })}>
       <Navigation closeMenu={closeMenu}/>
 
       <div className={styles.menu_footer}>

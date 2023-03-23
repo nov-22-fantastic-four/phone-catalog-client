@@ -14,12 +14,16 @@ import { TotalCost } from '../shared/TotalCost';
 import emptyCart from '../../images/emty-cart-image.png';
 import styles from './CartPage.module.scss';
 import { Link } from 'react-router-dom';
+import { CheckOutModal } from '../shared/CheckOutModal';
 
 export const CartPage: React.FC = () => {
   const { cartItems, getCount } = useContext(CartContext);
   const [products, setProducts] = useState<Product[]>([]);
   const [isLoading, setIsLoading] = useState(true);
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const noItems = cartItems.length === 0;
+
+  const totalItem = cartItems.reduce((total, item) => total + item.count, 0);
 
   useEffect(() => {
     const fetchData = async(): Promise<void> => {
@@ -51,7 +55,7 @@ export const CartPage: React.FC = () => {
 
       {!noItems &&
       <ItemCount>
-        {`${cartItems.length} items`}
+        {`${totalItem} items`}
       </ItemCount>
       }
       {noItems &&
@@ -81,10 +85,15 @@ export const CartPage: React.FC = () => {
                     />
                   ))}
                 </div>
-                <TotalCost totalCost={totalCost} />
+                <TotalCost totalCost={totalCost} showModal={setIsModalOpen}/>
               </>
             )}
           </div>)}
+
+      {
+        isModalOpen &&
+        <CheckOutModal totalCost={totalCost} showModal={setIsModalOpen}/>
+      }
     </Container>
   );
 };

@@ -1,60 +1,28 @@
 @import "src/style/utils";
 
 .menu {
+  padding-top: 16px;
   position: fixed;
   z-index: 50;
   top: 49px;
   left: 0;
   right: 0;
   background-color: $c-white;
-  overflow-y: auto;
-  height: 100vh;
+  overflow: hidden;
+  height: calc(100vh - 50px);
   box-sizing: border-box;
+  transform: translateY(-150%);
+  transition: transform 0.5s ease-in-out;
 
+  z-index: 2;
+
+  &Open {
+    transform: translateY(0);
+    z-index: 2;
+  }
   @include onTablet {
-    position: static;
     display: none;
   }
-}
-
-.menu_icon {
-  display: flex;
-  box-shadow: -1px 0px 0px #E2E6E9;
-  padding: 19px 17px;
-}
-
-.navList {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-.navLink {
-  text-decoration: none;
-  font-size: 12px;
-  text-transform: uppercase;
-  color: #89939A;
-  display: flex;
-  padding-top: 32px;
-}
-
-.isActive {
-  position: relative;
-  color: #313237;
-}
-
-.isActive:after {
-  content: "";
-  position: absolute;
-  height: 2px;
-  width: 100%;
-  left: 0;
-  bottom: -10px;
-  background-color: #313237;
 }
 
 .menu_footer {
@@ -65,15 +33,6 @@
   bottom: 0;
   left: 0;
   right: 0;
-  box-shadow: 0px -1px 0px #E2E6E9;
-  background-color: #fff;
-}
-
-.icon {
-  padding: 16px 25vw;
-  box-shadow: -1px 0px 0px #E2E6E9;
-}
-
-.iconLink {
-  display: flex;
+  box-shadow: 0px -1px 0px $c-elements;
+  background-color: $c-white;
 }
