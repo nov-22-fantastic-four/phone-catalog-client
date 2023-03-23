@@ -1,23 +1,23 @@
 import React from 'react';
-import styles from './StubPageFavorite.module.scss';
-import brokenHeart from '../../../images/broken_heart.png';
+import styles from './StubPageCart.module.scss';
+import emptyCart from '../../../images/empty_cart.png';
 import { Link } from 'react-router-dom';
 
-export const StubPageFavorite: React.FC = () => {
+export const StubPageCart: React.FC = () => {
   return (
     <div className={styles.container}>
       <img
-        src={brokenHeart}
+        src={emptyCart}
         className={styles.photo}
         alt="broken heart icon"
       />
-      <p
-        className={styles.text}
-      >
-        You have no favorites yet.
+      <p className={styles.text}>
+        Your cart is empty.
       </p>
       <p className={styles.subtitle}>
-        Why not add one?
+        You have no items in your shopping cart.
+        <br />
+        Let&apos;s go buy something!
       </p>
 
       <Link
