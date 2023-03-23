@@ -6,7 +6,7 @@ export const TelegramIcon: IconFC = ({ ...props }) => (
     width="45"
     height="45"
     viewBox="0 0 496 512"
-    fill="black"
+    fill="#34A2DF"
     xmlns="http://www.w3.org/2000/svg"
   >
     <path

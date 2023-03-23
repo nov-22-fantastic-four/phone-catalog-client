@@ -6,7 +6,7 @@ export const LinkedInIcon: IconFC = ({ ...props }) => (
     width="45"
     height="45"
     viewBox="0 0 448 512"
-    fill="black"
+    fill="#0a66c2"
     xmlns="http://www.w3.org/2000/svg"
   >
     <path
