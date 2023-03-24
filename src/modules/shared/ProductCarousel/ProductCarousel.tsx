@@ -4,17 +4,21 @@ import { ProductCard } from '../ProductCard';
 import { ChevronLeftIcon, ChevronRightIcon } from '../../icons';
 
 import styles from './ProductCarousel.module.scss';
+import { sampleProducts } from './sample.products';
+import cn from 'classnames';
 
 interface Props {
   title: string,
-  products: Product[],
+  products?: Product[],
   showFullPrice?: boolean,
+  isLoading?: boolean,
 }
 
 export const ProductCarousel: React.FC<Props> = ({
   title,
-  products,
+  products = sampleProducts,
   showFullPrice = false,
+  isLoading = false,
 }) => {
   const [position, setPosition] = useState(0);
 
@@ -55,7 +59,11 @@ export const ProductCarousel: React.FC<Props> = ({
         </div>
       </div>
 
-      <div className={styles.carousel}>
+      <div
+        className={cn(styles.carousel, {
+          [styles.loader]: isLoading,
+        })}
+      >
         <div
           className={styles.list}
           style={{

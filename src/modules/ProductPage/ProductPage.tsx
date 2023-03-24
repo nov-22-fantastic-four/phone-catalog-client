@@ -1,14 +1,13 @@
 import React, { useCallback, useEffect, useState } from 'react';
 import { type Phone, type Product } from '../../types';
 import { BreadCrumbs, Container, BackButton } from '../shared';
-import { PhoneItem } from './PhoneItem';
+import { LoadingPhone, PhoneItem } from './PhoneItem';
 import { useLocation, useParams } from 'react-router';
 import { getById } from '../../api/phones';
 import { ProductCarousel } from '../shared/ProductCarousel/ProductCarousel';
 import { getRecommended } from '../../api/products';
 import { scrollToTop } from '../../utils';
 import { useNavigate } from 'react-router-dom';
-import { Loading } from '../shared/Loading';
 
 export const ProductPage: React.FC = () => {
   const { phoneId } = useParams();
@@ -52,24 +51,14 @@ export const ProductPage: React.FC = () => {
     void fetchRecommended();
   }, [phone]);
 
-  if (isLoading) {
-    return (
-      <Container>
-        <Loading />
-      </Container>
-    );
-  }
-
-  if (!phone) {
-    return null;
-  }
-
   return (
     <Container>
-      <BreadCrumbs phoneName={phone.name} />
+      <BreadCrumbs phoneName={phone?.name} />
       <BackButton />
-      {!phone && <Loading />}
-      <PhoneItem phone={phone}/>
+
+      {!phone
+        ? <LoadingPhone />
+        : <PhoneItem phone={phone} isLoading={isLoading} /> }
 
       <ProductCarousel
         title="You may also like"

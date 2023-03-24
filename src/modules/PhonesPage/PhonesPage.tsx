@@ -14,8 +14,8 @@ import { useNavigate, useSearchParams } from 'react-router-dom';
 
 export const PhonesPage: React.FC = () => {
   const [searchParams] = useSearchParams();
-  const [phones, setPhones] = useState<Product[]>([]);
-  // const [isLoading, setIsLoading] = useState(false);
+  const [phones, setPhones] = useState<Product[]>();
+  const [isLoading, setIsLoading] = useState(false);
   const [totalCount, setTotalCount] = useState(0);
   const navigate = useNavigate();
 
@@ -25,7 +25,7 @@ export const PhonesPage: React.FC = () => {
 
   useEffect(() => {
     const fetchData = async(): Promise<void> => {
-      // setIsLoading(true);
+      setIsLoading(true);
 
       try {
         const fetchedPhones = await getWithParams(searchParams);
@@ -33,8 +33,9 @@ export const PhonesPage: React.FC = () => {
         setPhones(fetchedPhones);
       } catch (err) {
         navigate('404', { replace: true });
+      } finally {
+        setIsLoading(false);
       }
-      // setIsLoading(false);
     };
 
     void fetchData();
@@ -64,7 +65,7 @@ export const PhonesPage: React.FC = () => {
 
       <ProductFilter />
 
-      <CatalogGrid products={phones} />
+      <CatalogGrid products={phones} isLoading={isLoading} />
       {hasPagination && <Pagination totalItems={totalCount} />}
     </Container>
   );

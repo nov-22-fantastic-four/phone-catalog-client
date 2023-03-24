@@ -32,7 +32,7 @@ export const Pagination: React.FC<Props> = ({ totalItems }) => {
     }
 
     setSearchParams(searchParams);
-    scrollToTop();
+    scrollToTop(160);
   };
 
   return (
