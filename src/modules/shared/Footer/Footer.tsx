@@ -22,7 +22,8 @@ export const Footer: React.FC = () => {
               <li className={styles.nav_item}>
                 <a
                   className={styles.nav_link}
-                  href="https://github.com/nov-22-fantastic-four"
+                  // eslint-disable-next-line max-len
+                  href="https://github.com/nov-22-fantastic-four/phone-catalog-client"
                   target="_blank"
                   rel="noreferrer noopener"
                 >

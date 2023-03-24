@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Dropdown } from '../Dropdown';
 import { useSearchParams } from 'react-router-dom';
 import { type Option, SortBy } from '../../../types';
@@ -16,6 +16,20 @@ export const ProductFilter: React.FC = () => {
   const [searchParams, setSearchParams] = useSearchParams();
   const currentSort = searchParams.get('sort') || defaultSort;
   const currentPerPage = searchParams.get('perPage') || defaultPerPage;
+
+  useEffect(() => {
+    if (!['All', '16', '8', '4'].includes(currentPerPage)) {
+      searchParams.delete('perPage');
+      setSearchParams(searchParams);
+    }
+  }, [currentPerPage]);
+
+  useEffect(() => {
+    if (!['year', 'name', 'price'].includes(currentSort)) {
+      searchParams.delete('sort');
+      setSearchParams(searchParams);
+    }
+  }, [currentSort]);
 
   const handleSortChange = (sort: string): void => {
     if (sort === defaultSort) {

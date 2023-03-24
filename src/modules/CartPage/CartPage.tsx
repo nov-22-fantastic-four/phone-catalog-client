@@ -11,10 +11,9 @@ import {
 } from '../shared';
 import { CartItem } from '../shared/CartItem';
 import { TotalCost } from '../shared/TotalCost';
-import emptyCart from '../../images/emty-cart-image.png';
 import styles from './CartPage.module.scss';
-import { Link } from 'react-router-dom';
 import { CheckOutModal } from '../shared/CheckOutModal';
+import { StubPageCart } from '../shared/StubPageCart';
 
 export const CartPage: React.FC = () => {
   const { cartItems, getCount } = useContext(CartContext);
@@ -46,29 +45,18 @@ export const CartPage: React.FC = () => {
     <Container>
       <BackButton />
 
-      <PageTitle>
-        {noItems
-          ? 'Your cart is empty!'
-          : 'Cart'
-        }
-      </PageTitle>
-
       {!noItems &&
-      <ItemCount>
-        {`${totalItem} items`}
-      </ItemCount>
+        <>
+          <PageTitle>
+              Cart
+          </PageTitle>
+          <ItemCount>
+            {`${totalItem} items`}
+          </ItemCount>
+        </>
       }
-      {noItems &&
-      <div className={styles.emptyBox}>
-        <img
-          src={emptyCart}
-          alt="cart is empty"
-          className={styles.emptyCartImg}
-        />
-        <Link to='/' className={styles.button}>
-        Go To Homepage
-        </Link>
-      </div>}
+
+      {noItems && <StubPageCart /> }
 
       {isLoading
         ? <Loader />
@@ -77,13 +65,21 @@ export const CartPage: React.FC = () => {
             {!!cartItems.length && (
               <>
                 <div className={styles.items}>
-                  {products.map(product => (
-                    <CartItem
-                      key={product.id}
-                      product={product}
-                      count={getCount(product.id)}
-                    />
-                  ))}
+                  {products.map(product => {
+                    const count = getCount(product.id);
+
+                    if (!count) {
+                      return null;
+                    }
+
+                    return (
+                      <CartItem
+                        key={product.id}
+                        product={product}
+                        count={count}
+                      />
+                    );
+                  })}
                 </div>
                 <TotalCost totalCost={totalCost} showModal={setIsModalOpen}/>
               </>

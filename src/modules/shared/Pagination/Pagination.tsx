@@ -6,6 +6,7 @@ import { getPages } from './utils';
 
 import nextIcon from '../../../images/icons/chevron-right-black.svg';
 import prevIcon from '../../../images/icons/chevron-left-black.svg';
+import { scrollToTop } from '../../../utils';
 
 interface Props {
   totalItems: number,
@@ -31,6 +32,7 @@ export const Pagination: React.FC<Props> = ({ totalItems }) => {
     }
 
     setSearchParams(searchParams);
+    scrollToTop();
   };
 
   return (

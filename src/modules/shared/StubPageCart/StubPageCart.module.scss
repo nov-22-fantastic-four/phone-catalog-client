@@ -1,12 +1,12 @@
 @import "src/style/utils";
 
 .container {
-  margin-top: 48px;
+  margin-top: 64px;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  gap: 5px;
+  gap: 8px;
  }
 
 .photo {
@@ -94,7 +94,7 @@
     margin-top: 30px;
   }
 
-   
+
 
   &:hover {
     box-shadow: 0 3px 13px rgba(23, 32, 49, 0.4);

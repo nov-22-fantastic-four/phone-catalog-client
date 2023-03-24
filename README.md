@@ -4,7 +4,7 @@
   ## Stack technologies we used 💻:
  ---
    <h2 style="font-size: 24px;">
-    <img src="./src/images/HTML.png" alt="HTML" width="20" height="20">
+    <img src="./src/images/readme/HTML.png" alt="HTML" width="20" height="20">
       HTML
   </h2>
   <p>
@@ -13,7 +13,7 @@
 
 ---
    <h2 style="font-size: 24px;">
-    <img src="./src/images/Sass.svg" alt="Sass" width="20" height="20">
+    <img src="./src/images/readme/Sass.svg" alt="Sass" width="20" height="20">
       Sass
   </h2>
   <p>
@@ -22,7 +22,7 @@
 
 ---
    <h2 style="font-size: 24px;">
-    <img src="./src/images/React-icon.svg.png" alt="React" width="20" height="20">
+    <img src="./src/images/readme/React-icon.svg.png" alt="React" width="20" height="20">
       React
   </h2>
   <p>
@@ -32,7 +32,7 @@
   ---
   
    <h2 style="font-size: 24px;">
-    <img src="./src/images/JavaScript.png" alt="JavaScript" width="20" height="20">
+    <img src="./src/images/readme/JavaScript.png" alt="JavaScript" width="20" height="20">
       JavaScript
   </h2>
   <p>
@@ -42,7 +42,7 @@
 ---
 
    <h2 style="font-size: 24px;">
-    <img src="./src/images/Typescript.svg" alt="TypeScript" width="20" height="20">
+    <img src="./src/images/readme/Typescript.svg" alt="TypeScript" width="20" height="20">
       TypeScript
   </h2>
   <p>
@@ -52,7 +52,7 @@
 ---
 
    <h2 style="font-size: 24px;">
-    <img src="./src/images/ClickUp.png" alt="ClickUp" width="20" height="20">
+    <img src="./src/images/readme/ClickUp.png" alt="ClickUp" width="20" height="20">
       ClickUp
   </h2>
   <p>
@@ -62,7 +62,7 @@
   ---
 
    <h2 style="font-size: 24px;">
-    <img src="./src/images/Node.png" alt="Node" width="30" height="20">
+    <img src="./src/images/readme/Node.png" alt="Node" width="30" height="20">
       Node
   </h2>
   <p>
@@ -71,7 +71,7 @@
 
 ---
    <h2 style="font-size: 24px;">
-    <img src="./src/images/expressjs_logo.png" alt="Express" width="20" height="20">
+    <img src="./src/images/readme/expressjs_logo.png" alt="Express" width="20" height="20">
       Express
   </h2>
   <p>
@@ -80,7 +80,7 @@
 
 ---
    <h2 style="font-size: 24px;">
-    <img src="./src/images/Postgresql.png" alt="PostgreSQL" width="20" height="20">
+    <img src="./src/images/readme/Postgresql.png" alt="PostgreSQL" width="20" height="20">
       PostgreSQL
   </h2>
   <p>
@@ -90,7 +90,7 @@
  ---
 
    <h2 style="font-size: 24px;">
-    <img src="./src/images/Prisma.png" alt="Prisma" width="20" height="20">
+    <img src="./src/images/readme/Prisma.png" alt="Prisma" width="20" height="20">
       Prisma
   </h2>
   <p>
