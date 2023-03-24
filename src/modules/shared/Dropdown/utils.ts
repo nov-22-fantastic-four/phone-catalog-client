@@ -10,5 +10,5 @@ export const getOptionName = (
     }
   }
 
-  throw Error(`Option with value ${optionValue} doesn't exist!`);
+  return options[0][0];
 };

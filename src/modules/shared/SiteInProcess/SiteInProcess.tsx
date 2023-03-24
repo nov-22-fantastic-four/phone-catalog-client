@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './SiteInProcess.module.scss';
-import siteCoding from '../../../images/site_coding.jpg';
+import siteCoding from '../../../images/site_in_progress.png';
 import { Link } from 'react-router-dom';
 
 export const SiteInProcess: React.FC = () => {
@@ -9,12 +9,16 @@ export const SiteInProcess: React.FC = () => {
       <p className={styles.title}>
         Coming soon
       </p>
+
       <img
         src={siteCoding}
         className={styles.photo}
         alt="site is coding"
       />
-      <Link to="/" className={styles.button}>Home Page</Link>
+
+      <Link to="/" className={styles.button}>
+        Home Page
+      </Link>
     </div>
   );
 };
