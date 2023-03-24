@@ -128,7 +128,16 @@
   &:hover {
     border: 1px solid $c-primary;
   }
+
+  &:hover .heartIcon{
+    transform: scale(1.15);
+  }
 }
+
+.heartIcon {
+  transition: transform 0.3s;
+}
+
 
 .fullHeart {
   fill: $c-red;

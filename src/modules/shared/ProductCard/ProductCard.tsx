@@ -123,8 +123,14 @@ export const ProductCard: React.FC<Props> = ({
           onClick={handleClickLiked}
         >
           {isFavorite
-            ? <FullHeartIcon className={styles.fullHeart} />
-            : <EmptyHeartIcon className={styles.emptyHeart} />}
+            ? (
+              <FullHeartIcon
+                className={cn(styles.fullHeart, styles.heartIcon)}
+              />)
+            : (
+              <EmptyHeartIcon
+                className={cn(styles.emptyHeart, styles.heartIcon)}
+              />)}
         </div>
       </div>
     </div>

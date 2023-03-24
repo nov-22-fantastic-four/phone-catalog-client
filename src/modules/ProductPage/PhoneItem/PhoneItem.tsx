@@ -11,9 +11,10 @@ import { type ColorName, getColorHex } from '../../../utils';
 
 interface Props {
   phone: Phone,
+  isLoading?: boolean,
 }
 
-export const PhoneItem: React.FC<Props> = ({ phone }) => {
+export const PhoneItem: React.FC<Props> = ({ phone, isLoading = false }) => {
   const cartContext = useContext(CartContext);
   const favoritesContext = useContext(FavoritesContext);
 
@@ -77,7 +78,7 @@ export const PhoneItem: React.FC<Props> = ({ phone }) => {
   };
 
   return (
-    <>
+    <div className={cn({ [styles.loader]: isLoading })}>
       <h2 className={styles.title}>{name}</h2>
 
       <div className={styles.container}>
@@ -285,6 +286,6 @@ export const PhoneItem: React.FC<Props> = ({ phone }) => {
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 };

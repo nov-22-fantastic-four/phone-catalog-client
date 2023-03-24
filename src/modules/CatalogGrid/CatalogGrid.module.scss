@@ -4,3 +4,8 @@
   justify-content: center;
   gap: 16px;
 }
+
+.loader {
+  filter: blur(5px);
+  pointer-events: none;
+}

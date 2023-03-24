@@ -9,20 +9,24 @@ import { CategoryCard } from '../shared/CategoryCard';
 import styles from './HomePage.module.scss';
 
 export const HomePage: React.FC = () => {
-  const [newProducts, setNewProducts] = useState<Product[]>([]);
-  const [hotProducts, setHotProducts] = useState<Product[]>([]);
+  const [newProducts, setNewProducts] = useState<Product[]>();
+  const [hotProducts, setHotProducts] = useState<Product[]>();
+  const [isLoadingNew, setIsLoadingNew] = useState(true);
+  const [isLoadingDiscount, setIsLoadingDiscount] = useState(true);
 
   useEffect(() => {
     const fetchNew = async(): Promise<void> => {
       const fetchedData = await getNew();
 
       setNewProducts(fetchedData);
+      setIsLoadingNew(false);
     };
 
     const fetchDiscount = async(): Promise<void> => {
       const fetchedData = await getDiscount();
 
       setHotProducts(fetchedData);
+      setIsLoadingDiscount(false);
     };
 
     void fetchNew();
@@ -41,6 +45,7 @@ export const HomePage: React.FC = () => {
         <ProductCarousel
           title="Brand new models"
           products={newProducts}
+          isLoading={isLoadingNew}
         />
       </section>
 
@@ -53,6 +58,7 @@ export const HomePage: React.FC = () => {
           title="Hot prices"
           products={hotProducts}
           showFullPrice
+          isLoading={isLoadingDiscount}
         />
       </section>
     </Container>
